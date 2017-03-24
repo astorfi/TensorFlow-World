@@ -1,0 +1,44 @@
+#!/bin/bash
+#
+# This script performs the following operations:
+# 1. Downloads the MNIST dataset
+# 2. Trains a LeNet model on the MNIST training set.
+# 3. Evaluates the model on the MNIST testing set.
+#
+# Usage:
+# cd to folder of the python file for training
+
+
+# Where the checkpoint and logs will be saved to.
+train_dir=/tmp/lenet-model
+
+# Where the dataset is saved to.
+checkpoint_dir=/tmp/mnist
+
+
+# Run training.
+python train_image_classifier.py \
+  --train_dir=${train_dir} \
+  --checkpoint_dir=${checkpoint_dir} \
+  --batch_size=512 \
+  --num_epochs=20 \
+  --max_num_checkpoint=10 \
+  --preprocessing_name=lenet \
+  --max_number_of_steps=20000 \
+  --batch_size=50 \
+  --learning_rate=0.01 \
+  --save_interval_secs=60 \
+  --save_summaries_secs=60 \
+  --log_every_n_steps=100 \
+  --optimizer=sgd \
+  --learning_rate_decay_type=fixed \
+  --weight_decay=0
+
+# Run evaluation.
+python eval_image_classifier.py \
+  --checkpoint_path=${TRAIN_DIR} \
+  --eval_dir=${TRAIN_DIR} \
+  --dataset_name=mnist \
+  --dataset_split_name=test \
+  --dataset_dir=${DATASET_DIR} \
+  --model_name=lenet
