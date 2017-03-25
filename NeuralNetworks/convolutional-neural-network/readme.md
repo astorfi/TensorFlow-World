@@ -21,7 +21,7 @@ python train_classifier.py --help
 ```
 In which `train_classifier.py` is the main file for running the training. The result of the above command will be as below:
 ```bash
---train_dir TRAIN_DIR
+  --train_dir TRAIN_DIR
                         Directory where event logs are written to.
   --checkpoint_dir CHECKPOINT_DIR
                         Directory where checkpoints are written to.
