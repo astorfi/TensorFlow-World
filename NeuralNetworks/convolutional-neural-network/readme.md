@@ -14,6 +14,8 @@ The traing can be run using the **train.sh** `bash script` file using the follow
 ./train.sh
 ```
 
+helper:
+
 In order to realize that what are the parameters as input running the following command is recommended:
 
 ```bash
@@ -42,20 +44,15 @@ In which `train_classifier.py` is the main file for running the training. The re
                         Number of epoch pass to decay learning rate.
   --is_training [IS_TRAINING]
                         Training/Testing.
-  --nois_training
   --fine_tuning [FINE_TUNING]
                         Fine tuning is desired or not?.
-  --nofine_tuning
   --online_test [ONLINE_TEST]
                         Fine tuning is desired or not?.
-  --noonline_test
   --allow_soft_placement [ALLOW_SOFT_PLACEMENT]
                         Automatically put the variables on CPU if there is no
                         GPU support.
-  --noallow_soft_placement
   --log_device_placement [LOG_DEVICE_PLACEMENT]
                         Demonstrate which variables are on what device.
-  --nolog_device_placement
 
 ```
 
