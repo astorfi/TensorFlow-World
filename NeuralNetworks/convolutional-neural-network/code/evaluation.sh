@@ -1,14 +1,3 @@
-#!/bin/bash
-#
-# This script performs the following operations:
-# 1. Downloads the MNIST dataset
-# 2. Trains a LeNet model on the MNIST training set.
-# 3. Evaluates the model on the MNIST testing set.
-#
-# Usage:
-# cd to folder of the python file for training
-
-
 # Where the logs will be saved to.
 test_dir=/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/test_logs
 

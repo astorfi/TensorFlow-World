@@ -67,6 +67,7 @@ tf.app.flags.DEFINE_boolean('log_device_placement', False,
 # Store all elemnts in FLAG structure!
 FLAGS = tf.app.flags.FLAGS
 
+
 ################################################
 ################# handling errors!##############
 ################################################
