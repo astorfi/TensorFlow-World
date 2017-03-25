@@ -1,39 +1,88 @@
 # Convolutional Neural Network
 
-## Overview
+This is the code repository for the blog post [Train a Convolutional Neural Network as a Classifier](http://machinelearninguru.com/deep_learning/tensorflow/neural_networks/cnn_classifier/cnn_classifier.html). Please refer to [this wiki page](https://github.com/astorfi/TensorFlow-Turorials/wiki/Convolutional-Neural-Networks) for more details.
 
-The aim is to design a simple convolutional Neural Network using `TensorFlow`. The tutorial is aimed to sketch a starup model to the the two follwing:
-
-1. Define an organization for the network architecture, training and evaluation phases.
-2. Provides a template framework for constructing larger and more complicated models.
-
-## Model Architecture
-
-Two simple `convolutional layers`(each have max pooling) followed by two `fully-cnnected` layers conisdered. The number of output units for the last fully-connected layer is equal to the number of `classes` becasue a `softmax` has been implemented for the classification task.
-
-## Code Organization
-
-The source code is embeded in `code` folder.
-
-| File                | Explanation   |
-| ------------------- |:-------------:|
-| Model_Functions.py  | The body of the framework which consists of structure and axillary functions |
-| classifier.py       | The main file which has to be run |
-
-## Input
-
-The input format is `HDF5` for this implemetation but it basically can be anything as long as it satisfies the shape properties. For each `TRAIN` and `TEST` data, there are attributes call `cube` and `label`. The `cube` is the data of the shape `(Number_Samples,height,width,Number_Channels)` and the `label` is of the form `(Number_Samples,1)` in which each row has the class label. The label matrix should be transform to the form of `(Number_Samples,Number_Classes)` for which each row is associated with a sample and all of the columns are zero except for the one which belongs to the class number. Method `Reform_Fn` does this in the begining.
 
 ## Training
 
-As conventional procedure, updating the gradient is done with batches of the data. Moreover `Batch Normalization` has been implemented for each convolutional layer. No `Batch Normalization` is done for the fully-connected layers. For all the convolutional and fully-connected layers, the `drop-out` has been used with the same parameter however this parameter can be customized for each layer in the code. Traditional `GradientDescentOptimizer` has been used.
 
-### Loss Function
+*Train:*
 
-`Cross-entropy` loss function has been chosen for the cost of system. The definition is as follows:
+The traing can be run using the **train.sh** `bash script` file using the following command:
+
+```bash
+./train.sh
 ```
-cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y), reduction_indices=[1]))
-```
-However by considering [TensorFlow official documention](https://www.tensorflow.org/versions/r0.11/tutorials/mnist/beginners/index.html#mnist-for-ml-beginners) it is numerically unstable. The reason can be due to the presence of the `log`. If the output of the network provide a very bad prediction and by normalizing that prediction we get `zero` for `y` value, then the loss goes to infinity and this is unstable. Another issue can be the explosion of the exponential. If the output of any of the neurons is large, since in the softmax we do the exponentiation, then the numerator and denominator of the softmax operation can be very large. So a trick can be add a number to all of the unscaled outputs. all the unit output values can be added by `-max{fi{i=0,...,n}}` which is the ngative sign of maximum of all output values. For further reading refer to [CNN for Visual Recognition](http://cs231n.github.io/linear-classify/) Course by stanford. Also please refer to [softmax_regression](http://ufldl.stanford.edu/wiki/index.php/Softmax_Regression) for further details.
 
-Instead the `tf.nn.softmax_cross_entropy_with_logits` on the unnormalized logits (i.e.,  softmax_cross_entropy_with_logits is called on tf.matmul(x, W) + b), this function computes the softmax activation internally which makes it more stable. It's good to take a look at the source code of `TensorFlow` for that however there is a traditional idea to overcome this problem which is add an `epsilon` number with the absolute value of `y` and take it as `y`.
+The bash script is as below:
+```bash
+# Where the logs will be saved to.
+train_dir=/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/train_logs
+
+# Where the checkpoints is saved to.
+checkpoint_dir=/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/checkpoints
+
+
+# Run training.
+python train_classifier.py \
+  --train_dir=${train_dir} \
+  --checkpoint_dir=${checkpoint_dir} \
+  --batch_size=512 \
+  --num_epochs=20 \
+  --max_num_checkpoint=10 \
+  --is_training \
+  --allow_soft_placement
+
+```
+
+*helper:*
+
+In order to realize that what are the parameters as input running the following command is recommended:
+
+```bash
+python train_classifier.py --help
+```
+In which `train_classifier.py` is the main file for running the training. The result of the above command will be as below:
+```bash
+  --train_dir TRAIN_DIR
+                        Directory where event logs are written to.
+  --checkpoint_dir CHECKPOINT_DIR
+                        Directory where checkpoints are written to.
+  --max_num_checkpoint MAX_NUM_CHECKPOINT
+                        Maximum number of checkpoints that TensorFlow will
+                        keep.
+  --num_classes NUM_CLASSES
+                        Number of model clones to deploy.
+  --batch_size BATCH_SIZE
+                        Number of model clones to deploy.
+  --num_epochs NUM_EPOCHS
+                        Number of epochs for training.
+  --initial_learning_rate INITIAL_LEARNING_RATE
+                        Initial learning rate.
+  --learning_rate_decay_factor LEARNING_RATE_DECAY_FACTOR
+                        Learning rate decay factor.
+  --num_epochs_per_decay NUM_EPOCHS_PER_DECAY
+                        Number of epoch pass to decay learning rate.
+  --is_training [IS_TRAINING]
+                        Training/Testing.
+  --fine_tuning [FINE_TUNING]
+                        Fine tuning is desired or not?.
+  --online_test [ONLINE_TEST]
+                        Fine tuning is desired or not?.
+  --allow_soft_placement [ALLOW_SOFT_PLACEMENT]
+                        Automatically put the variables on CPU if there is no
+                        GPU support.
+  --log_device_placement [LOG_DEVICE_PLACEMENT]
+                        Demonstrate which variables are on what device.
+
+```
+
+
+## Evaluating
+
+The evaluation will be run using the **evaluation.sh** `bash script` file using the following command:
+```bash
+./evaluation.sh
+```
+
+
