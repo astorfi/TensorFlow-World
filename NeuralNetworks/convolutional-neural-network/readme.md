@@ -6,7 +6,7 @@ This is the code repository for the blog post [Train a Convolutional Neural Netw
 ## Training
 
 
-Train:
+*Train:*
 
 The traing can be run using the **train.sh** `bash script` file using the following command:
 
@@ -14,7 +14,28 @@ The traing can be run using the **train.sh** `bash script` file using the follow
 ./train.sh
 ```
 
-helper:
+The bash script is as below:
+```bash
+# Where the logs will be saved to.
+train_dir=/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/train_logs
+
+# Where the checkpoints is saved to.
+checkpoint_dir=/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/checkpoints
+
+
+# Run training.
+python train_classifier.py \
+  --train_dir=${train_dir} \
+  --checkpoint_dir=${checkpoint_dir} \
+  --batch_size=512 \
+  --num_epochs=20 \
+  --max_num_checkpoint=10 \
+  --is_training \
+  --allow_soft_placement
+
+```
+
+*helper:*
 
 In order to realize that what are the parameters as input running the following command is recommended:
 
@@ -59,6 +80,7 @@ In which `train_classifier.py` is the main file for running the training. The re
 
 ## Evaluating
 
+The evaluation will be run using the **evaluation.sh** `bash script` file using the following command:
 ```bash
 ./evaluation.sh
 ```
