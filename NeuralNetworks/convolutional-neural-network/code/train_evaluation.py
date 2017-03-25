@@ -1,7 +1,7 @@
 from __future__ import print_function
 import tensorflow as tf
 import numpy as np
-import progress_bar
+from auxiliary import progress_bar
 import os
 import sys
 

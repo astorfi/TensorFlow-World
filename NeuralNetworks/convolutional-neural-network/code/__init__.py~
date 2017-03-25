@@ -1,4 +1,1 @@
-from auxiliary import progress_bar
-from input_function import input
-from net import net
-from train_evaluation import train_evaluation
+from input_function.input import *

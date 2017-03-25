@@ -2,10 +2,10 @@ from __future__ import print_function
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 import numpy as np
-import input
-import net
+from net_structure import net
+from input_function import input
+from auxiliary import progress_bar
 import os
-import progress_bar
 import sys
 
 slim = tf.contrib.slim

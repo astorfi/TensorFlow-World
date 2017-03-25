@@ -2,11 +2,10 @@ from __future__ import print_function
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 import numpy as np
-import input
-import net
+from net_structure import net
+from input_function import input
 import os
 import train_evaluation
-import sys
 
 slim = tf.contrib.slim
 
@@ -32,7 +31,7 @@ tf.app.flags.DEFINE_integer('num_classes', 10,
 tf.app.flags.DEFINE_integer('batch_size', np.power(2, 9),
                             'Number of model clones to deploy.')
 
-tf.app.flags.DEFINE_integer('num_epochs', 30,
+tf.app.flags.DEFINE_integer('num_epochs', 10,
                             'Number of epochs for training.')
 
 ##########################################
