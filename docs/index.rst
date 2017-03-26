@@ -1,7 +1,7 @@
 **TensorFLow Deep Learning**
 
 The tutorial are ready to used and the explanations are present in the `wiki`_ associated with this repository.
-** **
+
 .. The links.
 .. _wiki: https://github.com/astorfi/Tensorflow-Turorials/wiki
 .. _Document: https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks
