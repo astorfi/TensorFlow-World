@@ -11,7 +11,8 @@ The tutorial are ready to used and the explanations are present in the wiki_ ass
 
 .. Links:
 .. _convolutional neural network: https://github.com/astorfi/TensorFLow-Deep-Learning/NeuralNetworks/convolutional-neural-network
-.. _wikis: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki/Convolutional-Neural-Networks
+.. _wikicnn: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki/Convolutional-Neural-Networks
+`link <wikicnn_>`_
 +---+-------------------------------------------------+--------------------+ 
 | # | Source Code                                     | Documentation      | 
 +===+=================================================+====================+ 
