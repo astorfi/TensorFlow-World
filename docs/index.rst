@@ -2,7 +2,7 @@
 
 The tutorial are ready to used and the explanations are present in the `wiki <https://github.com/astorfi/Tensorflow-Turorials/wiki>`  associated with this repository.
 
-This is a paragraph that contains `a link`.
+This is a paragraph that contains `a link`_.
 
 .. _a link: http://example.com/
 
