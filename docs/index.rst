@@ -10,7 +10,7 @@ The tutorial are ready to used and the explanations are present in the wiki_ ass
 **TensorFlow Tutorials** 
 
 .. Links:
-.. _convolutional neural network: https://github.com/astorfi/TensorFLow-Deep-Learning/NeuralNetworks/convolutional-neural-network
+.. _convolutional neural network: https://github.com/astorfi/TensorFLow-Deep-Learning/tree/master/NeuralNetworks/convolutional-neural-network
 .. _wikicnn: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki/Convolutional-Neural-Networks
 
 
