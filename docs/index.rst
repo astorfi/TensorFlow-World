@@ -3,7 +3,7 @@
 The tutorial are ready to used and the explanations are present in the 'wiki'_ associated with this repository.
 
 .. The links.
-.. _wiki: https://github.com/astorfi/Tensorflow-Turorials/wiki
+.. _wiki: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki
 .. _TensorFlow: https://www.tensorflow.org/install/
 
 
@@ -11,7 +11,7 @@ The tutorial are ready to used and the explanations are present in the 'wiki'_ a
 
 .. Links:
 .. _convolutional neural network: https://github.com/astorfi/TensorFLow-Deep-Learning/NeuralNetworks/convolutional-neural-network
-.. _wiki: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki/Convolutional-Neural-Networks
+.. _wikis: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki/Convolutional-Neural-Networks
 +---+-------------------------------------------------+--------------------+ 
 | # | Source Code                                     | Documentation      | 
 +===+=================================================+====================+ 
