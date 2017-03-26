@@ -35,13 +35,17 @@ You can find python source code under the associated section directory.
 +----+-----------------------------------------------------------------------------------+-------------+--------------------------------------------------+
 
 
-+------------------------+------------+----------+----------+
-| #  | Code       |  Wiki    | Description |
-+========================+============+==========+==========+
-| 1  | **`convolutional neural network <NeuralNetworks/convolutional-neural-network/>`_**  | `Document`_ | Classification with Convolutional Neural Network |
-+------------------------+------------+----------+----------+
-| body row 2             | ...        | ...      |          |
-+------------------------+------------+----------+----------+
++------------+------------+-----------+ 
+| Header 1   | Header 2   | Header 3  | 
++============+============+===========+ 
+| body row 1 | column 2   | column 3  | 
++------------+------------+-----------+ 
+| body row 2 | Cells may span columns.| 
++------------+------------+-----------+ 
+| body row 3 | Cells may  | - Cells   | 
++------------+ span rows. | - contain | 
+| body row 4 |            | - blocks. | 
++------------+------------+-----------+
 
 
 
