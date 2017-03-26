@@ -2,8 +2,10 @@
 
 The tutorial are ready to used and the explanations are present in the `wiki`_ associated with this repository.
 
+.. The links.
 .. _wiki: https://github.com/astorfi/Tensorflow-Turorials/wiki
 .. _Document: https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks
+.. _TensorFlow: https://www.tensorflow.org/install/
 
 
 
@@ -21,7 +23,7 @@ You can find python source code under the associated section directory.
 ## Installation and Setup the Environment
 
 In order to install TensorFlow please refer to the following link:
-* [TensorFlow Installation](https://www.tensorflow.org/install/)
+`TensorFlow`_
 
 The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environmen.
 
