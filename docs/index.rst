@@ -1,6 +1,6 @@
 # TensorFLow Deep Learning
 
-The tutorial are ready to used and the explanations are present in the `Link wiki <https://github.com/astorfi/Tensorflow-Turorials/wiki>`  associated with this repository.
+The tutorial are ready to used and the explanations are present in the `wiki <https://github.com/astorfi/Tensorflow-Turorials/wiki>`  associated with this repository.
 
 
 # TensorFlow Tutorials
