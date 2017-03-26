@@ -7,30 +7,7 @@ The tutorial are ready to used and the explanations are present in the `wiki`_ a
 .. _TensorFlow: https://www.tensorflow.org/install/
 
 
-This is a normal text paragraph. The next paragraph is a code sample::
-
-   It is not processed in any way, except
-   that the indentation is removed.
-
-   It can span multiple lines.
-
-This is a normal text paragraph again.
-
-
 **TensorFlow Tutorials** 
-
-You can find python source code under the associated section directory.
-
-.. #### Neural Networks
-.. | | Code | Wiki | Description |
-.. | --- | --- | --- | --- |
-.. |1| **[convolutional neural network](NeuralNetworks/convolutional-neural-network)** |  | |
-
-+----+-----------------------------------------------------------------------------------+-------------+------------------------------------------------------+
-| #  |  Code                                                                             | Wiki        | Description                                      |
-+====+===================================================================================+=============+==================================================+
-| 1  | **[convolutional neural network](NeuralNetworks/convolutional-neural-network)**   | `Document`_ | Classification with Convolutional Neural Network |
-+----+-----------------------------------------------------------------------------------+-------------+--------------------------------------------------+
 
 .. Links:
 .. _convolutional neural network: https://github.com/astorfi/TensorFLow-Deep-Learning/NeuralNetworks/convolutional-neural-network
@@ -38,7 +15,7 @@ You can find python source code under the associated section directory.
 +---+-------------------------------------------------+--------------------+ 
 | # | Source Code                                     | Documentation      | 
 +===+=================================================+====================+ 
-| 1 |           `convolutional neural network`        | wiki page          | 
+| 1 |           `convolutional neural network`        |      wiki page     | 
 +---+-------------------------------------------------+--------------------+ 
 
 
