@@ -30,7 +30,7 @@ The virtual environment installation is recommended in order to prevent package 
 The TensorFlow version employed for these tutorials was `0.12` how ever the files have been transformed and tested in TensorFlow version `1.0` using the following instructions:
 `Transitioning to TensorFlow 1.0 <https://www.tensorflow.org/install/migration/>`_ 
 
-* Some Useful Tutorials
+**Some Useful Tutorials**
 
   * `TensorFlow Examples <https://github.com/aymericdamien/TensorFlow-Examples>`_ - TensorFlow tutorials and code examples for beginners
   * `Sungjoon's TensorFlow-101 <https://github.com/sjchoi86/Tensorflow-101>`_ - TensorFlow tutorials written in Python with Jupyter Notebook
