@@ -28,6 +28,7 @@ In order to install TensorFlow please refer to the following link:
 The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environmen.
 
 The TensorFlow version employed for these tutorials was `0.12` how ever the files have been transformed and tested in TensorFlow version `1.0` using the following instructions:
+`Transitioning to TensorFlow 1.0 <https://www.tensorflow.org/install/migration/>`_ 
 * [Transitioning to TensorFlow 1.0](https://www.tensorflow.org/install/migration)
 
 ## Some Useful Tutorials
