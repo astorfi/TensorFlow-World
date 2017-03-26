@@ -4,7 +4,6 @@ The tutorial are ready to used and the explanations are present in the `wiki`_ a
 
 .. The links.
 .. _wiki: https://github.com/astorfi/Tensorflow-Turorials/wiki
-.. _convolutional neural network: https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks
 .. _TensorFlow: https://www.tensorflow.org/install/
 
 
@@ -33,12 +32,14 @@ You can find python source code under the associated section directory.
 | 1  | **[convolutional neural network](NeuralNetworks/convolutional-neural-network)**   | `Document`_ | Classification with Convolutional Neural Network |
 +----+-----------------------------------------------------------------------------------+-------------+--------------------------------------------------+
 
-
-+------------+------------+-----------+ 
-| Topic      | Header 2   | Header 3  | 
-+============+============+===========+ 
-| body row 1 | column 2   | column 3  | 
-+------------+------------+-----------+ 
+.. Links:
+.. _convolutional neural network: https://github.com/astorfi/TensorFLow-Deep-Learning/NeuralNetworks/convolutional-neural-network
+.. _wiki: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki/Convolutional-Neural-Networks
++---+-------------------------------------------------+--------------------+ 
+| # | Source Code                                     | Documentation      | 
++===+=================================================+====================+ 
+| 1 |           `convolutional neural network`        | wiki page          | 
++---+-------------------------------------------------+--------------------+ 
 
 
 
