@@ -26,13 +26,12 @@ You can find python source code under the associated section directory.
 #### Neural Networks
 | | Code | Wiki | Description |
 | --- | --- | --- | --- |
-|1| **[convolutional neural network](NeuralNetworks/convolutional-neural-network)** | `Document`_ | Classification with Convolutional Neural Network|
+|1| **[convolutional neural network](NeuralNetworks/convolutional-neural-network)** |  | |
 
 +------------------------+------------+----------+----------+
-| Header row, column 1   | Header 2   | Header 3 | Header 4 |
-| (header rows optional) |            |          |          |
+| #  | Code       |  Wiki    | Description |
 +========================+============+==========+==========+
-| body row 1, column 1   | column 2   | column 3 | column 4 |
+| 1   | **`convolutional neural network <NeuralNetworks/convolutional-neural-network/>`_**   | `Document`_ | Classification with Convolutional Neural Network |
 +------------------------+------------+----------+----------+
 | body row 2             | ...        | ...      |          |
 +------------------------+------------+----------+----------+
