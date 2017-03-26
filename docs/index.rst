@@ -28,7 +28,7 @@ You can find python source code under the associated section directory.
 .. | --- | --- | --- | --- |
 .. |1| **[convolutional neural network](NeuralNetworks/convolutional-neural-network)** |  | |
 
-+------------------------+------------+----------+----------+
++------------------------+------------+----------+-------------+
 | #                      | Code       | Wiki     | Description |
 +========================+============+==========+=============+
 | body row 1, column 1   | column 2   | column 3 | column 4    |
