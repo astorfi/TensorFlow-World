@@ -1,7 +1,7 @@
 # TensorFLow Deep Learning
 
 The tutorial are ready to used and the explanations are present in the `wiki`_ associated with this repository.
-
+** **
 .. The links.
 .. _wiki: https://github.com/astorfi/Tensorflow-Turorials/wiki
 .. _Document: https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks
@@ -9,7 +9,7 @@ The tutorial are ready to used and the explanations are present in the `wiki`_ a
 
 
 
-# TensorFlow Tutorials
+** TensorFlow Tutorials 
 
 You can find python source code under the associated section directory.
 
@@ -20,7 +20,7 @@ You can find python source code under the associated section directory.
 
 
 
-## Installation and Setup the Environment
+** Installation and Setup the Environment **
 
 In order to install TensorFlow please refer to the following link:
   
