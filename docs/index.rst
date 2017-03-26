@@ -4,7 +4,7 @@ The tutorial are ready to used and the explanations are present in the `wiki`_ a
 
 .. The links.
 .. _wiki: https://github.com/astorfi/Tensorflow-Turorials/wiki
-.. _Document: https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks
+.. _convolutional neural network: https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks
 .. _TensorFlow: https://www.tensorflow.org/install/
 
 
@@ -17,7 +17,9 @@ This is a normal text paragraph. The next paragraph is a code sample::
 
 This is a normal text paragraph again.
 
+Want to learn about `my favorite programming language`_?
 
+.. _my favorite programming language: http://www.python.org
 
 **TensorFlow Tutorials** 
 
@@ -36,7 +38,7 @@ You can find python source code under the associated section directory.
 
 
 +------------+------------+-----------+ 
-| Header 1   | Header 2   | Header 3  | 
+| Topic   | Header 2   | Header 3  | 
 +============+============+===========+ 
 | body row 1 | column 2   | column 3  | 
 +------------+------------+-----------+ 
