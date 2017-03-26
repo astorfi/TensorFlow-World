@@ -16,22 +16,21 @@ The traing can be run using the **train.sh** `bash script` file using the follow
 
 The bash script is as below:
 ```bash
-# Where the logs will be saved to.
-train_dir=/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/train_logs
-
-# Where the checkpoints is saved to.
-checkpoint_dir=/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/checkpoints
-
 
 # Run training.
 python train_classifier.py \
-  --train_dir=${train_dir} \
-  --checkpoint_dir=${checkpoint_dir} \
   --batch_size=512 \
-  --num_epochs=20 \
   --max_num_checkpoint=10 \
-  --is_training \
-  --allow_soft_placement
+  --num_classes=10 \
+  --num_epochs=1 \
+  --initial_learning_rate=0.001 \
+  --num_epochs_per_decay=1 \
+  --is_training=True \
+  --allow_soft_placement=True \
+  --fine_tuning=False \
+  --online_test=True \
+  --log_device_placement=False
+
 
 ```
 
