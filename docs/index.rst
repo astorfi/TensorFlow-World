@@ -35,7 +35,7 @@ You can find python source code under the associated section directory.
 
 
 +------------+------------+-----------+ 
-| Topic   | Header 2   | Header 3  | 
+| Topic      | Header 2   | Header 3  | 
 +============+============+===========+ 
 | body row 1 | column 2   | column 3  | 
 +------------+------------+-----------+ 
