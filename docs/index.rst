@@ -17,9 +17,6 @@ This is a normal text paragraph. The next paragraph is a code sample::
 
 This is a normal text paragraph again.
 
-Want to learn about `my favorite programming language`_?
-
-.. _my favorite programming language: http://www.python.org
 
 **TensorFlow Tutorials** 
 
@@ -42,12 +39,6 @@ You can find python source code under the associated section directory.
 +============+============+===========+ 
 | body row 1 | column 2   | column 3  | 
 +------------+------------+-----------+ 
-| body row 2 | Cells may span columns.| 
-+------------+------------+-----------+ 
-| body row 3 | Cells may  | - Cells   | 
-+------------+ span rows. | - contain | 
-| body row 4 |            | - blocks. | 
-+------------+------------+-----------+
 
 
 
