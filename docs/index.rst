@@ -13,7 +13,7 @@ You can find python source code under the associated section directory.
 #### Neural Networks
 | | Code | Wiki | Description |
 | --- | --- | --- | --- |
-|1| **[convolutional neural network](NeuralNetworks/convolutional-neural-network)** | `Document`_ | Classification with Convolutional Neural Network|
+|1| **[convolutional neural network](NeuralNetworks/convolutional-neural-network)** | `wiki`_ | Classification with Convolutional Neural Network|
 .. _Document: https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks
 
 
