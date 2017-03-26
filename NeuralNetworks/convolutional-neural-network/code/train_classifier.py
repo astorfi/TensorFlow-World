@@ -14,12 +14,12 @@ slim = tf.contrib.slim
 ######################################
 
 tf.app.flags.DEFINE_string(
-    'train_dir', '/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/train_logs',
+    'train_dir', os.path.dirname(os.path.abspath(__file__)) + '/train_logs',
     'Directory where event logs are written to.')
 
 tf.app.flags.DEFINE_string(
     'checkpoint_dir',
-    '/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/checkpoints',
+    os.path.dirname(os.path.abspath(__file__)) + '/checkpoints',
     'Directory where checkpoints are written to.')
 
 tf.app.flags.DEFINE_integer('max_num_checkpoint', 10,
@@ -31,7 +31,7 @@ tf.app.flags.DEFINE_integer('num_classes', 10,
 tf.app.flags.DEFINE_integer('batch_size', np.power(2, 9),
                             'Number of model clones to deploy.')
 
-tf.app.flags.DEFINE_integer('num_epochs', 10,
+tf.app.flags.DEFINE_integer('num_epochs', 5,
                             'Number of epochs for training.')
 
 ##########################################

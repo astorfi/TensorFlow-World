@@ -14,12 +14,12 @@ slim = tf.contrib.slim
 ######### Necessary Flags ############
 ######################################
 tf.app.flags.DEFINE_string(
-    'test_dir', '/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/test_logs',
+    'test_dir', os.path.dirname(os.path.abspath(__file__)) + '/test_logs',
     'Directory where event logs are written to.')
 
 tf.app.flags.DEFINE_string(
     'checkpoint_dir',
-    '/home/sina/GITHUB/Tensorflow-Turorials/NeuralNetworks/convolutional-neural-network/code/checkpoints',
+    os.path.dirname(os.path.abspath(__file__)) + '/checkpoints',
     'Directory where checkpoints are written to.')
 
 tf.app.flags.DEFINE_integer('num_classes', 10,
