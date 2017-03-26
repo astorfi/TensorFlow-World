@@ -29,10 +29,9 @@ The virtual environment installation is recommended in order to prevent package 
 
 The TensorFlow version employed for these tutorials was `0.12` how ever the files have been transformed and tested in TensorFlow version `1.0` using the following instructions:
 `Transitioning to TensorFlow 1.0 <https://www.tensorflow.org/install/migration/>`_ 
-* [Transitioning to TensorFlow 1.0](https://www.tensorflow.org/install/migration)
 
 ## Some Useful Tutorials
-* [TensorFlow Examples](https://github.com/aymericdamien/TensorFlow-Examples) - TensorFlow tutorials and code examples for beginners
+* `TensorFlow Examples <https://github.com/aymericdamien/TensorFlow-Examples>`_ - TensorFlow tutorials and code examples for beginners
 * [Sungjoon's TensorFlow-101](https://github.com/sjchoi86/Tensorflow-101) - TensorFlow tutorials written in Python with Jupyter Notebook
 * [Terry Um’s TensorFlow Exercises](https://github.com/terryum/TensorFlow_Exercises) - Re-create the codes from other TensorFlow examples
 * [Classification on time series](https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition) - Recurrent Neural Network classification in TensorFlow with LSTM on cellphone sensor data
