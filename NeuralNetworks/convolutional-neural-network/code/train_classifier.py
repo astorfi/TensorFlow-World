@@ -31,7 +31,7 @@ tf.app.flags.DEFINE_integer('num_classes', 10,
 tf.app.flags.DEFINE_integer('batch_size', np.power(2, 9),
                             'Number of model clones to deploy.')
 
-tf.app.flags.DEFINE_integer('num_epochs', 5,
+tf.app.flags.DEFINE_integer('num_epochs', 10,
                             'Number of epochs for training.')
 
 ##########################################
@@ -236,12 +236,12 @@ with graph.as_default():
         ###################################################
         ############ Training / Evaluation ###############
         ###################################################
-        train_evaluation.train(sess, saver, tensors_dictionary, data,
+        train_evaluation.train(sess=sess, saver=saver, tensors=tensors_dictionary, data=data,
                                train_dir=FLAGS.train_dir,
                                finetuning=FLAGS.fine_tuning, online_test=FLAGS.online_test,
                                num_epochs=FLAGS.num_epochs, checkpoint_dir=FLAGS.checkpoint_dir,
                                batch_size=FLAGS.batch_size)
 
         # Test in the end of experiment.
-        train_evaluation.evaluation(sess, saver, tensors_dictionary, data,
+        train_evaluation.evaluation(sess=sess, saver=saver, tensors=tensors_dictionary, data=data,
                                     checkpoint_dir=FLAGS.checkpoint_dir)
