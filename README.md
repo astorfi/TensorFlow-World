@@ -9,7 +9,7 @@ You can find python source code under the associated section directory.
 #### Neural Networks
 | | Code | Wiki | Description |
 | --- | --- | --- | --- |
-|1| **[convolutional neural network](NeuralNetworks/convolutional-neural-network/code)** | [Document](https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks) | Classification with Convolutional Neural Network|
+|1| **[convolutional neural network](NeuralNetworks/convolutional-neural-network)** | [Document](https://github.com/astorfi/Tensorflow-Turorials/wiki/Convolutional-Neural-Networks) | Classification with Convolutional Neural Network|
 
 
 ## Installation and Setup the Environment
