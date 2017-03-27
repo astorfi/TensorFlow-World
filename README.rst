@@ -14,15 +14,15 @@ TensorFlow Tutorials
 ====================
 
 .. Links:
-.. _convolutional neural network: https://github.com/astorfi/TensorFLow-Deep-Learning/tree/master/NeuralNetworks/convolutional-neural-network
+.. _Convolutional Neural Networks: https://github.com/astorfi/TensorFLow-Deep-Learning/tree/master/NeuralNetworks/convolutional-neural-network
 .. _Documentationcnn: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki/Convolutional-Neural-Networks
 
 
-+---+----------------------------------------------------------------+----------------------------------------+ 
-| # | Source Code                                                    |           wiki                         | 
-+===+================================================================+========================================+ 
-| 1 |            `Documentations <`convolutional neural network`_>`_ |  `Documentation <Documentationcnn_>`_  | 
-+---+----------------------------------------------------------------+----------------------------------------+ 
++---+---------------------------------------------+----------------------------------------+ 
+| # | Source Code                                 |           wiki                         | 
++===+=============================================+========================================+ 
+| 1 |            `Convolutional Neural Networks`_ |  `Documentation <Documentationcnn_>`_  | 
++---+---------------------------------------------+----------------------------------------+ 
 
 
 ======================================
