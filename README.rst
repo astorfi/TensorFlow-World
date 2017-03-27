@@ -9,8 +9,9 @@ The tutorial are ready to used and the explanations are present in the wiki_ ass
 .. _wiki: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki
 .. _TensorFlow: https://www.tensorflow.org/install/
 
-
-**TensorFlow Tutorials** 
+====================
+TensorFlow Tutorials 
+====================
 
 .. Links:
 .. _convolutional neural network: https://github.com/astorfi/TensorFLow-Deep-Learning/tree/master/NeuralNetworks/convolutional-neural-network
@@ -24,8 +25,10 @@ The tutorial are ready to used and the explanations are present in the wiki_ ass
 +---+-------------------------------------------------+----------------------+ 
 
 
+======================================
+Installation and Setup the Environment
+======================================
 
-**Installation and Setup the Environment**
 
 In order to install TensorFlow please refer to the following link:
   
@@ -35,7 +38,9 @@ The virtual environment installation is recommended in order to prevent package 
 
   * `Transitioning to TensorFlow 1.0 <https://www.tensorflow.org/install/migration/>`_ 
 
-**Some Useful Tutorials**
+=====================
+Some Useful Tutorials
+=====================
 
   * `TensorFlow Examples <https://github.com/aymericdamien/TensorFlow-Examples>`_ - TensorFlow tutorials and code examples for beginners
   * `Sungjoon's TensorFlow-101 <https://github.com/sjchoi86/Tensorflow-101>`_ - TensorFlow tutorials written in Python with Jupyter Notebook
