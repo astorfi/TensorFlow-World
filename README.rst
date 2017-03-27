@@ -17,7 +17,7 @@ The tutorial are ready to used and the explanations are present in the wiki_ ass
 +---+-------------------------------------------------+------------------------------+ 
 | # | Source Code                                     | Documentation                | 
 +===+=================================================+==============================+ 
-| 1 |           `convolutional neural network`_       |  `wiki page <wikicnn_>`     | 
+| 1 |           `convolutional neural network`_       |  `wiki page <wikicnn_>`      | 
 +---+-------------------------------------------------+------------------------------+ 
 
 
