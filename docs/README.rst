@@ -19,9 +19,9 @@ TensorFlow Tutorials
 
 
 +---+---------------------------------------------+----------------------------------------+ 
-| # | Source Code                                 |           wiki                         | 
+| # |          Source Code                        |               wiki                     | 
 +===+=============================================+========================================+ 
-| 1 |            `Convolutional Neural Networks`_ |  `Documentation <Documentationcnn_>`_  | 
+| 1 |    `Convolutional Neural Networks`_         |  `Documentation <Documentationcnn_>`_  | 
 +---+---------------------------------------------+----------------------------------------+ 
 
 
