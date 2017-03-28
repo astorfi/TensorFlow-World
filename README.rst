@@ -18,6 +18,7 @@ The tutorials in this repository are partitioned into relevent categories.
 * Neural Networks
 ----------------
 The tutorials in this section are related to neural network architectures.
+
 .. Neural Networks Section
 .. Links:
 .. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-Tutorials/tree/master/NeuralNetworks/convolutional-neural-network
