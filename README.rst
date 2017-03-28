@@ -15,7 +15,7 @@ TensorFlow Tutorials
 The tutorials in this repository are partitioned into relevent categories.
 
 ----------------
-Neural Networks
+* Neural Networks
 ----------------
 
 .. Neural Networks Section
