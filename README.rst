@@ -12,7 +12,11 @@ The tutorial are ready to used and the explanations are present in the wiki_ ass
 ====================
 TensorFlow Tutorials 
 ====================
+The tutorials in this repository are partitioned into relevent categories.
 
+----------------
+Neural Networks
+----------------
 
 .. Neural Networks Section
 .. Links:
