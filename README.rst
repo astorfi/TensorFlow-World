@@ -6,7 +6,7 @@ TensorFLow Deep Learning
 The tutorial are ready to used and the explanations are present in the wiki_ associated with this repository.
 
 .. The links.
-.. _wiki: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki
+.. _wiki: https://github.com/astorfi/TensorFlow-Tutorials/wiki
 .. _TensorFlow: https://www.tensorflow.org/install/
 
 ====================
@@ -14,8 +14,8 @@ TensorFlow Tutorials
 ====================
 
 .. Links:
-.. _Convolutional Neural Networks: https://github.com/astorfi/TensorFLow-Deep-Learning/tree/master/NeuralNetworks/convolutional-neural-network
-.. _Documentationcnn: https://github.com/astorfi/TensorFLow-Deep-Learning/wiki/Convolutional-Neural-Networks
+.. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-Tutorials/tree/master/NeuralNetworks/convolutional-neural-network
+.. _Documentationcnn: https://github.com/astorfi/TensorFlow-Tutorials/wiki/Convolutional-Neural-Networks
 
 
 +---+---------------------------------------------+----------------------------------------+ 
