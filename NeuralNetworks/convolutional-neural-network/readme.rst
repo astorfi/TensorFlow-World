@@ -4,11 +4,13 @@ Convolutional Neural Network
 
 This is the code repository for the blog post `Train a Convolutional Neural Network as a Classifier`__. Please refer to this `wiki page`__ for more details.
 
+.. _cnn_classifier_wiki: https://github.com/astorfi/TensorFlow-Turorials/wiki/Convolutional-Neural-Networks
+__ cnn_classifier_wiki_
+
 .. _cnn_classifier_post: http://machinelearninguru.com/deep_learning/tensorflow/neural_networks/cnn_classifier/cnn_classifier.html
 __ cnn_classifier_post_
 
-.. _cnn_classifier_wiki: https://github.com/astorfi/TensorFlow-Turorials/wiki/Convolutional-Neural-Networks
-__ cnn_classifier_wiki_
+
 
 
 --------
