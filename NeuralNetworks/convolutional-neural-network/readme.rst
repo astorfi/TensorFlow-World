@@ -15,6 +15,15 @@ __ cnn_classifier_wiki_
 Training
 --------
 
+.. highlight:: html
+
+The literal blocks are now highlighted as HTML, until a new directive is found.
+
+::
+   <html><head></head>
+   <body>This is a text.</body>
+   </html>
+
 *Train:*
 
 The traing can be run using the **train.sh** `bash script` file using the following command:
