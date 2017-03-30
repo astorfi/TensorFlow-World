@@ -19,13 +19,13 @@ Training
 
 The traing can be run using the **train.sh** `bash script` file using the following command:
 
-```bash
-./train.sh
-```
+.. code:: bash
+  ./train.sh
 
 The bash script is as below:
-```bash
 
+
+.. code:: bash
 python train_classifier.py \
   --batch_size=512 \
   --max_num_checkpoint=10 \
@@ -39,18 +39,16 @@ python train_classifier.py \
   --online_test=True \
   --log_device_placement=False
 
-
-```
-
 **helper:**
 
 In order to realize that what are the parameters as input running the following command is recommended:
 
-```bash
+.. code:: bash
 python train_classifier.py --help
-```
+
+
 In which `train_classifier.py` is the main file for running the training. The result of the above command will be as below:
-```bash
+.. code:: bash
   --train_dir TRAIN_DIR
                         Directory where event logs are written to.
   --checkpoint_dir CHECKPOINT_DIR
@@ -82,15 +80,13 @@ In which `train_classifier.py` is the main file for running the training. The re
   --log_device_placement [LOG_DEVICE_PLACEMENT]
                         Demonstrate which variables are on what device.
 
-```
 
 -------------
 ## Evaluating
 -------------
 
 The evaluation will be run using the **evaluation.sh** `bash script` file using the following command:
-```bash
+.. code:: bash
 ./evaluation.sh
-```
 
 
