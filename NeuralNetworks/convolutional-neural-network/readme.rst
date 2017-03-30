@@ -21,7 +21,7 @@ The traing can be run using the **train.sh** `bash script` file using the follow
 
 .. code-block:: bash
 
-./train.sh
+   ./train.sh
 
 The bash script is as below:
 
