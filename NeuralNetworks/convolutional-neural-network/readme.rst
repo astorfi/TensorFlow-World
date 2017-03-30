@@ -86,9 +86,9 @@ In which `train_classifier.py` is the main file for running the training. The re
                         Demonstrate which variables are on what device.
 
 
--------------
-## Evaluating
--------------
+-----------
+Evaluation
+-----------
 
 The evaluation will be run using the **evaluation.sh** `bash script` file using the following command:
 
