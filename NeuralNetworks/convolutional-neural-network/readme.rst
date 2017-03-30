@@ -1,4 +1,6 @@
-# Convolutional Neural Network
+==============================
+Convolutional Neural Network
+==============================
 
 This is the code repository for the blog post `Train a Convolutional Neural Network as a Classifier`__. Please refer to this `wiki page`__ for more details.
 
@@ -9,9 +11,9 @@ __ cnn_classifier_post_
 __ cnn_classifier_wiki_
 
 
-
-## Training
-
+--------
+Training
+--------
 
 *Train:*
 
@@ -24,7 +26,6 @@ The traing can be run using the **train.sh** `bash script` file using the follow
 The bash script is as below:
 ```bash
 
-# Run training.
 python train_classifier.py \
   --batch_size=512 \
   --max_num_checkpoint=10 \
@@ -41,7 +42,7 @@ python train_classifier.py \
 
 ```
 
-*helper:*
+**helper:**
 
 In order to realize that what are the parameters as input running the following command is recommended:
 
@@ -83,8 +84,9 @@ In which `train_classifier.py` is the main file for running the training. The re
 
 ```
 
-
+-------------
 ## Evaluating
+-------------
 
 The evaluation will be run using the **evaluation.sh** `bash script` file using the following command:
 ```bash
