@@ -19,8 +19,9 @@ Training
 
 The traing can be run using the **train.sh** `bash script` file using the following command:
 
-.. code:: bash
+.. highlight:: bash
   ./train.sh
+::
 
 The bash script is as below:
 
