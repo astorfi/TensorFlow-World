@@ -20,35 +20,40 @@ Training
 The traing can be run using the **train.sh** `bash script` file using the following command:
 
 .. code-block:: bash
+
    ./train.sh
 
 The bash script is as below:
 
 
-.. code:: bash
-python train_classifier.py \
-  --batch_size=512 \
-  --max_num_checkpoint=10 \
-  --num_classes=10 \
-  --num_epochs=1 \
-  --initial_learning_rate=0.001 \
-  --num_epochs_per_decay=1 \
-  --is_training=True \
-  --allow_soft_placement=True \
-  --fine_tuning=False \
-  --online_test=True \
-  --log_device_placement=False
+.. code-block:: bash
+
+   python train_classifier.py \
+     --batch_size=512 \
+     --max_num_checkpoint=10 \
+     --num_classes=10 \
+     --num_epochs=1 \
+     --initial_learning_rate=0.001 \
+     --num_epochs_per_decay=1 \
+     --is_training=True \
+     --allow_soft_placement=True \
+     --fine_tuning=False \
+     --online_test=True \
+     --log_device_placement=False
 
 **helper:**
 
 In order to realize that what are the parameters as input running the following command is recommended:
 
-.. code:: bash
-python train_classifier.py --help
+.. code-block:: bash
+
+   python train_classifier.py --help
 
 
 In which `train_classifier.py` is the main file for running the training. The result of the above command will be as below:
-.. code:: bash
+
+.. code-block:: bash
+
   --train_dir TRAIN_DIR
                         Directory where event logs are written to.
   --checkpoint_dir CHECKPOINT_DIR
@@ -86,7 +91,9 @@ In which `train_classifier.py` is the main file for running the training. The re
 -------------
 
 The evaluation will be run using the **evaluation.sh** `bash script` file using the following command:
-.. code:: bash
-./evaluation.sh
+
+.. code-block:: bash
+
+   ./evaluation.sh
 
 
