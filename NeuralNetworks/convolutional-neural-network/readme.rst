@@ -15,7 +15,7 @@ __ cnn_classifier_wiki_
 Training
 --------
 
-*Train:*
+**Train:**
 
 The traing can be run using the **train.sh** `bash script` file using the following command:
 
