@@ -22,7 +22,7 @@ The traing can be run using the **train.sh** `bash script` file using the follow
 .. highlight:: bash
 
 ::
-  ./train.sh
+./train.sh
 
 The bash script is as below:
 
