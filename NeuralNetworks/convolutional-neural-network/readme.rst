@@ -20,7 +20,6 @@ Training
 The traing can be run using the **train.sh** `bash script` file using the following command:
 
 .. code-block:: bash
-
    ./train.sh
 
 The bash script is as below:
