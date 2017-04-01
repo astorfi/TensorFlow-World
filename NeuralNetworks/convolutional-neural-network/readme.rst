@@ -7,7 +7,7 @@ This is the code repository for the blog post `Train a Convolutional Neural Netw
 .. _cnn_classifier_post: http://machinelearninguru.com/deep_learning/tensorflow/neural_networks/cnn_classifier/cnn_classifier.html
 __ cnn_classifier_post_
 
-.. _cnn_classifier_wiki: https://github.com/astorfi/TensorFlow-Turorials/wiki/Convolutional-Neural-Networks
+.. _cnn_classifier_wiki: https://github.com/astorfi/TensorFlow-World/wiki/Convolutional-Neural-Networks
 __ cnn_classifier_wiki_
 
 
