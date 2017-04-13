@@ -167,7 +167,7 @@ Common Errors
 Different errors reported to block the compiling and running TensorFlow.
 
    * ``Mismatch between the supported kernel versions:`` This error mentioned earlier in this documentation. The naive solution reported to be reinstallation of the CUDA driver.
-   * ``ImportError: cannot import name pywrap_tensorflow:`` This error usually occurs when the Python loads the tensorflow libraries from the wrong directory, i.e., not the version installed by the user in the root. The first step is to make sure we are in the system root such that the python libraries are utilized correctly.
+   * ``ImportError: cannot import name pywrap_tensorflow:`` This error usually occurs when the Python loads the tensorflow libraries from the wrong directory, i.e., not the version installed by the user in the root. The first step is to make sure we are in the system root such that the python libraries are utilized correctly. So basically we can open a new terminal and test TensorFlow installation again.
 
 
 
