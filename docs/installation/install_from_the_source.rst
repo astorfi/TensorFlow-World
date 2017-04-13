@@ -57,8 +57,56 @@ The following requirements must be satisfied:
     * NVIDIA's Cuda Toolkit and its associated drivers(version 8.0 is recommended). The installation is explained at `CUDA Installation`_.
     * The cuDNN library(version 5.1 is recommended). Please refer to `NIDIA documentation`_ for further details.
     * Installing the ``libcupti-dev`` using the following command: ``sudo apt-get install libcupti-dev``
+    
+---------------------------------
+Configuration of the installation
+---------------------------------
+
+After preparing the environment, the installation must be configured. The ``flags`` of the cofiguration are of great importance becasue they determine how well and compatible the TensorFlow will be installed!! At first we have to go to the TensorFlow root:
+
+.. code:: bash
+
+    cd tensorflow  # cd to the cloned directory
+
+The flags alongside with the configuration environment are demonstrated below:
+
+.. code:: bash
+
+    
+    $ ./configure
+    Please specify the location of python. [Default is /usr/bin/python]: **/usr/bin/python2.7**
+    Please specify optimization flags to use during compilation when bazel option "--config=opt" is specified [Default is -march=native]:
+    Do you wish to use jemalloc as the malloc implementation? [Y/n] **Y**
+    jemalloc enabled
+    Do you wish to build TensorFlow with Google Cloud Platform support? [y/N] **N**
+    No Google Cloud Platform support will be enabled for TensorFlow
+    Do you wish to build TensorFlow with Hadoop File System support? [y/N] **N**
+    No Hadoop File System support will be enabled for TensorFlow
+    Do you wish to build TensorFlow with the XLA just-in-time compiler (experimental)? [y/N] **N**
+    No XLA JIT support will be enabled for TensorFlow
+    Found possible Python library paths:
+      /usr/local/lib/python2.7/dist-packages
+      /usr/lib/python2.7/dist-packages
+    Please input the desired Python library path to use.  Default is [/usr/local/lib/python2.7/dist-packages]
+    Using python library path: /usr/local/lib/python2.7/dist-packages
+    Do you wish to build TensorFlow with OpenCL support? [y/N] **N**
+    No OpenCL support will be enabled for TensorFlow
+    Do you wish to build TensorFlow with CUDA support? [y/N] **Y**
+    CUDA support will be enabled for TensorFlow
+    Please specify which gcc should be used by nvcc as the host compiler. [Default is /usr/bin/gcc]:
+    Please specify the Cuda SDK version you want to use, e.g. 7.0. [Leave empty to use system default]: **8.0**
+    Please specify the location where CUDA 8.0 toolkit is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:
+    Please specify the cuDNN version you want to use. [Leave empty to use system default]: **5.1.10**
+    Please specify the location where cuDNN 5 library is installed. Refer to README.md for more details. [Default is /usr/local/cuda]:
+    Please specify a list of comma-separated Cuda compute capabilities you want to build with.
+    You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
+    Please note that each additional compute capability significantly increases your build time and binary size.
+    [Default is: "3.5,5.2"]: **5.2**
 
 
+NOTE: 
+     * The cuDNN version must be exactly determined using the associated files in /usr/local/cuda
+     * The compute capability is spesified related the ``available GPU model`` in the system architecture. For example ``Geforce GTX Titan X`` GPUs have compute capability of 5.2.
     
     
  
