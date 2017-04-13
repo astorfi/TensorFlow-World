@@ -108,6 +108,17 @@ NOTE:
      * The compute capability is spesified related the ``available GPU model`` in the system architecture. For example ``Geforce GTX Titan X`` GPUs have compute capability of 5.2.
      * Using ``bazel clean`` is recommended if re-configuration is needed.
      
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Test Bazel (Optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We can run tests using ``Bazel`` to make sure everything's fine:
+
+.. code:: bash
+
+    ./configure
+    bazel test ...
+
 ---------------------
 Build the .whl Package
 ---------------------
@@ -140,7 +151,7 @@ The following command will install the pip package created by bazel build:
 Validate the Installation
 --------------------------
 
-In the terminal, the following script must be run correctly without any error and preferablely any warning:
+In the terminal, the following script must be run (``in the home directory``) correctly without any error and preferablely any warning:
 
 .. code:: bash
 
