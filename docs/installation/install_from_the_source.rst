@@ -56,11 +56,10 @@ The following requirements must be satisfied:
 
     * NVIDIA's Cuda Toolkit and its associated drivers(version 8.0 is recommended). The installation is explained at `CUDA Installation`_.
     * The cuDNN library(version 5.1 is recommended). Please refer to `NIDIA documentation`_ for further details.
-    * Installing the ``libcupti-dev`` using the following command:
-    
-    .. code:: bash
+    * Installing the ``libcupti-dev`` using the following command: ``sudo apt-get install libcupti-dev``
 
-    sudo apt-get install libcupti-dev
+
+    
     
  
 
