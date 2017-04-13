@@ -25,7 +25,7 @@ The following should be done in order:
     * TensorFlow GPU prerequisites setup
 
 ~~~~~~~~~~~~~~~~~~~
-Bazel installation
+Bazel Installation
 ~~~~~~~~~~~~~~~~~~~
 
 Please refer to `Bazel Installation`_.
@@ -39,7 +39,7 @@ Please refer to `Bazel Installation`_.
 For solving that error you may need to purge all NVIDIA drivers and install or update them again. Please refer to `CUDA Installation`_ for further detail.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TensorFlow Python dependencies installation
+TensorFlow Python Dependencies Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For installaion of the required dependencies, the following command must be executed in the terminal:
@@ -49,7 +49,7 @@ For installaion of the required dependencies, the following command must be exec
     sudo apt-get install python-numpy python-dev python-pip python-wheel
     
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TensorFlow GPU prerequisites setup
+TensorFlow GPU Prerequisites Setup
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following requirements must be satisfied:
@@ -59,7 +59,7 @@ The following requirements must be satisfied:
     * Installing the ``libcupti-dev`` using the following command: ``sudo apt-get install libcupti-dev``
     
 ---------------------------------
-Configuration of the installation
+Configuration of the Installation
 ---------------------------------
 
 After preparing the environment, the installation must be configured. The ``flags`` of the cofiguration are of great importance becasue they determine how well and compatible the TensorFlow will be installed!! At first we have to go to the TensorFlow root:
@@ -100,15 +100,62 @@ The flags alongside with the configuration environment are demonstrated below:
     Please specify a list of comma-separated Cuda compute capabilities you want to build with.
     You can find the compute capability of your device at: https://developer.nvidia.com/cuda-gpus.
     Please note that each additional compute capability significantly increases your build time and binary size.
-    [Default is: "3.5,5.2"]: 5.2
+    [Default is: "3.5,5.2"]: "5.2"
 
 
 NOTE: 
      * The cuDNN version must be exactly determined using the associated files in /usr/local/cuda
      * The compute capability is spesified related the ``available GPU model`` in the system architecture. For example ``Geforce GTX Titan X`` GPUs have compute capability of 5.2.
+     * Using ``bazel clean`` is recommended if re-configuration is needed.
+     
+---------------------
+Build the .whl Package
+---------------------
+
+After configuration of the setup, the pip package needs to be built by the Bazel.
     
+To build a TensorFlow package with GPU support, execute the following command:
+
+.. code:: bash
+
+    bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
     
- 
+The ``bazel build`` command builds a script named build_pip_package. Running the following script build a .whl file within the ~/tensorflow_package directory:
+
+.. code:: bash
+
+    bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/tensorflow_package
+
+-------------------------------
+Installation of the Pip Package
+-------------------------------
+
+The following command will install the pip package created by bazel build:
+
+.. code:: bash
+
+    sudo pip install ~/tensorflow_package/file_name.whl
+    
+--------------------------
+Validate the Installation
+--------------------------
+
+In the terminal, the following script must be run correctly without any error and preferablely any warning:
+
+.. code:: bash
+
+    import tensorflow as tf
+    hello = tf.constant('Hello, TensorFlow!')
+    sess = tf.Session()
+    print(sess.run(hello))
+
+--------------------------
+Common Errors
+--------------------------
+
+Different errors reported to block the compiling and running TensorFlow.
+
+   * Mismatch between the supported kernel versions: This error mentioned earlier in this documentation. The naive solution reported to be reinstallation of the CUDA driver.
 
 
 
