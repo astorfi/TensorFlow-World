@@ -33,7 +33,7 @@ Please refer to `Bazel Installation`_.
 
 .. code:: bash
 
-    kernel version 352.63.0 does not match DSO version 361.93.2 -- cannot find working devices in this configuration
+    kernel version X does not match DSO version Y -- cannot find working devices in this configuration
     
 For solving that error you may need to purge all NVIDIA drivers and install or update them again. Please refer to `CUDA Installation`_ for further detail.
 
