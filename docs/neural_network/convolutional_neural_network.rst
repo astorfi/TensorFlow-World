@@ -87,14 +87,11 @@ versa please refer to `this
 link <http://cs231n.github.io/convolutional-networks/>`__. The general
 architecture schematic is as below:
 
-.. class:: center
+.. figure:: _img/architecture.png
+   :scale: 50 %
+   :align: center
 
-    .. figure:: _img/architecture.png
-          :scale: 50 %
-          :alt: Architecture
-          :align: center
-
-          **Figure 1:** The general architecture of the network.
+   **Figure 1:** The general architecture of the network.
 
    
 The image is depicted by
