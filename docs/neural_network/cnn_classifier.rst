@@ -60,15 +60,7 @@ the one\_hot flag to **False** for customized preprocessing and data
 organization. The **input.provide\_data** function is provided to get
 any data with specific format separated by training and testing sets and
 return the structured data object for further processing. From now on we
-consider **data** as the data object which has the following structure:
-
-.. raw:: html
-
-   <div id="chart_div">
-
-.. raw:: html
-
-   </div>
+consider **data** as the data object.
 
 In any of the train, validation and test attributes, sub-attributes of
 images and labels exist. The have just not been depicted for the
@@ -79,8 +71,9 @@ a little bit with data object to grasp a better idea of how it works and
 what is its output. The codes are available in the GitHub repository for
 this post.
 
-.. rubric:: Network Architecture
-   :name: Network Architecture
+--------------------
+Network Architecture
+--------------------
 
 After explanation of the data input pipeline, Now it's the time to go
 through the neural network architecture used for this tutorial. The
@@ -115,22 +108,6 @@ architecture schematic is as below:
 
 **Figure 1:** The general architecture of the network.
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
 The image is depicted by
 `Tensorboard <https://www.tensorflow.org/get_started/summaries_and_tensorboard>`__
 as a visualization tool for TensorFlow. Later on in this tutorial the
@@ -141,27 +118,8 @@ dropout layer to decrease the overfitting. *The dropout will only be
 applied in the training phase*. The code for designing the architecture
 is as below:
 
-.. raw:: html
+.. code:: python
 
-   <div class="panel panel-default">
-
-.. raw:: html
-
-   <div class="panel-heading">
-
-Network Architecture
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div id="pycode" class="panel-body">
-
-::
-
-     
     import tensorflow as tf
     slim = tf.contrib.slim
 
@@ -204,10 +162,7 @@ Network Architecture
                     logits = tf.squeeze(logits, [1, 2], name='fc4/squeezed')
                     end_points[sc.name + '/fc4'] = logits
                 return logits, end_points
-
-::
-
-     
+ 
     def net_arg_scope(weight_decay=0.0005):
         #Defines the default network argument scope.
 
@@ -221,16 +176,9 @@ Network Architecture
                 activation_fn=tf.nn.relu) as sc:
             return sc
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. rubric:: Default Parameters and Operations
-   :name: Default Parametes and Operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Default Parameters and Operations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The function net\_arg\_scope is defined to share some attributes between
 layers. It is very useful in the cases which some attributes like 'SAME'
@@ -269,8 +217,9 @@ and provided by the TensorFlow. is the one proposed by the paper
 networks <http://jmlr.org/proceedings/papers/v9/glorot10a/glorot10a.pdf>`__
 and provided by the TensorFlow.
 
-.. rubric:: Convolution and Pooling Layers
-   :name: Convolution Layers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Convolution and Pooling Layers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now it's the time to build our convolutional architecture using
 convolution and pooling layers which are defined in the
@@ -318,25 +267,7 @@ overall architecture of the convolution layer is as depicted below:
    <div class="desc">
 
 **Figure 2:** The operations in convolutional layer.
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-Let's get back to **'line 20'**. The number of **output feature maps**
-is set to 32 and the **spatial kernel size** is set to [5,5]. The
+The number of **output feature maps** is set to 32 and the **spatial kernel size** is set to [5,5]. The
 **stride** is [1,1] by default. The **scope** argument is for defining
 the name for the layer which is useful in different scenarios such as
 returning the output of the layer, fine-tuning the network and graphical
@@ -344,9 +275,9 @@ advantages like drawing a nicer graph of the network using Tensorboard.
 Basically it is the representative of the layer and adds all the
 operations into a higher-level node.
 
-In **'line 29'** we overwritten the padding type. It is changed to
+We overwritten the padding type. It is changed to
 'VALID' padding. The reason is behind the characteristics of the
-convolutional layer defined in **'line 28'**. It is operating as a
+convolutional layer. It is operating as a
 fully-connected layer. *It is not because of the 'VALID' padding
 though*. The 'VALID' padding is just part of the mathematical operation.
 The reason is because the input to this layer has the spatial size of
@@ -357,8 +288,9 @@ neuron if the number of output feature map equals to 1. So if the number
 of output feature maps is equals to 1024, this layer operates like and
 filly-connected layer with 1024 output hidden units!
 
-.. rubric:: Dropout Layer
-   :name: Dropout Layer
+~~~~~~~~~~~~~
+Dropout Layer
+~~~~~~~~~~~~~
 
 The dropout is one of the most famous methods in order to prevent
 over-fitting. This operation randomly kills a portion of neuron to
@@ -372,8 +304,9 @@ supposed to active and deactive the dropout layer which force the
 dropout to be **active** in the training phase and **deactivate** it in
 the test/evaluation phase.
 
-.. rubric:: Embedding Layer
-   :name: Embedding Layer
+~~~~~~~~~~~~~~~
+Embedding Layer
+~~~~~~~~~~~~~~~
 
 Convolutional layers results a 4-dimensional tensor with dimensions as
 [batch\_size, width, height, channel]. As a result, the embedding layer
@@ -387,8 +320,9 @@ this layer has the dimensionality of [batch\_size, 1, 1, num\_classes].
 is [batch\_size, num\_classes]. It is worth noting that the scope of the
 last layer overwrite the scope='fc4'.
 
-.. rubric:: The TensorFlow Graph
-   :name: The TensorFlow Graph
+--------------------
+The TensorFlow Graph
+--------------------
 
 At this time, after describing the network design and different layers,
 it is the time to present how to implement this architecture using
@@ -432,52 +366,15 @@ graph of out experimental setup is as below:
 
 **Figure 3:** The TensorFlow Graph.
 
-.. raw:: html
 
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
 
 The graph is explicitly defined in our experiments. The following
 script, panel by panel, shows the graph design of our experiments:
 
-.. raw:: html
-
-   <div class="panel panel-default">
-
-.. raw:: html
-
-   <div class="panel-heading">
-
-TensorFlow Graph Design
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div id="pycode" class="panel-body">
-
-::
-
+.. code:: python
      
     graph = tf.Graph()
     with graph.as_default():
-
-::
-
-     
 
         # global step
         global_step = tf.Variable(0, name="global_step", trainable=False)
@@ -492,15 +389,11 @@ TensorFlow Graph Design
                                                    staircase=True,
                                                    name='exponential_decay_learning_rate')
 
-::
 
-     
         # Place holders
         image_place = tf.placeholder(tf.float32, shape=([None, height, width, num_channels]), name='image')
         label_place = tf.placeholder(tf.float32, shape=([None, FLAGS.num_classes]), name='gt')
         dropout_param = tf.placeholder(tf.float32)
-
-::
 
      
         # MODEL
@@ -521,8 +414,6 @@ TensorFlow Graph Design
             # Accuracy calculation
             accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
-::
-
      
         # Define optimizer by its default values
         optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
@@ -531,8 +422,6 @@ TensorFlow Graph Design
         with tf.name_scope('train'):
             grads_and_vars = optimizer.compute_gradients(loss)
             train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
-
-::
 
      
         arr = np.random.randint(data.train.images.shape[0], size=(3,))
@@ -557,27 +446,22 @@ TensorFlow Graph Design
         summary_test_op = tf.summary.merge_all('test')
         summary_epoch_train_op = tf.summary.merge_all('per_epoch_train')
 
-.. raw:: html
 
-   </div>
-
-.. raw:: html
-
-   </div>
-
-Each of the above panels, will be explained in the following subsections
+Each of the above sections, will be explained in the following subsections
 using the same naming convention for convenience.
 
-.. rubric:: Graph Default
-   :name: Graph Default
+~~~~~~~~~~~~~
+Graph Default
+~~~~~~~~~~~~~
 
 As mentioned before, it is recommended to set the graph manually and in
 that section, we named the graph to be **graph**. Later on it will be
 notice that this definition is useful because we can pass the graph to
 other functions and sessions and it will be recognized.
 
-.. rubric:: Parameters
-   :name: Parameters
+~~~~~~~~~~
+Parameters
+~~~~~~~~~~
 
 Different parameters are necessary for the learning procedure. The
 global\_step defined in **'line 4'** is one of which. The reason behind
@@ -594,8 +478,9 @@ idea of the *tf.train.exponential\_decay* layer. It is worth noting that
 the *tf.train.exponential\_decay* layer takes *global\_step* as its
 counter to realize when it has to change the learning rate.
 
-.. rubric:: Place Holders
-   :name: Place Holders
+~~~~~~~~~~~~~
+Place Holders
+~~~~~~~~~~~~~
 
 The tf.placeholder operation, creates a placeholder variable tensor
 which will be fed to the network in testing/training phase. The images
@@ -612,18 +497,20 @@ parameter is to enable the setup to take this parameter in running each
 any session arbitrary which enrich the experiment to disable it when
 running the testing session.
 
-.. rubric:: Model and Evaluation Tensors
-   :name: Model and Evalutaion Tensors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Model and Evaluation Tensors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The **'lines 17-20'** provides the default parameters determines by
+The default provided parameters are determined by
 **arg\_scope** operator. The
 *tf.nn.softmax\_cross\_entropy\_with\_logits* on the un-normalized
 logits is used as the loss function. This function computes the softmax
 activation internally which makes it more stable. Finally in **'lines
 27-32'** the accuracy is computed.
 
-.. rubric:: Training Tensors
-   :name: Training Tensors
+~~~~~~~~~~~~~~~~
+Training Tensors
+~~~~~~~~~~~~~~~~
 
 Now it's the time to define the training tensors. As defined in **'line
 34'** the Adam Optimizer is used as one of the best current optimization
@@ -636,8 +523,9 @@ execution of 'train\_op' is a training step. By passing 'global\_step'
 to the optimizer, each time that the 'train\_op' is run, TensorFlow
 update the 'global\_step' and increment it by one!
 
-.. rubric:: Summaries
-   :name: Summaries
+~~~~~~~~~
+Summaries
+~~~~~~~~~
 
 In this section we describe how to create summary operations and save
 them into allocated tensors. Eventually the summaries should be
@@ -648,11 +536,10 @@ implementations. In order to avoid this post to becoming too verbose, we
 do not go in depth of the explanation for summary operations and we will
 get back to it in another post.
 
-In **'lines 33-35'** image summaries are created which has the duty of
+The image summaries are created which has the duty of
 visualize the input elements to the summary tensor. This elements here
-are 3 random images from the train data. In **'lines 38-42'** the
-outputs of different layers will be fed to the relevent summary tensor.
-Finally in **'lines 45-48'** some scalar summaries are created in order
+are 3 random images from the train data. In The outputs of different layers will be fed to the relevent summary tensor.
+Finally some scalar summaries are created in order
 to track the *training convergence* and *testing performance*. The
 collections argument in summary definitions is a supervisor which direct
 each summary tensor to the relevent operation. For example some
@@ -663,15 +550,17 @@ training phase, will be stored in this list. Eventually **'lines
 51-53'** are defined with the goal of gathering the summaries in the
 corresponding summary lists using the collections key.
 
-.. rubric:: Training
-   :name: Training
+--------
+Training
+--------
 
 Now it's the time to go through the training procedure. In consists of
 different steps which starts by **session configuration** to saving the
 **model checkpoint**.
 
-.. rubric:: Configuration and Initialization
-   :name: Configuration and Initialization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configuration and Initialization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First of all the tensors should be gathered for convenience and the
 session must be configured. The code is as below:
