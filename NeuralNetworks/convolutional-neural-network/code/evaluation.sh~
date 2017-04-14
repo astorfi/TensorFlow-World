@@ -1,7 +1,0 @@
-
-# Run training.
-python test_classifier.py \
-  --batch_size=512 \
-  --num_epochs=2 \
-  --allow_soft_placement
-
