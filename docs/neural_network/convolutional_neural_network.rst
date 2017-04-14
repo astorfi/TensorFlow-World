@@ -90,7 +90,7 @@ architecture schematic is as below:
 .. figure:: _img/architecture.png
    :scale: 50 %
    :alt: Architecture
-   :align: "center"
+   :align: 'center'
 
    **Figure 1:** The general architecture of the network.
 
