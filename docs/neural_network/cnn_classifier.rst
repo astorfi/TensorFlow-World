@@ -1,99 +1,14 @@
-.. raw:: html
-
-   <div id="page-wrapper">
-
-.. raw:: html
-
-   <div id="header">
-
--  `Home <../../../../index.php>`__
--  `> <#>`__
--  `Deep Learning <../../../../topics.php?my_id=4>`__
--  `> <#>`__
--  `TensorFlow <../../../../posts.php?my_id=10>`__
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="section wrapper style1">
-
-.. raw:: html
-
-   <div class="container">
-
-.. raw:: html
-
-   <div class="row">
-
-.. raw:: html
-
-   <div class="4u 12u(narrower)">
-
-.. raw:: html
-
-   <div id="sidebar">
-
-.. raw:: html
-
-   <div class="section">
-
-.. rubric:: |image0| `Machine Learning Guru <../../../../index.html>`__
-   :name: machine-learning-guru
-
-Machine Learning and Computer Vision tutorials using open source
-packages.
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="section">
-
-.. rubric:: Sections
-   :name: sections
-
--  `Introduction <#intro>`__
--  `Input Pipeline <#Input%20Pipeline>`__
--  `Network Architecture <#Network%20Architecture>`__
--  `The TensorFlow Graph <#The%20TensorFlow%20Graph>`__
--  `Training <#Training>`__
--  `Training Summaries and
-   Results <#Training%20Summaries%20and%20Results>`__
--  `Summary <#Summary>`__
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div class="8u 12u(narrower) important(narrower)">
-
-.. raw:: html
-
-   <div id="content">
-
-.. rubric:: Train a Convolutional Neural Network as a Classifier
-   :name: train-a-convolutional-neural-network-as-a-classifier
+==============================================
+Convolutional Neural Networks using TensorFlow
+==============================================
 
 This tutorial deals with training a classifier using convolutional
 neural networks.
 
-.. rubric:: Introduction
-   :name: intro
+------------
+Introduction
+------------
+
 
 In this tutorial we try to teach you how to implement a simple neural
 network image classifier using **Convolutional Neural Networks(CNNs)**.
@@ -107,8 +22,9 @@ post <http://machinelearninguru.com/computer_vision/basics/convolution/convoluti
 In the next section we start to describe procedure of learning the
 classifier.
 
-.. rubric:: Input Pipeline
-   :name: Input Pipeline
+--------------
+Input Pipeline
+--------------
 
 The dataset that we work on that in this tutorial is the
 `MNIST <http://yann.lecun.com/exdb/mnist/>`__ dataset probably the most
@@ -126,42 +42,13 @@ use and its source code is available at `this
 repository <tensorflow.contrib.learn.python.learn.datasets.mnist>`__ .
 The code for downloading and extracting MNIST dataset is as is as below:
 
-.. raw:: html
+.. code:: python
 
-   <div class="panel panel-default">
+       from tensorflow.examples.tutorials.mnist import input_data
+       import tensorflow as tf
+       mnist = input_data.read_data_sets("MNIST_data/", reshape=False, one_hot=False)
+       data = input.provide_data(mnist)
 
-.. raw:: html
-
-   <div class="panel-heading">
-
-Download and Extract MNIST dataset
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div id="pycode" class="panel-body">
-
-::
-
-     
-    from tensorflow.examples.tutorials.mnist import input_data
-    import tensorflow as tf
-
-    mnist = input_data.read_data_sets("MNIST_data/", reshape=False, one_hot=False)
-
-    # The 'input.provide_data' is provided to organize any custom dataset.
-    data = input.provide_data(mnist)
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
 
 The above code download and extract MNIST data in the MNIST\_data/
 folder in the current directory that we are running the python script.
