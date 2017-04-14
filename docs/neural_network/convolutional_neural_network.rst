@@ -231,8 +231,11 @@ matching the shapes and theoretically it is done equally on every side
 of the input map. One the other hand, 'VALID' means no padding. The
 overall architecture of the convolution layer is as depicted below:
 
-
-**Figure 2:** The operations in convolutional layer.
+.. figure:: _img/convlayer.png
+   :scale: 50 %
+   :align: center
+       
+   **Figure 2:** The operations in convolutional layer.
 
 
 The number of **output feature maps** is set to 32 and the **spatial kernel size** is set to [5,5]. The
@@ -312,8 +315,11 @@ a default graph. Although there is no harm working with the default
 graph, but explicitly defining the graph is recommended. The general
 graph of out experimental setup is as below:
 
+.. figure:: _img/graph.png
+   :scale: 50 %
+   :align: center
 
-**Figure 3:** The TensorFlow Graph.
+   **Figure 3:** The TensorFlow Graph.
 
 
 
@@ -768,15 +774,21 @@ using the Tensorboard and pointing to the directory that the logs are
 saved, we can visualize the training procedure. The loss and accuracy
 for the train are depicted jointly as below:
 
-
-**Figure 4:** The loss and accuracy curves for training.
+.. figure:: _img/loss_accuracy_train.png
+   :scale: 50 %
+   :align: center
+   
+   **Figure 4:** The loss and accuracy curves for training.
 
 
 The activation of the last fully-connected layer will be depicted in the
 following figure:
 
-
-**Figure 5:** The activation of the last layer.
+.. figure:: _img/activation_fc4_train.png
+   :scale: 50 %
+   :align: center
+   
+   **Figure 5:** The activation of the last layer.
 
 
 For the last layer it is good to have a visualization of the
@@ -784,23 +796,31 @@ distribution of the neurons outputs. By using the histogram summary the
 distribution can be shown over the whole training steps. The result is
 as below:
 
-
-**Figure 6:** The histogram summary of the last layer.
+.. figure:: _img/histogram_fc4_train.png
+   :scale: 50 %
+   :align: center
+   
+   **Figure 6:** The histogram summary of the last layer.
 
 
 Eventually the test accuracy per step is plotted as the following curve:
 
+.. figure:: _img/test_accuracy.png
+   :scale: 50 %
+   :align: center
 
-
-**Figure 7:** Test Accuracy.
+   **Figure 7:** Test Accuracy.
 
 
 
 A representation of the terminal progressive bar for the training phase
 is as below:
 
-
-**Figure 8:** Terminal scene in training phase.
+.. figure:: _img/terminal_training.png
+   :scale: 50 %
+   :align: center
+   
+   **Figure 8:** Terminal scene in training phase.
 
 
 
