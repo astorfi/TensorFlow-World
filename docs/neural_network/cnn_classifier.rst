@@ -181,7 +181,7 @@ default been set to **'SAME'** by the arg\_scope operation. Now it's the
 time to explain the architecture itself by describing of how to create
 cnvolutional and pooling layers.
 
-ReLU has been used as the non-linear activation function for all the
+ReLU has been used as the non-==============================================ar activation function for all the
 layers except the last layer(embedding layer). The famous xavier
 initialization has not been used for initialization of the network and
 instead the Variance-Scaling-Initializer has been used which provided
@@ -211,15 +211,14 @@ the network, the matching between inputs-outputs of the layers must be
 considered and in the end the output of the last layer should be form
 into a feature vector in order to be fed to the embedding layer.
 
-Defining pooling layers is straightforward as it is shown in **'line
-29'**. The defined pooling layer has the kernel size of 2x2 and a stride
+Defining pooling layers is straightforward as it is shown. The defined pooling layer has the kernel size of 2x2 and a stride
 of 2 in each dimension. This is equivalent to extract the maximum in
 each 2x2 windows and the stride makes no overlapping in the chosen
 windows for max pooling operation. In order to have a better
 understanding of pooling layer please refer to `this
 link <https://www.tensorflow.org/api_docs/python/tf/contrib/layers/max_pool2d>`__.
 
-Convolution layers can be defined as of written in **'line 20'** using
+Convolution layers can be defined using
 `tf.contrib.layers <https://www.tensorflow.org/api_docs/python/tf/contrib/layers>`__.
 The default padding is set to 'SAME' as mentioned before. loosely
 speaking, 'SAME' padding equals to same spatial dimensions for output
@@ -261,8 +260,7 @@ The dropout is one of the most famous methods in order to prevent
 over-fitting. This operation randomly kills a portion of neuron to
 stochastically force the neuron to learn more useful information.
 Although the method is stochastic but it's been widely used in neural
-network architecture and presented promising results. The layer is
-defined in **line '29'**. The dropout\_keep\_prob argument determines
+network architecture and presented promising results. The dropout\_keep\_prob argument determines
 the portion of the neurons which remains untouched and will not be
 disables by the dropout layer. Moreover the flag is\_training is
 supposed to active and deactive the dropout layer which force the
@@ -277,11 +275,11 @@ Convolutional layers results a 4-dimensional tensor with dimensions as
 [batch\_size, width, height, channel]. As a result, the embedding layer
 combines all the channels except the first one indicating the batches.
 So the dimension of [batch\_size, width, height, channel] becomes
-[batch\_size, width x height x channel]. Let's go to **'line 33'**. This
+[batch\_size, width x height x channel]. This
 is the last fully-connected layer prior to softmax which the number of
 its output units must be equal to the number of classes. The output of
 this layer has the dimensionality of [batch\_size, 1, 1, num\_classes].
-**'Line 39-42'** does the embedding operation which its output dimension
+The ``tf.squeeze`` function does the embedding operation which its output dimension
 is [batch\_size, num\_classes]. It is worth noting that the scope of the
 last layer overwrite the scope='fc4'.
 
@@ -411,15 +409,15 @@ Parameters
 ~~~~~~~~~~
 
 Different parameters are necessary for the learning procedure. The
-global\_step defined in **'line 4'** is one of which. The reason behind
+global\_step is one of which. The reason behind
 defining the global\_step is to have a track of where we are in the
 training procedure. It is a non-learnable tensor and should be
 incremented per each gradient update which will be done over each batch.
-The decay\_steps defined in **'line 7'** determines after how many steps
+The decay\_steps determines after how many steps
 or epochs the learning rate should be decreased by a predefined policy.
 As can be seen **num\_epochs\_per\_decay** defines the decay factor
 which is restricted to the number of passed epochs. The learning\_rate
-tensor defined in **'line 9'** determines the learning rate policy.
+tensor determines the learning rate policy.
 Please refer to TensorFlow official documentation for grasping a better
 idea of the *tf.train.exponential\_decay* layer. It is worth noting that
 the *tf.train.exponential\_decay* layer takes *global\_step* as its
@@ -433,8 +431,7 @@ The tf.placeholder operation, creates a placeholder variable tensor
 which will be fed to the network in testing/training phase. The images
 and labels must have placeholders because they are in essence the inputs
 to the network in training/testing phase. The *type* and *shape* of the
-place holders must be defined as required parameters. As can be seen in
-**line '14'**, the first dimension of the shape argument is set to
+place holders must be defined as required parameters. The first dimension of the shape argument is set to
 **None** which allows the place holder to get any dimension. The first
 dimension is the *batch\_size* and is flexible.
 
@@ -452,17 +449,15 @@ The default provided parameters are determined by
 **arg\_scope** operator. The
 *tf.nn.softmax\_cross\_entropy\_with\_logits* on the un-normalized
 logits is used as the loss function. This function computes the softmax
-activation internally which makes it more stable. Finally in **'lines
-27-32'** the accuracy is computed.
+activation internally which makes it more stable. Finally the accuracy is computed.
 
 ~~~~~~~~~~~~~~~~
 Training Tensors
 ~~~~~~~~~~~~~~~~
 
-Now it's the time to define the training tensors. As defined in **'line
-34'** the Adam Optimizer is used as one of the best current optimization
+Now it's the time to define the training tensors. The Adam Optimizer is used as one of the best current optimization
 algorithms which is widely used and is famous because of its adaptive
-characteristics. As is defined in **'lines 37-39'**, the gradients must
+characteristics. The gradients must
 be computed using the *defined loss tensor* and those computations must
 be added as the *train operations* to the graph. Basically 'train\_op'
 is an operation that is run for gradient update on parameters. Each
@@ -493,8 +488,7 @@ each summary tensor to the relevent operation. For example some
 summaries only needs to be generated in training phase and some are only
 needed in testing. We have a collection named 'per\_epoch\_train' too
 and the summaries which only have to be generated once per epoch in the
-training phase, will be stored in this list. Eventually **'lines
-51-53'** are defined with the goal of gathering the summaries in the
+training phase, will be stored in this list. Eventually the summaries are gathered in the
 corresponding summary lists using the collections key.
 
 --------
@@ -512,25 +506,7 @@ Configuration and Initialization
 First of all the tensors should be gathered for convenience and the
 session must be configured. The code is as below:
 
-.. raw:: html
-
-   <div class="panel panel-default">
-
-.. raw:: html
-
-   <div class="panel-heading">
-
-Session Configuration
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div id="pycode" class="panel-body">
-
-::
+.. code:: python
 
      
     tensors_key = ['cost', 'accuracy', 'train_op', 'global_step', 'image_place', 'label_place', 'dropout_param',
@@ -545,17 +521,9 @@ Session Configuration
         log_device_placement=FLAGS.log_device_placement)
     sess = tf.Session(graph=graph, config=session_conf)
 
-.. raw:: html
 
-   </div>
-
-.. raw:: html
-
-   </div>
-
-As it is clear from **'line 58'**, all the tensors are store in a
-dictionary to be used later by the corresponding keys. **'Line 61-63'**
-are dedicated to configuring the network. The allow\_soft\_placement
+As it is clear, all the tensors are store in a
+dictionary to be used later by the corresponding keys. The allow\_soft\_placement
 flag, allows the switching back-and-forth between different devices.
 This is useful when the user allocated 'GPU' to all operations without
 considering the fact that not all operations are supported by GPU using
@@ -565,29 +533,11 @@ process but using the active flag prevent this issue by automatically
 switch from a non-supported device to the supported one. The
 log\_device\_placement flag is to present which operations are set on
 what devices. This is useful for debugging and it projects a verbose
-dialog in the terminal. Eventually in **'line 64'** the session is taken
+dialog in the terminal. Eventually the session is taken
 using the defined **graph**. The training phase start using the
 following script:
 
-.. raw:: html
-
-   <div class="panel panel-default">
-
-.. raw:: html
-
-   <div class="panel-heading">
-
-Trainig Operations
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div id="pycode" class="panel-body">
-
-::
+.. code:: python
 
      
     with sess.as_default():
@@ -610,46 +560,22 @@ Trainig Operations
         train_evaluation.evaluation(sess, saver, tensors_dictionary, data,
                                checkpoint_dir=FLAGS.checkpoint_dir)
 
-.. raw:: html
 
-   </div>
-
-.. raw:: html
-
-   </div>
-
-In **'line 68'** the tf.train.Saver is run in order to provide an
+The tf.train.Saver is run in order to provide an
 operation to save and load the models. The **max\_to\_keep** flags
 determines the maximum number of the saved models that the TensorFlow
-keeps and its default is set to '5' by TensorFlow. In **'line 73'** the
+keeps and its default is set to '5' by TensorFlow. The
 session is run in order to initialize all the variable which is
-necessary. Finally in **'line 76'** train\_evaluation function is
+necessary. Finally train\_evaluation function is
 provided to run the training/tesing phase.
 
-.. rubric:: Training Operations
-   :name: Training Function
+~~~~~~~~~~~~~~~~~~~
+Training Operations
+~~~~~~~~~~~~~~~~~~~
 
 The training function is as below:
 
-.. raw:: html
-
-   <div class="panel panel-default">
-
-.. raw:: html
-
-   <div class="panel-heading">
-
-Training Function
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div id="pycode" class="panel-body">
-
-::
+.. code:: python
 
      
     from __future__ import print_function
@@ -819,231 +745,60 @@ Training Function
 
             print("Final Test Accuracy is %% %.2f" % test_accuracy)
 
-.. raw:: html
 
-   </div>
-
-.. raw:: html
-
-   </div>
-
-The input parameters to the function are described by the comments in
-**'lines 12-20'**. In **'lines 33-39'** the summary writers are defined
-separately for train and test phases. In **'lines 45-47'** the program
+The input parameters to the function are described by the comments. The summary writers are defined
+separately for train and test phases. The program
 checks if fine-tuning is desired then the model is loaded and the
-operation will be continued afterward. In **'lines 58-63'** The batches
-are extracted from training data. In **'lines 71-76'** for a single
+operation will be continued afterward. The batches
+are extracted from training data. For a single
 training step, the model is evaluated on a batch of data and the model
-parameter and weights will be updated. Same applies for the test set
-starting in **'line 113'** however at this time only evaluation will be
-done and the model won't be updated. In **'line 143'** the model will be
+parameter and weights will be updated. The model finally will be
 saved.
 
-.. rubric:: Training Summaries and Results
-   :name: Training Summaries and Results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Training Summaries and Results
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The training loops saves the summaries in the train summary part. By
 using the Tensorboard and pointing to the directory that the logs are
 saved, we can visualize the training procedure. The loss and accuracy
 for the train are depicted jointly as below:
 
-.. raw:: html
-
-   <div align="center">
-
-.. raw:: html
-
-   <div id="figure1" class="responsive"
-   style="padding: 0 6px;height: 80%;width: 100%;">
-
-.. raw:: html
-
-   <div class="img">
-
-|image|
-
-.. raw:: html
-
-   <div class="desc">
 
 **Figure 4:** The loss and accuracy curves for training.
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
 
 The activation of the last fully-connected layer will be depicted in the
 following figure:
 
-.. raw:: html
-
-   <div align="center">
-
-.. raw:: html
-
-   <div id="figure1" class="responsive"
-   style="padding: 0 6px;height: 50%;width: 50%;">
-
-.. raw:: html
-
-   <div class="img">
-
-|image|
-
-.. raw:: html
-
-   <div class="desc">
 
 **Figure 5:** The activation of the last layer.
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
 
 For the last layer it is good to have a visualization of the
 distribution of the neurons outputs. By using the histogram summary the
 distribution can be shown over the whole training steps. The result is
 as below:
 
-.. raw:: html
-
-   <div align="center">
-
-.. raw:: html
-
-   <div id="figure1" class="responsive"
-   style="padding: 0 6px;height: 50%;width: 50%;">
-
-.. raw:: html
-
-   <div class="img">
-
-|image|
-
-.. raw:: html
-
-   <div class="desc">
 
 **Figure 6:** The histogram summary of the last layer.
 
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
 
 Eventually the test accuracy per step is plotted as the following curve:
 
-.. raw:: html
 
-   <div align="center">
-
-.. raw:: html
-
-   <div id="figure1" class="responsive"
-   style="padding: 0 6px;height: 50%;width: 50%;">
-
-.. raw:: html
-
-   <div class="img">
-
-|image|
-
-.. raw:: html
-
-   <div class="desc">
 
 **Figure 7:** Test Accuracy.
 
-.. raw:: html
 
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
 
 A representation of the terminal progressive bar for the training phase
 is as below:
 
-.. raw:: html
-
-   <div align="center">
-
-.. raw:: html
-
-   <div id="figure1" class="responsive"
-   style="padding: 0 6px;height: 50%;width: 60%;">
-
-.. raw:: html
-
-   <div class="img">
-
-|image|
-
-.. raw:: html
-
-   <div class="desc">
 
 **Figure 8:** Terminal scene in training phase.
 
-.. raw:: html
 
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
 
 Few things needs to be considered in order to clarify the results:
 
@@ -1059,8 +814,9 @@ Few things needs to be considered in order to clarify the results:
    big, isolated evaluation is recommended in order to avoid the memory
    exhaustion issue.
 
-.. rubric:: Summary
-   :name: Summary
+-------
+Summary
+-------
 
 In this tutorial we train a neural network classifier using
 convolutional neural networks. MNIST data has been used for simplicity
@@ -1075,123 +831,3 @@ TensorFlow(like summaries) and data-input-pipeline have been ignored for
 simplicity. We get back to them in the future posts. I hope you enjoyed
 it.
 
-`Go Top <#post_top>`__
-
-.. raw:: html
-
-   <div id="disqus_thread">
-
-.. raw:: html
-
-   </div>
-
-Please enable JavaScript to view the `comments powered by
-Disqus. <https://disqus.com/?ref_noscript>`__
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   <div id="footer">
-
-.. raw:: html
-
-   <div class="container">
-
-.. raw:: html
-
-   <div class="row">
-
-.. raw:: html
-
-   <div class="section 3u 6u(narrower) 12u$(mobilep)">
-
-.. rubric:: Related Posts:
-   :name: related-posts
-
--  `Twitter <https://twitter.com/M_L_Guru>`__
--  `GitHub <https://github.com/Machinelearninguru>`__
--  `LinkedIn <https://www.linkedin.com/groups/12030461>`__
-
-.. raw:: html
-
-   <div class="copyright">
-
--  © Machine Learning Guru. All rights reserved
--  Design: `HTML5 UP <http://html5up.net>`__
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. raw:: html
-
-   </div>
-
-.. |image0| image:: ../../../../_images/logo2.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/architecture.png
-   :width: 200px
-   :height: 150px
-   :target: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/architecture.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/convlayer.png
-   :width: 200px
-   :height: 150px
-   :target: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/convlayer.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/graph.png
-   :width: 200px
-   :height: 150px
-   :target: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/graph.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/loss_accuracy_train.png
-   :width: 400px
-   :height: 300px
-   :target: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/loss_accuracy_train.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/activation_fc4_train.png
-   :width: 400px
-   :height: 300px
-   :target: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/activation_fc4_train.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/histogram_fc4_train.png
-   :width: 400px
-   :height: 300px
-   :target: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/histogram_fc4_train.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/test_accuracy.png
-   :width: 400px
-   :height: 300px
-   :target: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/test_accuracy.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/terminal_training.png
-   :width: 400px
-   :height: 300px
-   :target: ../../../../_images/topics/deep_learning/tensorflow/neural_networks/cnn_classifier/terminal_training.png
