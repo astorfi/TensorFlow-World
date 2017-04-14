@@ -90,6 +90,7 @@ architecture schematic is as below:
 .. figure:: picture.png
    :scale: 50 %
    :alt: map to buried treasure
+   :align: center
 
    This is the caption of the figure (a simple paragraph).
 
