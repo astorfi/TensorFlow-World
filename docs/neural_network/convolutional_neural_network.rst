@@ -87,29 +87,14 @@ versa please refer to `this
 link <http://cs231n.github.io/convolutional-networks/>`__. The general
 architecture schematic is as below:
 
-.. figure:: picture.png
+.. figure:: _img/architecture.png
    :scale: 50 %
-   :alt: map to buried treasure
+   :alt: Architecture
    :align: center
 
-   This is the caption of the figure (a simple paragraph).
+   **Figure 1:** The general architecture of the network.
 
-   The legend consists of all elements after the caption.  In this
-   case, the legend consists of this paragraph and the following
-   table:
-
-   +-----------------------+-----------------------+
-   | Symbol                | Meaning               |
-   +=======================+=======================+
-   | .. image:: tent.png   | Campground            |
-   +-----------------------+-----------------------+
-   | .. image:: waves.png  | Lake                  |
-   +-----------------------+-----------------------+
-   | .. image:: peak.png   | Mountain              |
-   +-----------------------+-----------------------+
-
-**Figure 1:** The general architecture of the network.
-
+   
 The image is depicted by
 `Tensorboard <https://www.tensorflow.org/get_started/summaries_and_tensorboard>`__
 as a visualization tool for TensorFlow. Later on in this tutorial the
