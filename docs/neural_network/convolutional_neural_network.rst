@@ -232,7 +232,7 @@ of the input map. One the other hand, 'VALID' means no padding. The
 overall architecture of the convolution layer is as depicted below:
 
 .. figure:: _img/convlayer.png
-   :scale: 50 %
+   :scale: 30 %
    :align: center
        
    **Figure 2:** The operations in convolutional layer.
@@ -316,7 +316,7 @@ graph, but explicitly defining the graph is recommended. The general
 graph of out experimental setup is as below:
 
 .. figure:: _img/graph.png
-   :scale: 50 %
+   :scale: 30 %
    :align: center
 
    **Figure 3:** The TensorFlow Graph.
