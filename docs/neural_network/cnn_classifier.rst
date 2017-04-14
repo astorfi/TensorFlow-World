@@ -87,24 +87,6 @@ versa please refer to `this
 link <http://cs231n.github.io/convolutional-networks/>`__. The general
 architecture schematic is as below:
 
-.. raw:: html
-
-   <div align="center">
-
-.. raw:: html
-
-   <div id="figure1" class="responsive"
-   style="padding: 0 6px;height: 20%;width: 40%;">
-
-.. raw:: html
-
-   <div class="img">
-
-|image|
-
-.. raw:: html
-
-   <div class="desc">
 
 **Figure 1:** The general architecture of the network.
 
@@ -193,8 +175,7 @@ defined in the arg\_scope. The is more work to use this useful
 arg\_scope operation and it will be explained in the general TensorFlow
 implementation details later on in this tutorial. It is worth noting
 that all the parameters defined by arg\_scope, can be overwritten
-locally in the specific layer definition. As an example take a look at
-**'line 28'**. While defining the tf.contrib.layers.conv2d layer(the
+locally in the specific layer definition. As an example take a look at defining the tf.contrib.layers.conv2d layer(the
 convolutional layer), the padding is set to **'VALID'** although its
 default been set to **'SAME'** by the arg\_scope operation. Now it's the
 time to explain the architecture itself by describing of how to create
@@ -247,26 +228,10 @@ matching the shapes and theoretically it is done equally on every side
 of the input map. One the other hand, 'VALID' means no padding. The
 overall architecture of the convolution layer is as depicted below:
 
-.. raw:: html
-
-   <div align="center">
-
-.. raw:: html
-
-   <div id="figure1" class="responsive"
-   style="padding: 0 6px;height: 30%;width: 50%;">
-
-.. raw:: html
-
-   <div class="img">
-
-|image|
-
-.. raw:: html
-
-   <div class="desc">
 
 **Figure 2:** The operations in convolutional layer.
+
+
 The number of **output feature maps** is set to 32 and the **spatial kernel size** is set to [5,5]. The
 **stride** is [1,1] by default. The **scope** argument is for defining
 the name for the layer which is useful in different scenarios such as
@@ -345,24 +310,6 @@ a default graph. Although there is no harm working with the default
 graph, but explicitly defining the graph is recommended. The general
 graph of out experimental setup is as below:
 
-.. raw:: html
-
-   <div align="center">
-
-.. raw:: html
-
-   <div id="figure1" class="responsive"
-   style="padding: 0 6px;height: 40%;width: 60%;">
-
-.. raw:: html
-
-   <div class="img">
-
-|image|
-
-.. raw:: html
-
-   <div class="desc">
 
 **Figure 3:** The TensorFlow Graph.
 
