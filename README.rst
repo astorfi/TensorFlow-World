@@ -22,7 +22,7 @@ The tutorials in this repository are partitioned into relevent categories.
 
 .. Neural Networks Section
 .. Links:
-.. _Convolutional Neural Networks:https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/3-neural_networks/convolutional-neural-network
+.. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/3-neural_networks/convolutional-neural-network
 
 .. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/wiki/Convolutional-Neural-Networks
 
