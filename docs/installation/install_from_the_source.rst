@@ -228,10 +228,11 @@ The following command will install the pip package created by bazel build:
 Using Virtual Environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+At first, the environment must be activation. Since we already defined the environment alias as ``tensorflow``, by the terminal execution of the simple command of ``tensorflow``, the environment will be activated. Then like the previous part we execute the following:
 
-
-
-
+.. code:: bash
+    
+    sudo pip install ~/tensorflow_package/file_name.whl
     
 --------------------------
 Validate the Installation
