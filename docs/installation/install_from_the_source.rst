@@ -109,7 +109,7 @@ To double check let's check the ``~/.bash_aliases`` from the terminal using the 
 
 .. code:: shell
 
-    alias tensorflow="source $HO~/env/tensorflow/bin/activate" 
+    alias tensorflow="source $HO~/virtualenvs/tensorflow/bin/activate" 
     
 
 **check the ``.bashrc``**
