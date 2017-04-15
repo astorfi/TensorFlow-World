@@ -87,7 +87,7 @@ versa please refer to `this
 link <http://cs231n.github.io/convolutional-networks/>`__. The general
 architecture schematic is as below:
 
-.. figure:: _img/architecture.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/architecture.png
    :scale: 50 %
    :align: center
 
@@ -231,7 +231,7 @@ matching the shapes and theoretically it is done equally on every side
 of the input map. One the other hand, 'VALID' means no padding. The
 overall architecture of the convolution layer is as depicted below:
 
-.. figure:: _img/convlayer.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/convlayer.png
    :scale: 30 %
    :align: center
        
@@ -315,7 +315,7 @@ a default graph. Although there is no harm working with the default
 graph, but explicitly defining the graph is recommended. The general
 graph of out experimental setup is as below:
 
-.. figure:: _img/graph.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/graph.png
    :scale: 30 %
    :align: center
 
@@ -774,7 +774,7 @@ using the Tensorboard and pointing to the directory that the logs are
 saved, we can visualize the training procedure. The loss and accuracy
 for the train are depicted jointly as below:
 
-.. figure:: _img/loss_accuracy_train.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/loss_accuracy_train.png
    :scale: 50 %
    :align: center
    
@@ -784,7 +784,7 @@ for the train are depicted jointly as below:
 The activation of the last fully-connected layer will be depicted in the
 following figure:
 
-.. figure:: _img/activation_fc4_train.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/activation_fc4_train.png
    :scale: 50 %
    :align: center
    
@@ -796,7 +796,7 @@ distribution of the neurons outputs. By using the histogram summary the
 distribution can be shown over the whole training steps. The result is
 as below:
 
-.. figure:: _img/histogram_fc4_train.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/histogram_fc4_train.png
    :scale: 50 %
    :align: center
    
@@ -805,7 +805,7 @@ as below:
 
 Eventually the test accuracy per step is plotted as the following curve:
 
-.. figure:: _img/test_accuracy.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/test_accuracy.png
    :scale: 50 %
    :align: center
 
@@ -816,7 +816,7 @@ Eventually the test accuracy per step is plotted as the following curve:
 A representation of the terminal progressive bar for the training phase
 is as below:
 
-.. figure:: _img/terminal_training.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/terminal_training.png
    :scale: 50 %
    :align: center
    
