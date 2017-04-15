@@ -6,7 +6,6 @@
 # The TensorFlow flags are used for having a more user friendly environment.
 
 from __future__ import print_function
-from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 import os
 
