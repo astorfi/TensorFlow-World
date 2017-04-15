@@ -2,7 +2,7 @@
 Welcome to TensorFlow World
 ============================
 
-.. _this link: https://github.com/astorfi/TensorFlow-World/blob/master/Tutorials/0-welcome/README.rst
+.. _this link: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/0-welcome
 
 The tutorials in this section is just a start for going into TensorFlow world. The source code is available at `this link`_.
 
