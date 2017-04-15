@@ -169,10 +169,13 @@ The flags alongside with the configuration environment are demonstrated below:
     [Default is: "3.5,5.2"]: "5.2"
 
 
-NOTE: 
+**NOTE:**
      * The cuDNN version must be exactly determined using the associated files in /usr/local/cuda
      * The compute capability is spesified related the ``available GPU model`` in the system architecture. For example ``Geforce GTX Titan X`` GPUs have compute capability of 5.2.
      * Using ``bazel clean`` is recommended if re-configuration is needed.
+
+**WARNING:**
+     * In case installation of the TwnsorFlow in a virtual environment is desired, the environment must be activated at first and before running the ``./configure`` script.
      
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Test Bazel (Optional)
