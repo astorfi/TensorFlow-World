@@ -19,11 +19,23 @@ Prepare the environment
 ------------------------
 
 The following should be done in order:
-    
-    * Bazel installation
+ 
     * TensorFlow Python dependencies installation
+    * Bazel installation
     * TensorFlow GPU prerequisites setup
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TensorFlow Python Dependencies Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For installaion of the required dependencies, the following command must be executed in the terminal:
+
+.. code:: bash
+
+    sudo apt-get install python-numpy python-dev python-pip python-wheel python-virtualenv
+    sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel python3-virtualenv
+    
+The second line is for ``python3`` instalaltion.
 ~~~~~~~~~~~~~~~~~~~
 Bazel Installation
 ~~~~~~~~~~~~~~~~~~~
@@ -38,15 +50,7 @@ Please refer to `Bazel Installation`_.
     
 For solving that error you may need to purge all NVIDIA drivers and install or update them again. Please refer to `CUDA Installation`_ for further detail.
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-TensorFlow Python Dependencies Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For installaion of the required dependencies, the following command must be executed in the terminal:
-
-.. code:: bash
-
-    sudo apt-get install python-numpy python-dev python-pip python-wheel
     
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TensorFlow GPU Prerequisites Setup
@@ -57,6 +61,56 @@ The following requirements must be satisfied:
     * NVIDIA's Cuda Toolkit and its associated drivers(version 8.0 is recommended). The installation is explained at `CUDA Installation`_.
     * The cuDNN library(version 5.1 is recommended). Please refer to `NIDIA documentation`_ for further details.
     * Installing the ``libcupti-dev`` using the following command: ``sudo apt-get install libcupti-dev``
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a Virtual Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Assume installation of TensorFlow in a ``python virtual environment`` is desired. First we need to create adirectory to contain all the environments. It can be done by executing the following in the terminal:
+
+.. code:: bash
+
+    sudo mkdir ~/virtualenvs
+
+Now by using the ``virtualenv`` command, the virtual environment can be created:
+
+.. code:: bash
+
+    virtualenv --system-site-packages ~/virtualenvs/tensorflow
+
+Up to now, the virtual environment named *tensorflow* has been created. For environment activation, the following must be done:
+
+.. code:: bash
+
+    source ~/virtualenvs/tensorflow/bin/activate
+
+However the command is too verbose! The solution is to use an alias to make life easy! Let's execute the following command:
+
+.. code:: bash
+
+    echo 'alias tensorflow="source $HOME/virtualenvs/tensorflow/bin/activate" ' >> ~/.bash_aliases
+    bash
+
+After running the previous command, please close and open terminal again. Now by running the following simple script, the tensorflow environment will be activated.
+
+.. code:: bash
+
+    tensorflow
+    
+
+To double check let's check the ``~/.bash_aliases`` from the terminal using the following:
+
+.. code:: bash
+
+    sudo gedit ~/.bash_aliases
+    
+The file should contain the following script:
+
+
+.. code:: shell
+
+    alias tensorflow="source $HO~/env/tensorflow/bin/activate" 
+
     
 ---------------------------------
 Configuration of the Installation
@@ -137,15 +191,35 @@ The ``bazel build`` command builds a script named build_pip_package. Running the
 
     bazel-bin/tensorflow/tools/pip_package/build_pip_package ~/tensorflow_package
 
+
+
+
+
 -------------------------------
 Installation of the Pip Package
 -------------------------------
+
+Two types of installation can be used. The native installation using system root and the virtual environment installation.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Native Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following command will install the pip package created by bazel build:
 
 .. code:: bash
 
     sudo pip install ~/tensorflow_package/file_name.whl
+    
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Using Virtual Environments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+
     
 --------------------------
 Validate the Installation
