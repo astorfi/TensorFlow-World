@@ -9,6 +9,9 @@ The tutorials in this section is just a start for going into TensorFlow world.
 How to run the code in Terminal?
 --------------------------------
 
+    
+``WARNING:`` If TensorFlow is installed in any environment(virtual environment, ...), it must be activated at first.
+
 Please root to the ``code/`` directory and run the python script as the general form of below:
 
 .. code:: shell
@@ -44,8 +47,7 @@ The Tensorboard can be run as follows in the terminal:
 .. code:: shell
     
     tensorboard --logdir="absolute/path/to/log_dir"
-    
-``WARNING:`` If TensorFlow is installed in any environment(virtual environment, ...), it must be activated at first.
+
 
  
 
