@@ -20,10 +20,6 @@ The tutorials in this repository are partitioned into relevent categories.
 ----------------
 The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 
-.. Neural Networks Section
-.. Links:
-.. _welcome: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/0-welcome
-
 .. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/0-welcome
 .. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/wiki/Welcome%21
 
@@ -39,9 +35,7 @@ The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 ----------------
 The tutorials in this section are related to neural network architectures.
 
-.. Neural Networks Section
-.. Links:
-.. _Convolutional Neural Networks:https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/3-neural_networks/convolutional-neural-network
+.. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/3-neural_networks/convolutional-neural-network
 .. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/wiki/Convolutional-Neural-Networks
 
 
