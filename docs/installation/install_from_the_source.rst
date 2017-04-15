@@ -235,7 +235,11 @@ At first, the environment must be activation. Since we already defined the envir
 
 .. code:: bash
     
-    sudo pip install ~/tensorflow_package/file_name.whl
+    pip install ~/tensorflow_package/file_name.whl
+
+**WARNING**:
+           * By using the virtual environment installation method, the sudo command should not be used anymore because if we use sudo, it points to native system packages and not the one available in the virtual environment.
+           * Since ``sudo mkdir ~/virtualenvs`` is used for creating of the virtual environment, using the ``pip install`` returns ``permission error``. In this case the root priviledge of the environment directory must be change using the ``sudo chmod -R 777 ~/virtualenvs`` command.
     
 --------------------------
 Validate the Installation
