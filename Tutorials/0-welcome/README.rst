@@ -30,6 +30,15 @@ How to run the code in IDEs?
 
 Since the code is ready-to-go, as long as the TensorFlow can be called in the IDE editor(Pycharm, Spyder,..), the code can be executed successfully.
 
+
+----------------------------
+How to run the Tensorboard?
+----------------------------
+.. _Google’s words: https://www.tensorflow.org/get_started/summaries_and_tensorboard
+TensorBoard is the graph visualization tools provided by TensorFlow. Using `Google’s words`_: “The computations you'll use TensorFlow for - like training a massive deep neural network - can be complex and confusing. To make it easier to understand,
+debug, and optimize TensorFlow programs, we've included a suite of visualization tools called
+TensorBoard.”
+
  
 
 
