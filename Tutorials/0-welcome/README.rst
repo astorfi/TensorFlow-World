@@ -3,7 +3,7 @@
 Welcome to TensorFlow World
 ===========================
 
-The tutorials in this section is just a start for going into TensorFlow world.
+This document is dedicated to explain how to run the python script for this tutorial.
 
 ---------------------------
 Test TensorFlow Environment
