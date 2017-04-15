@@ -15,32 +15,27 @@ TensorFlow Tutorials
 The tutorials in this repository are partitioned into relevent categories.
 
 
-.. ----------------
-.. * Basics
-.. ----------------
-.. The tutorials in this section are related to basic operations and TensorFlow implementation.
+----------------
+* Welcome
+----------------
+The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 
-.. Neural Networks Section
-.. Links:
-.. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/3-neural_networks/convolutional-neural-network
-
-.. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/wiki/Convolutional-Neural-Networks
+.. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/0-welcome
+.. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/wiki/Welcome%21
 
 
-.. +---+---------------------------------------------+----------------------------------------+ 
-.. | # |          Source Code                        |               wiki                     | 
-.. +===+=============================================+========================================+ 
-.. | 1 |    `Convolutional Neural Networks`_         |  `Documentation <Documentationcnn_>`_  | 
-.. +---+---------------------------------------------+----------------------------------------+ 
++---+---------------------------------------------+-------------------------------------------------+ 
+| # |          Source Code                        |                     wiki                        | 
++===+=============================================+=================================================+ 
+| 1 |    `welcome <welcomesourcecode_>`_          |  `Documentation <Documentationcnnwelcome_>`_    | 
++---+---------------------------------------------+-------------------------------------------------+ 
 
 ----------------
 * Neural Networks
 ----------------
 The tutorials in this section are related to neural network architectures.
 
-.. Neural Networks Section
-.. Links:
-.. _Convolutional Neural Networks:https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/3-neural_networks/convolutional-neural-network
+.. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/3-neural_networks/convolutional-neural-network
 .. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/wiki/Convolutional-Neural-Networks
 
 
@@ -55,7 +50,7 @@ The tutorials in this section are related to neural network architectures.
 Installation and Setup the Environment
 ======================================
 
-.. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/blob/master/docs/0-installation/install_from_the_source.rst
+.. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/blob/master/docs/installation/install_from_the_source.rst
 
 In order to install TensorFlow please refer to the following link:
   
