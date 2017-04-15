@@ -78,6 +78,10 @@ Now by using the ``virtualenv`` command, the virtual environment can be created:
 
     virtualenv --system-site-packages ~/virtualenvs/tensorflow
 
+__________
+Run
+___________
+
 Up to now, the virtual environment named *tensorflow* has been created. For environment activation, the following must be done:
 
 .. code:: bash
@@ -98,18 +102,21 @@ After running the previous command, please close and open terminal again. Now by
     tensorflow
     
 
-To double check let's check the ``~/.bash_aliases`` from the terminal using the following:
-
-.. code:: bash
-
-    sudo gedit ~/.bash_aliases
-    
-The file should contain the following script:
-
+To double check let's check the ``~/.bash_aliases`` from the terminal using the ``sudo gedit ~/.bash_aliases`` command. The file should contain the following script:
 
 .. code:: shell
 
     alias tensorflow="source $HO~/env/tensorflow/bin/activate" 
+    
+ 
+Also let's check the ``.bashrc`` shell script using the ``sudo gedit ~/.bashrc`` command. It should contain the following:
+ 
+.. code:: shell
+
+    if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+    fi
+ 
 
     
 ---------------------------------
