@@ -86,4 +86,16 @@ The ``seesion``, which is the environment for running the operations, is execute
 Results
 --------
 
+The results for running in the terminal is as bellow:
+
+.. code:: shell
+
+        a = 5.0
+        b = 10.0
+        a + b = 15.0
+        a/b = 0.5
+
+
+
+If we run the Tensorboard using ``tensorboard --logdir="absolute/path/to/log_dir"`` we get the following when visualiaing the ``Graph``:
 
