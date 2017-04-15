@@ -31,7 +31,7 @@ The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 +---+---------------------------------------------+-------------------------------------------------+ 
 | # |          Source Code                        |                     wiki                        | 
 +===+=============================================+=================================================+ 
-| 1 |    `welcome <welcomesourcecode_>`_          |  `Documentation <Documentationcnn_welcome_>`_   | 
+| 1 |    `welcome <welcomesourcecode_>`_          |  `Documentation <Documentationcnnwelcome_>`_    | 
 +---+---------------------------------------------+-------------------------------------------------+ 
 
 ----------------
