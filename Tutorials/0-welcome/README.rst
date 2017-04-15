@@ -39,6 +39,14 @@ TensorBoard is the graph visualization tools provided by TensorFlow. Using `Goog
 debug, and optimize TensorFlow programs, we've included a suite of visualization tools called
 TensorBoard.”
 
+The Tensorboard can be run as follows in the terminal:
+
+.. code:: shell
+    
+    tensorboard --logdir="absolute/path/to/log_dir"
+    
+``WARNING:`` If TensorFlow is installed in any environment(virtual environment, ...), it must be activated at first.
+
  
 
 
