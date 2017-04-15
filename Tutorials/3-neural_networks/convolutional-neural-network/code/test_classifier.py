@@ -8,8 +8,6 @@ from auxiliary import progress_bar
 import os
 import sys
 
-slim = tf.contrib.slim
-
 ######################################
 ######### Necessary Flags ############
 ######################################

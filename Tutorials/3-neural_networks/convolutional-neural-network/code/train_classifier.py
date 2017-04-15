@@ -7,8 +7,6 @@ from input_function import input
 import os
 import train_evaluation
 
-slim = tf.contrib.slim
-
 ######################################
 ######### Necessary Flags ############
 ######################################
