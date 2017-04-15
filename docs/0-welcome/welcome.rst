@@ -34,3 +34,56 @@ Since we are aimed to use Tensorboard, we need a directory to store the informat
        FLAGS = tf.app.flags.FLAGS
 
 The ``os.path.dirname(os.path.abspath(__file__))`` gets the directory name of the current python file. The ``tf.app.flags.FLAGS`` points to all defined flags using the ``FLAGS`` indicator. From now on the flags can be called using ``FLAGS.flag_name``.
+
+For convenience it is useful to only work with ``absolute paths``. By using the following script, the user is prompt to use absolute paths for the ``log_dir`` directory.
+
+.. code:: python
+
+    # The user is prompted to input an absolute path.
+    # os.path.expanduser is leveraged to transform '~' sign to the corresponding path indicator.
+    #       Example: '~/logs' equals to '/home/username/logs'
+    if not os.path.isabs(os.path.expanduser(FLAGS.log_dir)):
+        raise ValueError('You must assign absolute path for --log_dir')
+
+-----------------
+Basic Operations
+-----------------
+
+Some basic operations can be defined by TensorFlow:
+
+.. code:: python
+
+    # Defining some constant values
+    a = tf.constant(5.0, name="a")
+    b = tf.constant(10.0, name="b")
+
+    # Some basic operations
+    x = tf.add(a, b, name="add")
+    y = tf.div(a, b, name="divide")
+    
+The ``tf.`` operator dperforms the specific operation and the output will be a ``Tensor``. The attribute ``name="some_name"`` is defined for better Tensorboard visualization as we see later in this tutorial.
+
+-------------------
+Run the Experiment
+-------------------
+
+The ``seesion``, which is the environment for running the operations, is executed as below:
+
+.. code:: python
+
+    # Run the session
+    with tf.Session() as sess:
+        writer = tf.summary.FileWriter(os.path.expanduser(FLAGS.log_dir), sess.graph)
+        print("a =", sess.run(a))
+        print("b =", sess.run(b))
+        print("a + b =", sess.run(x))
+        print("a/b =", sess.run(y))
+
+    # Closing the writer.
+    writer.close()
+    
+--------
+Results
+--------
+
+
