@@ -13,6 +13,7 @@ How to run the code in Terminal?
 ``WARNING:`` If TensorFlow is installed in any environment(virtual environment, ...), it must be activated at first. So at first make sure the tensorFlow is available in the current environment using the following script:
 
 .. code:: shell
+
     cd code/
     python TensorFlow_Test.py
 
