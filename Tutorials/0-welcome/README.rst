@@ -34,7 +34,13 @@ As an example the code can be executed as follows:
     
     python 1-welcome.py --log_dir='~/log_dir'
 
-The ``--log_dir`` is to provide the address which the event files (for visualizing in Tensorboard) will be saved.
+The ``--log_dir`` flag is to provide the address which the event files (for visualizing in Tensorboard) will be saved. The flag of ``--log_dir`` is not required becasue its default value is available in the source code as follows:
+
+.. code:: python
+    
+    tf.app.flags.DEFINE_string(
+    'log_dir', os.path.dirname(os.path.abspath(__file__)) + '/logs',
+    'Directory where event logs are written to.')
 
 ----------------------------
 How to run the code in IDEs?
