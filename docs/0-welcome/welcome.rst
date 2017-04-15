@@ -6,7 +6,11 @@ Welcome to TensorFlow World
 
 The tutorials in this section is just a start for going into TensorFlow world. The source code is available at `this link`_.
 
-We using Tensorboard for visualizing the outcomes. TensorBoard is the graph visualization tools provided by TensorFlow. Using Google’s words: “The computations you'll use TensorFlow for - like training a massive deep neural network - can be complex and confusing. To make it easier to understand, debug, and optimize TensorFlow programs, we've included a suite of visualization tools called TensorBoard.” A simple Tensorboard implementation is used in this tutorial. The details of Tensorboard and its advantages will be presented in more advanced tutorials.
+We using Tensorboard for visualizing the outcomes. TensorBoard is the graph visualization tools provided by TensorFlow. Using Google’s words: “The computations you'll use TensorFlow for - like training a massive deep neural network - can be complex and confusing. To make it easier to understand, debug, and optimize TensorFlow programs, we've included a suite of visualization tools called TensorBoard.” A simple Tensorboard implementation is used in this tutorial. 
+
+**NOTE:*** 
+     
+     * The details of summary operations, Tensorboard and their advantages are beyond the scope of this tutorial and will be presented in more advanced tutorials.
 
 
 --------------------------
@@ -81,6 +85,8 @@ The ``seesion``, which is the environment for running the operations, is execute
 
     # Closing the writer.
     writer.close()
+
+The ``tf.summary.FileWriter`` is defined to write the summaries into ``event files``.The command of ``sess.run()`` must be used for evaluation of any ``Tensor`` otherwise the operation won't be executed. In the end by using the ``writer.close()``, the summary writer will be closed.
     
 --------
 Results
