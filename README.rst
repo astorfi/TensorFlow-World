@@ -42,7 +42,7 @@ These tutorials are related to basics of TensorFlow.
 +---+-----------------------------------------------------+-------------------------------------------------+ 
 | # |          Source Code                                |                     wiki                        | 
 +===+=====================================================+=================================================+ 
-| 1 |    `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_    | 
+| 1 |    `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_     | 
 +---+-----------------------------------------------------+-------------------------------------------------+ 
 
 ----------------
