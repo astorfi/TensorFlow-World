@@ -27,8 +27,23 @@ The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 +---+---------------------------------------------+-------------------------------------------------+ 
 | # |          Source Code                        |                     wiki                        | 
 +===+=============================================+=================================================+ 
-| 1 |    `welcome <welcomesourcecode_>`_          |  `Documentation <Documentationcnnwelcome_>`_    | 
+| 1 |    `Welcome <welcomesourcecode_>`_          |  `Documentation <Documentationcnnwelcome_>`_    | 
 +---+---------------------------------------------+-------------------------------------------------+ 
+
+----------------
+* Basics
+----------------
+These tutorials are related to basics of TensorFlow.
+
+.. _basicmathsourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/basic_math_operations
+.. _Documentationbasicmath: https://github.com/astorfi/TensorFlow-World/wiki/Basic-Math-Operations
+
+
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| # |          Source Code                                |                     wiki                        | 
++===+=====================================================+=================================================+ 
+| 1 |    `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_    | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
 
 ----------------
 * Neural Networks
