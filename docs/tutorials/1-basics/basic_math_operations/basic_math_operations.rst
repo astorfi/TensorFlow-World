@@ -98,7 +98,7 @@ The results for running in the terminal is as bellow:
 
 If we run the Tensorboard using ``tensorboard --logdir="absolute/path/to/log_dir"`` we get the following when visualiaing the ``Graph``:
 
-.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/0-welcome/graph-run.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/1-basics/basic_math_operations/graph-run.png
    :scale: 30 %
    :align: center
 
