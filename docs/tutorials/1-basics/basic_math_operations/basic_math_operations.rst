@@ -49,16 +49,21 @@ For convenience it is useful to only work with ``absolute paths``. By using the 
     if not os.path.isabs(os.path.expanduser(FLAGS.log_dir)):
         raise ValueError('You must assign absolute path for --log_dir')
 
------------------
-Inauguration
------------------
+--------
+Basics
+--------
 
-Some sentence can be defined by TensorFlow:
+Some basic math operations can be defined by TensorFlow:
 
 .. code:: python
 
-     # Defining some sentence!
-     welcome = tf.constant('Welcome to TensorFlow world!')
+     # Defining some constant values
+     a = tf.constant(5.0, name="a")
+     b = tf.constant(10.0, name="b")
+
+     # Some basic operations
+     x = tf.add(a, b, name="add")
+     y = tf.div(a, b, name="divide")
     
 The ``tf.`` operator dperforms the specific operation and the output will be a ``Tensor``. The attribute ``name="some_name"`` is defined for better Tensorboard visualization as we see later in this tutorial.
 
@@ -98,7 +103,7 @@ The results for running in the terminal is as bellow:
 
 If we run the Tensorboard using ``tensorboard --logdir="absolute/path/to/log_dir"`` we get the following when visualiaing the ``Graph``:
 
-.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/0-welcome/graph-run.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/1-basics/basic_math_operations/graph-run.png
    :scale: 30 %
    :align: center
 
