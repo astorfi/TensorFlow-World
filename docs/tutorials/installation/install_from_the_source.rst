@@ -77,7 +77,7 @@ Now by using the ``virtualenv`` command, the virtual environment can be created:
 
 .. code:: bash
 
-    virtualenv --system-site-packages ~/virtualenvs/tensorflow
+    sudo virtualenv --system-site-packages ~/virtualenvs/tensorflow
 
 **Environment Activation**
 
@@ -262,7 +262,14 @@ Common Errors
 Different errors reported to block the compiling and running TensorFlow.
 
    * ``Mismatch between the supported kernel versions:`` This error mentioned earlier in this documentation. The naive solution reported to be reinstallation of the CUDA driver.
-   * ``ImportError: cannot import name pywrap_tensorflow:`` This error usually occurs when the Python loads the tensorflow libraries from the wrong directory, i.e., not the version installed by the user in the root. The first step is to make sure we are in the system root such that the python libraries are utilized correctly. So basically we can open a new terminal and test TensorFlow installation again.
+   * ``ImportError: cannot import name pywrap_tensorflow:`` This error usually occurs when the Python loads the tensorflow libraries from the wrong directory, i.e., not the version installed by the user in the root. The first step is to make sure we are in the system root such that the python libraries are utilized correctly. So basically we can open a new terminal and test TensorFlow installation again. 
+   * ``ImportError: No module named packaging.version":`` Most likely it might be related to the ``pip`` installation. Reinstalling that using ``python -m pip install -U pip`` or ``sudo python -m pip install -U pip`` may fixed it!
+
+--------------------------
+Summary
+--------------------------
+
+In this tutorial, we described how to install TensorFlow from the source which has the advantage of more compatibility with the system configuration. Python virtual environment installation has been investigated as well to separate the TensorFlow environment from other environments. Conda environments can be used as well as python virtual environments which will be explained in a separated post. In any case, the TensorFlow installed from the source can be run much faster than the pre-build binary packages provided by the TensorFlow although it adds the complexity for installation.
 
 
 
