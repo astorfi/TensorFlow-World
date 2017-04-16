@@ -36,6 +36,7 @@ For installaion of the required dependencies, the following command must be exec
     sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel python3-virtualenv
     
 The second line is for ``python3`` instalaltion.
+
 ~~~~~~~~~~~~~~~~~~~
 Bazel Installation
 ~~~~~~~~~~~~~~~~~~~
@@ -62,11 +63,11 @@ The following requirements must be satisfied:
     * The cuDNN library(version 5.1 is recommended). Please refer to `NIDIA documentation`_ for further details.
     * Installing the ``libcupti-dev`` using the following command: ``sudo apt-get install libcupti-dev``
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Creating a Virtual Environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Creating a Virtual Environment (Optional)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assume installation of TensorFlow in a ``python virtual environment`` is desired. First we need to create adirectory to contain all the environments. It can be done by executing the following in the terminal:
+Assume the installation of TensorFlow in a ``python virtual environment`` is desired. First we need to create adirectory to contain all the environments. It can be done by executing the following in the terminal:
 
 .. code:: bash
 
