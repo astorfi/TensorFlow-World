@@ -15,9 +15,10 @@ TensorFlow Tutorials
 The tutorials in this repository are partitioned into relevent categories.
 
 
-----------------
-* Welcome
-----------------
+~~~~~~~~~~~~
+**Welcome**
+~~~~~~~~~~~~
+
 The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 
 .. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/0-welcome
@@ -30,9 +31,9 @@ The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 | 1 |    `Welcome <welcomesourcecode_>`_          |  `Documentation <Documentationcnnwelcome_>`_    | 
 +---+---------------------------------------------+-------------------------------------------------+ 
 
-----------------
-* Basics
-----------------
+~~~~~~~~~~
+**Basics**
+~~~~~~~~~~
 These tutorials are related to basics of TensorFlow.
 
 .. _basicmathsourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/basic_math_operations
@@ -45,9 +46,9 @@ These tutorials are related to basics of TensorFlow.
 | 1 |    `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_     | 
 +---+-----------------------------------------------------+-------------------------------------------------+ 
 
-----------------
-* Neural Networks
-----------------
+~~~~~~~~~~~~~~~~~~~
+**Neural Networks**
+~~~~~~~~~~~~~~~~~~~
 The tutorials in this section are related to neural network architectures.
 
 .. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/convolutional-neural-network
