@@ -3,7 +3,7 @@
 TensorFLow World
 ************************
 
-The tutorial are ready to used and the explanations are present in the wiki_ associated with this repository.
+The tutorials are ready to used and the explanations are present in the wiki_ associated with this repository.
 
 .. The links.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
