@@ -50,20 +50,15 @@ For convenience it is useful to only work with ``absolute paths``. By using the 
         raise ValueError('You must assign absolute path for --log_dir')
 
 -----------------
-Basic Operations
+Inauguration
 -----------------
 
-Some basic operations can be defined by TensorFlow:
+Some sentence can be defined by TensorFlow:
 
 .. code:: python
 
-    # Defining some constant values
-    a = tf.constant(5.0, name="a")
-    b = tf.constant(10.0, name="b")
-
-    # Some basic operations
-    x = tf.add(a, b, name="add")
-    y = tf.div(a, b, name="divide")
+     # Defining some sentence!
+     welcome = tf.constant('Welcome to TensorFlow world!')
     
 The ``tf.`` operator dperforms the specific operation and the output will be a ``Tensor``. The attribute ``name="some_name"`` is defined for better Tensorboard visualization as we see later in this tutorial.
 
@@ -78,13 +73,11 @@ The ``seesion``, which is the environment for running the operations, is execute
     # Run the session
     with tf.Session() as sess:
         writer = tf.summary.FileWriter(os.path.expanduser(FLAGS.log_dir), sess.graph)
-        print("a =", sess.run(a))
-        print("b =", sess.run(b))
-        print("a + b =", sess.run(x))
-        print("a/b =", sess.run(y))
+        print("output: ", sess.run(welcome))
 
     # Closing the writer.
     writer.close()
+    sess.close()
 
 The ``tf.summary.FileWriter`` is defined to write the summaries into ``event files``.The command of ``sess.run()`` must be used for evaluation of any ``Tensor`` otherwise the operation won't be executed. In the end by using the ``writer.close()``, the summary writer will be closed.
     
