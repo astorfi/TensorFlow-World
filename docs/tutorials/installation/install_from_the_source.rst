@@ -129,6 +129,12 @@ Also let's check the ``.bashrc`` shell script using the ``sudo gedit ~/.bashrc``
 Configuration of the Installation
 ---------------------------------
 
+At first the Tensorflow repository must be cloned:
+
+.. code:: bash
+
+     git clone https://github.com/tensorflow/tensorflow 
+
 After preparing the environment, the installation must be configured. The ``flags`` of the cofiguration are of great importance becasue they determine how well and compatible the TensorFlow will be installed!! At first we have to go to the TensorFlow root:
 
 .. code:: bash
