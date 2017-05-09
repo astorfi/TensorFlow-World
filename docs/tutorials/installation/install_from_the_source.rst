@@ -257,10 +257,10 @@ In the terminal, the following script must be run (``in the home directory``) co
 .. code:: bash
 
     python
-    import tensorflow as tf
-    hello = tf.constant('Hello, TensorFlow!')
-    sess = tf.Session()
-    print(sess.run(hello))
+    >> import tensorflow as tf
+    >> hello = tf.constant('Hello, TensorFlow!')
+    >> sess = tf.Session()
+    >> print(sess.run(hello))
 
 --------------------------
 Common Errors
