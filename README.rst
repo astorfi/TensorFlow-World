@@ -6,9 +6,8 @@ TensorFLow World
 The tutorials are ready to used and the explanations are present in the wiki_ associated with this repository.
 
 .. image:: docs/_img/mainpage/tensorflow.gif
-   :align: right
-   
-<img src="docs/_img/mainpage/tensorflow.gif" style="float:right" />
+   :align: center
+
    
 .. The links.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
