@@ -9,9 +9,9 @@ The tutorials are ready to used and the explanations are present in the wiki_ as
    :align: center
    
 +---+--------------------------------------------------+-------------------------------------------------+ 
-| # |          Source Code                             |                     wiki                        | 
+| # |                                                  |                                                 | 
 +===+==================================================+=================================================+ 
-| 1 |    .. image:: docs/_img/mainpage/tensorflow.gif  |  .. image:: docs/_img/mainpage/tensorflow.gif   | 
+|   |    .. image:: docs/_img/mainpage/tensorflow.gif  |  .. image:: docs/_img/mainpage/tensorflow.gif   | 
 +---+--------------------------------------------------+-------------------------------------------------+ 
 
    
