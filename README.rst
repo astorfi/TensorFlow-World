@@ -3,7 +3,7 @@
 TensorFLow World
 ************************
 
-The tutorials are ready to used and the explanations are present in the wiki_ associated with this repository.
+This repository is aimed to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository. Each tutorial has a source code and its documetation.
 
 +--------------------------------------------------+----------------------------------------------------------+ 
 |                                                  |                                                          | 
@@ -70,7 +70,7 @@ The tutorials in this section are related to neural network architectures.
 
 
 ======================================
-Installation and Setup the Environment
+TensorFlow Installation and Setup the Environment
 ======================================
 
 .. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/installation/install_from_the_source.rst
