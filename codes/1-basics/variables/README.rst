@@ -1,6 +1,6 @@
 ==========
 Variables
-===========
+==========
 
 This source code is dedicated to define and initialize variables.
 
