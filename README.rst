@@ -5,6 +5,8 @@ TensorFLow World
 
 The tutorials are ready to used and the explanations are present in the wiki_ associated with this repository.
 
+.. image:: docs/_img/mainpage/tensorflow.gif
+
 .. The links.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
 .. _TensorFlow: https://www.tensorflow.org/install/
