@@ -8,9 +8,11 @@ The tutorials are ready to used and the explanations are present in the wiki_ as
 .. image:: docs/_img/mainpage/tensorflow.gif
    :align: center
    
- Solarized dark            |  Solarized Ocean
-:-------------------------:|:-------------------------:
-![](https://...Ocean.png)  |  ![](https://...Dark.png)
++---+--------------------------------------------------+-------------------------------------------------+ 
+| # |          Source Code                             |                     wiki                        | 
++===+==================================================+=================================================+ 
+| 1 |    .. image:: docs/_img/mainpage/tensorflow.gif  |  .. image:: docs/_img/mainpage/tensorflow.gif   | 
++---+--------------------------------------------------+-------------------------------------------------+ 
 
    
 .. The links.
