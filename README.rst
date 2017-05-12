@@ -9,7 +9,7 @@ The tutorials are ready to used and the explanations are present in the wiki_ as
    :height: 200px
    :width: 500 px
    :scale: 200 %
-   :align: middle
+   :align: right
 
 .. The links.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
