@@ -8,7 +8,7 @@ The tutorials are ready to used and the explanations are present in the wiki_ as
 +--------------------------------------------------+--------------------------------------------------------+ 
 |                                                  |                                                        | 
 +==================================================+========================================================+ 
-|    .. image:: docs/_img/mainpage/tensorflow.gif  |  .. image:: docs/_img/mainpage/tensorflow-dynamc.gif   | 
+|    .. image:: docs/_img/mainpage/tensorflow.gif  |  .. image:: docs/_img/mainpage/tensorflow-dynamc_2.gif   | 
 +--------------------------------------------------+--------------------------------------------------------+ 
 
    
