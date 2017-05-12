@@ -6,7 +6,7 @@ TensorFLow World
 The tutorials are ready to used and the explanations are present in the wiki_ associated with this repository.
 
 +--------------------------------------------------+-------------------------------------------------+ 
-|               Source Code                        |                     wiki                        | 
+|                                                  |                                                 | 
 +==================================================+=================================================+ 
 |    .. image:: docs/_img/mainpage/tensorflow.gif  |  .. image:: docs/_img/mainpage/tensorflow.gif   | 
 +--------------------------------------------------+-------------------------------------------------+ 
