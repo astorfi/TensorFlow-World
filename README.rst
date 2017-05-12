@@ -81,6 +81,7 @@ In order to install TensorFlow please refer to the following link:
 
 
 .. image:: docs/_img/mainpage/installation.gif
+    :target: www.google.com
 
 
 The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environmen. The TensorFlow version employed for these tutorials is `1.0`. However the files from previous versions can be transformed to newer versions (ex: version `1.0`) using the following instructions:
