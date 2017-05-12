@@ -14,6 +14,10 @@ The installation is available at `TensorFlow`_. Installation from the source is 
 
 The assumption is that installing TensorFlow in the ``Ubuntu`` using ``GPU support`` is desired. ``Python2.7`` is chosen for installation.
 
+**NOTE** Please refer to this youtube `link <youtube_>`_ for a visual explanation.
+
+.. _youtube: https://www.youtube.com/watch?v=EEsh__CJFc0&t=1s
+
 ------------------------
 Prepare the environment
 ------------------------
