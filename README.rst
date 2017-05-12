@@ -7,6 +7,12 @@ The tutorials are ready to used and the explanations are present in the wiki_ as
 
 .. image:: docs/_img/mainpage/tensorflow.gif
    :align: right
+   
+.. image:: docs/_img/mainpage/tensorflow.gif
+    :width: 200px
+    :align: center
+    :height: 100px
+    :alt: alternate text
 
 .. The links.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
