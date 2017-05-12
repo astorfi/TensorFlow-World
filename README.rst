@@ -6,10 +6,7 @@ TensorFLow World
 The tutorials are ready to used and the explanations are present in the wiki_ associated with this repository.
 
 .. image:: docs/_img/mainpage/tensorflow.gif
-   :height: 200px
-   :width: 500 px
-   :scale: 200 %
-   :align: right
+   :align: middle
 
 .. The links.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
