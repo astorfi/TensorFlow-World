@@ -15,7 +15,7 @@ biases = tf.Variable(tf.zeros([3]), name="biases")
 custom_variable = tf.Variable(tf.zeros([3]), name="custom")
 
 # Get all the variables' tensors and store them in a list.
-variable_list = ops.get_collection(ops.GraphKeys.GLOBAL_VARIABLES)
+all_variables_list = ops.get_collection(ops.GraphKeys.GLOBAL_VARIABLES)
 
 
 ############################################
@@ -28,8 +28,8 @@ variable_list = ops.get_collection(ops.GraphKeys.GLOBAL_VARIABLES)
 # "variable_list_custom" is the list of variables that we want to initialize.
 variable_list_custom = [weights, custom_variable]
 
-# The initializaer
-init_custom_op = tf.variables_initializer(var_list=variable_list)
+# The initializer
+init_custom_op = tf.variables_initializer(var_list=variable_list_custom )
 
 
 ########################################
@@ -41,7 +41,7 @@ init_custom_op = tf.variables_initializer(var_list=variable_list)
 init_all_op = tf.global_variables_initializer()
 
 # Method-2
-init_all_op = tf.variables_initializer(var_list=variable_list)
+init_all_op = tf.variables_initializer(var_list=all_variables_list)
 
 
 
