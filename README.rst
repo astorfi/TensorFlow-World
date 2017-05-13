@@ -46,11 +46,18 @@ These tutorials are related to basics of TensorFlow.
 .. _basicmathsourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/basic_math_operations
 .. _Documentationbasicmath: https://github.com/astorfi/TensorFlow-World/wiki/Basic-Math-Operations
 
+.. _variablssourcecode: https://github.com/astorfi/TensorFlow-World/blob/master/codes/1-basics/variables/README.rst
+.. _Documentationvariabls: https://github.com/astorfi/TensorFlow-World/wiki/TensorFlow-Variables%3A-Creation%2C-Initialization
+
+https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/variables/README.rst
+
 
 +---+-----------------------------------------------------+-------------------------------------------------+ 
 | # |          Source Code                                |                     wiki                        | 
 +===+=====================================================+=================================================+ 
 | 1 |    `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_     | 
++---+-----------------------------------------------------+-------------------------------------------------+
+| 2 |    `TensorFlow Variables <variablssourcecode_>`_    |  `Documentation <Documentationvariabls_>`_      | 
 +---+-----------------------------------------------------+-------------------------------------------------+ 
 
 ~~~~~~~~~~~~~~~~~~~
