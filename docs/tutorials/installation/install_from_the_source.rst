@@ -16,7 +16,7 @@ The assumption is that installing TensorFlow in the ``Ubuntu`` using ``GPU suppo
 
 **NOTE** Please refer to this youtube `link <youtube_>`_ for a visual explanation.
 
-.. _youtube: https://www.youtube.com/watch?v=EEsh__CJFc0&t=1s
+.. _youtube: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
 
 ------------------------
 Prepare the environment
