@@ -27,7 +27,7 @@ to the graph. Basically the following will happen:
        graph.
     -  By using tf.assign, an initializer set initial variable value.
 
-Some arbirtray variables can be defined as follows:
+Some arbitrary variables can be defined as follows:
 
 .. code:: python
 
@@ -67,14 +67,9 @@ Initializing Specific Variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By using tf.variables\_initializer, we can explicitly command the
-TensorFlow to only initialize cetain variable. The script is as follows
+TensorFlow to only initialize certain variable. The script is as follows
 
-:
-
-Custom variable initialization
-
-::
-
+.. code:: python
      
     # "variable_list_custom" is the list of variables that we want to initialize.
     variable_list_custom = [weights, custom_variable]
@@ -91,14 +86,11 @@ specific variables by hand.
 Golobal variable initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-All variables can be initializaed at once using the
+All variables can be initialized at once using the
 tf.global\_variables\_initializer(). This op must be run after the model
 being fully constructed. The script is as below:
 
-Global Variable Initialization
-
-::
-
+.. code:: python
      
     # Method-1
     # Add an op to initialize the variables.
@@ -120,9 +112,8 @@ values by taking the values using initialized\_value().
 
 Initialization using predefined variables' values
 
-::
+.. code:: python
 
-     
     # Create another variable with the same value as 'weights'.
     WeightsNew = tf.Variable(weights.initialized_value(), name="WeightsNew")
 
@@ -141,9 +132,8 @@ ops must be run in the session. The script is as follows:
 
 Running the session for initialization
 
-::
+.. code:: python
 
-     
     with tf.Session() as sess:
         # Run the initializer operation.
         sess.run(init_all_op)
@@ -157,23 +147,7 @@ Summary
 
 In this tutorial, we walked through the variable creation and
 initialization. The global, custom and inherited variable initialization
-have been invesitgated. In the future posts, we investigate how to save
+have been investigated. In the future posts, we investigate how to save
 and restore the variables. Restoring a variable eliminate the necessity
 of its initialization.
 
-`Go Top <#post_top>`__
-
-Please enable JavaScript to view the `comments powered by
-Disqus. <https://disqus.com/?ref_noscript>`__
-
-Related Posts:
-~~~~~~~~~~~~~~
-
--  `Twitter <https://twitter.com/M_L_Guru>`__
--  `GitHub <https://github.com/Machinelearninguru>`__
--  `LinkedIn <https://www.linkedin.com/groups/12030461>`__
-
--  © Machine Learning Guru. All rights reserved
--  Design: `HTML5 UP <http://html5up.net>`__
-
-.. |image0| image:: ../../../../_images/logo2.png
