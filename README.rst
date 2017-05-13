@@ -75,9 +75,9 @@ The tutorials in this section are related to neural network architectures.
 +---+---------------------------------------------+----------------------------------------+ 
 
 
-======================================
+=================================================
 TensorFlow Installation and Setup the Environment
-======================================
+=================================================
 
 .. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/installation/install_from_the_source.rst
 
