@@ -49,7 +49,6 @@ These tutorials are related to basics of TensorFlow.
 .. _variablssourcecode: https://github.com/astorfi/TensorFlow-World/blob/master/codes/1-basics/variables/README.rst
 .. _Documentationvariabls: https://github.com/astorfi/TensorFlow-World/wiki/TensorFlow-Variables%3A-Creation%2C-Initialization
 
-https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/variables/README.rst
 
 
 +---+-----------------------------------------------------+-------------------------------------------------+ 
