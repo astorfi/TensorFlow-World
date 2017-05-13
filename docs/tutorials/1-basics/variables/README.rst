@@ -29,9 +29,7 @@ to the graph. Basically the following will happen:
 
 Some arbirtray variables can be defined as follows:
 
-Defining Variables
-
-::
+.. code:: python
 
      
     import tensorflow as tf
@@ -49,8 +47,9 @@ Defining Variables
 
     # Get all the variables' tensors and store them in a list.
     all_variables_list = ops.get_collection(ops.GraphKeys.GLOBAL_VARIABLES)
+    
 
-In the above script, **line 15** gets the list of all defined variables
+In the above script, ``ops.get_collection`` gets the list of all defined variables
 from the defined graph. The "name" key, define a specific name for each
 variable on the graph
 
