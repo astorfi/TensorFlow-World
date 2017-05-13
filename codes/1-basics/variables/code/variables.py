@@ -12,7 +12,7 @@ from tensorflow.python.framework import ops
 weights = tf.Variable(tf.random_normal([2, 3], stddev=0.1),
                       name="weights")
 biases = tf.Variable(tf.zeros([3]), name="biases")
-custom_variable = tf.Variable(tf.zeros([3]), name="biases2")
+custom_variable = tf.Variable(tf.zeros([3]), name="custom")
 
 # Get all the variables' tensors and store them in a list.
 variable_list = ops.get_collection(ops.GraphKeys.GLOBAL_VARIABLES)
