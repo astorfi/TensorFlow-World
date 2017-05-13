@@ -13,7 +13,7 @@ TensorFlow are just tensors with certain shapes and types. The tensors
 must be initialized with values to become valid. In this tutorial, we
 are going to explain how to ``define`` and ``initialize`` variables. The
 `source
-code <https://github.com/Machinelearninguru/Deep_Learning/tree/master/TensorFlow/basics/variables>`__
+code <https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/variables>`__
 is available on the dedicated GitHub repository.
 
 Creating variables
