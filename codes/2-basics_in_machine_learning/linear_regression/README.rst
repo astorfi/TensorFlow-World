@@ -1,11 +1,10 @@
-
-===========================
+============================
 Welcome to TensorFlow World
-===========================
+============================
 
 This document is dedicated to explain how to run the python script for this tutorial.
 
------------------
+------------------
 Linear Regression
 ------------------
 
