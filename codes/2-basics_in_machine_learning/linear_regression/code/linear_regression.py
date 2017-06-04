@@ -91,16 +91,20 @@ with tf.Session() as sess:
         # Displaying the loss per epoch.
         print('epoch %d, loss=%f' %(epoch_num+1, loss_value))
 
-        # Step 9: output the values of w and b
-        w_value, b_value = sess.run([W, b])
+        # save the values of weight and bias
+        wcoeff, bias = sess.run([W, b])
 
 
 ###############################
 #### Evaluate and plot ########
 ###############################
-plt.plot(data[:,0], data[:,1], 'ro',label='Original')
-plt.plot(data[:,0], data[:,0]*w_value+b_value,label='Predicted')
+Input_values = data[:,0]
+Labels = data[:,1]
+Prediction_values = data[:,0] * wcoeff + bias
+plt.plot(Input_values, Labels, 'ro', label='main')
+plt.plot(Input_values, Prediction_values, label='Predicted')
 
+# Saving the result.
 plt.legend()
 plt.savefig('plot.png')
 plt.close()
