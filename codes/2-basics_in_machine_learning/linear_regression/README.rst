@@ -1,12 +1,12 @@
-============================
-Welcome to TensorFlow World
-============================
-
-This document is dedicated to explain how to run the python script for this tutorial.
-
-------------------
+==================
 Linear Regression
-------------------
+==================
+
+This document is dedicated to explain how to run the python script for this tutorial. In machine learning and statistics, ```linear regression``` is the modeling of the relationship between a variable such as ``y`` and at least one independent variable as ``X``. In the ``linear regression``, the linear relationships will be modeled by a predictor function which its paprameres will be estimated by the data and is called a ``linear models``.
+
+-------------------
+Python Environment
+-------------------
 
 ``WARNING:`` If TensorFlow is installed in any environment(virtual environment, ...), it must be activated at first. So at first make sure the tensorFlow is available in the current environment using the following script:
 
