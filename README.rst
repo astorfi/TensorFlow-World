@@ -69,7 +69,7 @@ We are going to present concepts of basic machine learning models and methods an
 +---+---------------------------------------------+----------------------------------------+ 
 | # |          Source Code                        |               wiki                     | 
 +===+=============================================+========================================+ 
-| 1 |    `Linear Regression`_                     |  `Documentation <Documentationlr_>`_  | 
+| 1 |    `Linear Regression`_                     |  `Documentation <Documentationlr_>`_   | 
 +---+---------------------------------------------+----------------------------------------+ 
 
 ~~~~~~~~~~~~~~~~~~~
