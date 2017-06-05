@@ -2,7 +2,9 @@
 Linear Regression
 ==================
 
-This document is dedicated to explain how to run the python script for this tutorial. In machine learning and statistics, ```linear regression``` is the modeling of the relationship between a variable such as ``y`` and at least one independent variable as ``X``. In the ``linear regression``, the linear relationships will be modeled by a predictor function which its paprameres will be estimated by the data and is called a ``linear models``.
+This document is dedicated to explain how to run the python script for this tutorial. The documentation is available `Here <Documentationlinearregression_>`_.
+
+.. _Documentationlinearregression: https://github.com/astorfi/TensorFlow-World/wiki/Linear-Regeression
 
 -------------------
 Python Environment
