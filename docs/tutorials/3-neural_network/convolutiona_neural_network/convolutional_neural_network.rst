@@ -774,7 +774,7 @@ using the Tensorboard and pointing to the directory that the logs are
 saved, we can visualize the training procedure. The loss and accuracy
 for the train are depicted jointly as below:
 
-.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/3-neural_network/convolutiona_neural_network/loss_accuracy_train.png
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/2-basics_in_machine_learning/linear_regression/updating_model.gif
    :scale: 50 %
    :align: center
    
