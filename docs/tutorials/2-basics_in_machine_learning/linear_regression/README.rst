@@ -1,6 +1,6 @@
-~~~~~~~~
+~~~~~~~~~
 Sections
-~~~~~~~~
+~~~~~~~~~
 
 -  `Introduction <#Introduction>`__
 -  `Description of the Overall
