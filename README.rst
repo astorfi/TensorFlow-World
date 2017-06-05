@@ -33,7 +33,7 @@ The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 
 
 +---+---------------------------------------------+-------------------------------------------------+ 
-| # |          Source Code                        |                 Documentation                   | 
+| # |          Source Code                        |                                                 | 
 +===+=============================================+=================================================+ 
 | 1 |    `Welcome <welcomesourcecode_>`_          |  `Documentation <Documentationcnnwelcome_>`_    | 
 +---+---------------------------------------------+-------------------------------------------------+ 
@@ -51,7 +51,7 @@ These tutorials are related to basics of TensorFlow.
 
 
 +---+-----------------------------------------------------+-------------------------------------------------+ 
-| # |          Source Code                                |                 Documentation                   | 
+| # |          Source Code                                |                                                 | 
 +===+=====================================================+=================================================+ 
 | 1 |    `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_     | 
 +---+-----------------------------------------------------+-------------------------------------------------+
@@ -67,7 +67,7 @@ We are going to present concepts of basic machine learning models and methods an
 .. _Documentationlr: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/2-basics_in_machine_learning/linear_regression/README.rst
 
 +---+---------------------------------------------+----------------------------------------+ 
-| # |          Source Code                        |            Documentation               | 
+| # |          Source Code                        |                                        | 
 +===+=============================================+========================================+ 
 | 1 |    `Linear Regression`_                     |  `Documentation <Documentationlr_>`_   | 
 +---+---------------------------------------------+----------------------------------------+ 
