@@ -1,15 +1,3 @@
--  `Home <../../../../index.php>`__
--  `> <#>`__
--  `Deep Learning <../../../../topics.php?my_id=4>`__
--  `> <#>`__
--  `TensorFlow <../../../../posts.php?my_id=10>`__
-
-|image0| `Machine Learning Guru <../../../../../index.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Machine Learning and Computer Vision tutorials using open source
-packages.
-
 Sections
 ~~~~~~~~
 
@@ -56,7 +44,7 @@ How to Do It in Code?
 The process is started by loading the necessary libraries and the
 dataset:
 
-::
+..code:: python
 
      
     # Data file provided by the Stanford course CS 20SI: TensorFlow for Deep Learning Research.
