@@ -2,7 +2,7 @@
 Linear Regression
 ==================
 
-This document is dedicated to explain how to run the python script for this tutorial. The documentation is available `Here <Documentationlinearregression_>`_. Alternatively you can check this ``Linear Regression using TensorFlow`` `blog post <blogpostlinearregression_>`_ for futher details.
+This document is dedicated to explain how to run the python script for this tutorial. The documentation is available `here <Documentationlinearregression_>`_. Alternatively you can check this ``Linear Regression using TensorFlow`` `blog post <blogpostlinearregression_>`_ for futher details.
 
 .. _blogpostlinearregression: http://www.machinelearninguru.com/deep_learning/tensorflow/machine_learning_basics/linear_regresstion/linear_regression.html
 
