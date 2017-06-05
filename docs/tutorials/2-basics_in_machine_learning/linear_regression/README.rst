@@ -68,9 +68,8 @@ dataset:
 
 Then we continue by defining and initializing the necessary variables:
 
-::
-
-     
+.. code:: python
+ 
     # creating the weight and bias.
     # The defined variables will be initialized to zero.
     W = tf.Variable(0.0, name="weights")
@@ -79,8 +78,7 @@ Then we continue by defining and initializing the necessary variables:
 After that, we should define the necessary functions. Different tabs
 demonstrate the defined functions:
 
-::
-
+.. code:: python
      
     def inputs():
         """
@@ -92,8 +90,7 @@ demonstrate the defined functions:
         Y = tf.placeholder(tf.float32, name="Y")
         return X,Y
 
-::
-
+.. code:: python
      
     def inference():
         """
@@ -103,8 +100,7 @@ demonstrate the defined functions:
         """
         return X * W + b
 
-::
-
+.. code:: python
      
     def loss(X, Y):
         """
@@ -118,8 +114,7 @@ demonstrate the defined functions:
         Y_predicted = inference(X)
         return tf.squared_difference(Y, Y_predicted)
 
-::
-
+.. code:: python
      
     # The training function.
     def train(loss):
@@ -129,8 +124,7 @@ demonstrate the defined functions:
 Next, we are going to loop through different epochs of data and perform
 the optimization process:
 
-::
-
+.. code:: python
      
     with tf.Session() as sess:
 
@@ -165,8 +159,7 @@ parameters of the linear model, e.g., wcoeff and bias, will be returned.
 For evaluation, the prediction line and the original data will be
 demonstrated to show how the model fits the data:
 
-::
-
+.. code:: python
      
     ###############################
     #### Evaluate and plot ########
@@ -184,8 +177,10 @@ demonstrated to show how the model fits the data:
 
 The result is depicted in the following figure:
 
-|image|
-
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/2-basics_in_machine_learning/linear_regression/updating_model.gif
+   :scale: 50 %
+   :align: center
+   
 **Figure 1:** The original data alongside with the estimated linear
 model.
 
@@ -203,21 +198,3 @@ to be the best one. Different parameters affect the convergence
 accuracy. The linear model is found using stochastic optimization and
 its simplicity makes our world easier.
 
-`Go Top <#post_top>`__
-
-Please enable JavaScript to view the `comments powered by
-Disqus. <https://disqus.com/?ref_noscript>`__
-
-Related Posts:
-~~~~~~~~~~~~~~
-
--  `Twitter <https://twitter.com/M_L_Guru>`__
--  `GitHub <https://github.com/Machinelearninguru>`__
--  `LinkedIn <https://www.linkedin.com/groups/12030461>`__
-
--  © Machine Learning Guru. All rights reserved
--  Design: `HTML5 UP <http://html5up.net>`__
-
-.. |image0| image:: ../../../../_images/logo2.png
-.. |image| image:: ../../../../_images/topics/deep_learning/tensorflow/machine_learning_basics/linear_regression/updating_model.gif
-   :target: ../../../../_images/topics/deep_learning/tensorflow/machine_learning_basics/linear_regression/updating_model.gif
