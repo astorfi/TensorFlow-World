@@ -42,11 +42,11 @@ def inputs():
 
 # Create the prediction.
 def inference(X):
-    '''
+    """
     Forward passing the X.
     :param X: Input.
     :return: X*W + b.
-    '''
+    """
     return X * W + b
 
 def loss(X, Y):
