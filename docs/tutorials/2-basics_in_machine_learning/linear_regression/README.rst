@@ -45,7 +45,7 @@ How to Do It in Code?
 The process is started by loading the necessary libraries and the
 dataset:
 
-::
+.. code:: python
 
      
     # Data file provided by the Stanford course CS 20SI: TensorFlow for Deep Learning Research.
