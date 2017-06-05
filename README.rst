@@ -29,7 +29,7 @@ The tutorials in this repository are partitioned into relevent categories.
 The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 
 .. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/0-welcome
-.. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/wiki/Welcome%21
+.. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/0-welcome/welcome.rst
 
 
 +---+---------------------------------------------+-------------------------------------------------+ 
@@ -44,11 +44,10 @@ The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 These tutorials are related to basics of TensorFlow.
 
 .. _basicmathsourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/basic_math_operations
-.. _Documentationbasicmath: https://github.com/astorfi/TensorFlow-World/wiki/Basic-Math-Operations
+.. _Documentationbasicmath: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/basic_math_operations/basic_math_operations.rst
 
 .. _variablssourcecode: https://github.com/astorfi/TensorFlow-World/blob/master/codes/1-basics/variables/README.rst
-.. _Documentationvariabls: https://github.com/astorfi/TensorFlow-World/wiki/TensorFlow-Variables%3A-Creation%2C-Initialization
-
+.. _Documentationvariabls: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/variables/README.rst
 
 
 +---+-----------------------------------------------------+-------------------------------------------------+ 
@@ -59,13 +58,27 @@ These tutorials are related to basics of TensorFlow.
 | 2 |    `TensorFlow Variables <variablssourcecode_>`_    |  `Documentation <Documentationvariabls_>`_      | 
 +---+-----------------------------------------------------+-------------------------------------------------+ 
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Machine Learning Basics**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We are going to present concepts of basic machine learning models and methods and showing how to implement them in Tensorflow.
+
+.. _Linear Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_regression
+.. _Documentationlr: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/2-basics_in_machine_learning/linear_regression/README.rst
+
++---+---------------------------------------------+----------------------------------------+ 
+| # |          Source Code                        |               wiki                     | 
++===+=============================================+========================================+ 
+| 1 |    `Linear Regression`_                     |  `Documentation <Documentationlr_>`_  | 
++---+---------------------------------------------+----------------------------------------+ 
+
 ~~~~~~~~~~~~~~~~~~~
 **Neural Networks**
 ~~~~~~~~~~~~~~~~~~~
 The tutorials in this section are related to neural network architectures.
 
 .. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/convolutional-neural-network
-.. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/wiki/Convolutional-Neural-Networks
+.. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/3-neural_network/convolutiona_neural_network/convolutional_neural_network.rst
 
 
 +---+---------------------------------------------+----------------------------------------+ 
