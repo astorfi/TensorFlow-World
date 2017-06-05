@@ -12,7 +12,7 @@ Linear Regression using TensorFlow
 ----------------------------------
 
 This tutorial is about training a linear model by TensorFlow to fit the
-data. Alternatively you can check this `blog post<blogpostlinearregression_>`_.
+data. Alternatively you can check this `blog post <blogpostlinearregression_>`_.
 
 .. _blogpostlinearregression: http://www.machinelearninguru.com/deep_learning/tensorflow/machine_learning_basics/linear_regresstion/linear_regression.html
 
