@@ -1,14 +1,4 @@
--  `Home <../../../../index.php>`__
--  `> <#>`__
--  `Deep Learning <../../../../topics.php?my_id=4>`__
--  `> <#>`__
--  `TensorFlow <../../../../posts.php?my_id=10>`__
 
-|image0| `Machine Learning Guru <../../../../../index.html>`__
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Machine Learning and Computer Vision tutorials using open source
-packages.
 
 Sections
 ~~~~~~~~
