@@ -3,7 +3,7 @@
 TensorFLow World
 ************************
 
-This repository is aimed to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository. Each tutorial has a source code and its documetation.
+This repository is aimed to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the ``wiki_`` associated with this repository. Each tutorial has a ``source code`` and its ``documetation``.
 
 +--------------------------------------------------+----------------------------------------------------------+ 
 |                                                  |                                                          | 
