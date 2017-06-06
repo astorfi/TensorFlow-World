@@ -68,6 +68,8 @@ We are going to present concepts of basic machine learning models and methods an
 
 .. _Logistic Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/logistic_regression
 
+.. _Linear SVM: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_SVM
+
 
 +---+---------------------------------------------+----------------------------------------+ 
 | # |          Source Code                        |                                        | 
@@ -75,6 +77,8 @@ We are going to present concepts of basic machine learning models and methods an
 | 1 |    `Linear Regression`_                     |  `Documentation <Documentationlr_>`_   | 
 +---+---------------------------------------------+----------------------------------------+ 
 | 2 |    `Logistic Regression`_                   |                                        | 
++---+---------------------------------------------+----------------------------------------+ 
+| 2 |    `Linear SVM`_                            |                                        | 
 +---+---------------------------------------------+----------------------------------------+ 
 
 ~~~~~~~~~~~~~~~~~~~
