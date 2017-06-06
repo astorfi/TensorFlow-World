@@ -12,7 +12,7 @@ import random
 tf.app.flags.DEFINE_integer('batch_size', 32,
                             'Number of samples per batch.')
 
-tf.app.flags.DEFINE_integer('num_steps', 1000,
+tf.app.flags.DEFINE_integer('num_steps', 3000,
                             'Number of steps for training.')
 
 tf.app.flags.DEFINE_integer('log_step', 100,
@@ -22,11 +22,19 @@ tf.app.flags.DEFINE_boolean('is_evaluation', True,
                             'Whether or not the model should be evaluated.')
 
 tf.app.flags.DEFINE_float(
-    'C_param', 10.0,
+    'C_param', 0.1,
     'penalty parameter of the error term.')
 
 tf.app.flags.DEFINE_float(
-    'initial_learning_rate', 0.01,
+    'Reg_param', 1.0,
+    'penalty parameter of the error term.')
+
+tf.app.flags.DEFINE_float(
+    'delta', 1.0,
+    'The parameter set for margin.')
+
+tf.app.flags.DEFINE_float(
+    'initial_learning_rate', 0.1,
     'The initial learning rate for optimization.')
 
 FLAGS = tf.app.flags.FLAGS
@@ -37,9 +45,10 @@ FLAGS = tf.app.flags.FLAGS
 ##########################
 
 def loss_fn(W,b,x_data,y_target):
-    norm_term = tf.reduce_sum(tf.multiply(tf.transpose(W),W))
-    classification_loss = tf.reduce_mean(tf.maximum(0., tf.subtract(1., tf.multiply(tf.subtract(tf.matmul(x_data, W), b), y_target))))
-    total_loss = tf.add(tf.multiply(FLAGS.C_param,classification_loss), norm_term)
+    logits = tf.subtract(tf.matmul(x_data, W),b)
+    norm_term = tf.divide(tf.reduce_sum(tf.multiply(tf.transpose(W),W)),2)
+    classification_loss = tf.reduce_mean(tf.maximum(0., tf.subtract(FLAGS.delta, tf.multiply(logits, y_target))))
+    total_loss = tf.add(tf.multiply(FLAGS.C_param,classification_loss), tf.multiply(FLAGS.Reg_param,norm_term))
     return total_loss
 
 def inference_fn(W,b,x_data,y_target):
