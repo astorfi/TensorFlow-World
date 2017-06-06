@@ -2,7 +2,7 @@
 Linear SVM
 ===========
 
-This document is dedicated to explain how to run the python script for this tutorial. 
+This document is dedicated to explain how to run the python script for this tutorial. For this tutorial, we will create a linear SVM for separation of the data. The data that is used for this code, is linearly separable.
 
 -------------------
 Python Environment
