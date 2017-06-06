@@ -12,7 +12,7 @@ import random
 tf.app.flags.DEFINE_integer('batch_size', 32,
                             'Number of samples per batch.')
 
-tf.app.flags.DEFINE_integer('num_steps', 500,
+tf.app.flags.DEFINE_integer('num_steps', 1000,
                             'Number of steps for training.')
 
 tf.app.flags.DEFINE_integer('log_step', 100,
@@ -137,8 +137,8 @@ if FLAGS.is_evaluation:
     negative_y = [data[0] for index,data in enumerate(X) if y[index]==-1]
 
     # Plotting the SVM decision boundary.
-    plt.plot(positive_X, positive_y, 'o', label='Positive')
-    plt.plot(negative_X, negative_y, 'x', label='Negative')
+    plt.plot(positive_X, positive_y, '+', label='Positive')
+    plt.plot(negative_X, negative_y, 'o', label='Negative')
     plt.plot(x_line, line, 'r-', label='Separator', linewidth=3)
     plt.legend(loc='best')
     plt.title('Linear SVM')
