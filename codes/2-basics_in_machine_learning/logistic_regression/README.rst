@@ -2,9 +2,8 @@
 Linear Regression
 ==================
 
-This document is dedicated to explain how to run the python script for this tutorial. The documentation is available `Here <Documentationlinearregression_>`_.
-
-.. _Documentationlinearregression: https://github.com/astorfi/TensorFlow-World/wiki/Linear-Regeression
+This document is dedicated to explain how to run the python script for this tutorial. ``Logistic regression`` is a binary
+classification algorthim in which `yes` or `no` are the only possible responses. The linear output is transformed to a probability of course between zero and 1. The decision is made by thresholding the probability and saying it belongs to which class. We consider ``Softmax`` with ``cross entropy`` loss for minimizing the loss.
 
 -------------------
 Python Environment
@@ -16,7 +15,6 @@ Python Environment
 How to run the code in Terminal?
 --------------------------------
 
-    
 Please root to the ``code/`` directory and run the python script as the general form of below:
 
 .. code:: shell
@@ -28,14 +26,9 @@ As an example the code can be executed as follows:
 
 .. code:: shell
     
-    python linear_regression.py --num_epochs=50
+    python logistic_regression.py --num_epochs=50 --batch_size=512 --max_num_checkpoint=10 --num_classes=2
 
-The ``--num_epochs`` flag is to provide the number of epochs that will be used for training. The flag of ``--log_dir`` is not required becasue its default value is ``50`` and is provided in the source code as follows:
-
-.. code:: python
-    
-    tf.app.flags.DEFINE_integer(
-    'num_epochs', 50, 'The number of epochs for training the model. Default=50')
+Different ``flags`` are provided for training. For the full list please refer to the source code. The above example is just an example as is!
 
 ----------------------------
 How to run the code in IDEs?
