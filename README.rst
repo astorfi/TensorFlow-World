@@ -66,10 +66,15 @@ We are going to present concepts of basic machine learning models and methods an
 .. _Linear Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_regression
 .. _Documentationlr: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/2-basics_in_machine_learning/linear_regression/README.rst
 
+.. _Logistic Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/logistic_regression
+
+
 +---+---------------------------------------------+----------------------------------------+ 
 | # |          Source Code                        |                                        | 
 +===+=============================================+========================================+ 
 | 1 |    `Linear Regression`_                     |  `Documentation <Documentationlr_>`_   | 
++---+---------------------------------------------+----------------------------------------+ 
+| 2 |    `Logistic Regression`_                   |                                        | 
 +---+---------------------------------------------+----------------------------------------+ 
 
 ~~~~~~~~~~~~~~~~~~~
