@@ -1,12 +1,8 @@
-==================
-Linear Regression
-==================
+===========
+Linear SVM
+===========
 
-This document is dedicated to explain how to run the python script for this tutorial. The documentation is available `here <Documentationlinearregression_>`_. Alternatively you can check this ``Linear Regression using TensorFlow`` `blog post <blogpostlinearregression_>`_ for futher details.
-
-.. _blogpostlinearregression: http://www.machinelearninguru.com/deep_learning/tensorflow/machine_learning_basics/linear_regresstion/linear_regression.html
-
-.. _Documentationlinearregression: https://github.com/astorfi/TensorFlow-World/wiki/Linear-Regeression
+This document is dedicated to explain how to run the python script for this tutorial. 
 
 -------------------
 Python Environment
@@ -30,14 +26,7 @@ As an example the code can be executed as follows:
 
 .. code:: shell
     
-    python linear_regression.py --num_epochs=50
-
-The ``--num_epochs`` flag is to provide the number of epochs that will be used for training. The flag of ``--log_dir`` is not required becasue its default value is ``50`` and is provided in the source code as follows:
-
-.. code:: python
-    
-    tf.app.flags.DEFINE_integer(
-    'num_epochs', 50, 'The number of epochs for training the model. Default=50')
+    python linear_svm.py
 
 ----------------------------
 How to run the code in IDEs?
