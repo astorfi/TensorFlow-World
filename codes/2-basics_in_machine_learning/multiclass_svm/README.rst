@@ -1,8 +1,8 @@
-===========
-Linear SVM
-===========
+=======================
+Multi-Class Kernel SVM
+=======================
 
-This document is dedicated to explain how to run the python script for this tutorial. For this tutorial, we will create a linear SVM for separation of the data. The data that is used for this code is linearly separable.
+This document is dedicated to explain how to run the python script for this tutorial. For this tutorial, we will create a Kernel SVM for separation of the data. The data that is used for this code is MNIST dataset.
 
 -------------------
 Python Environment
@@ -26,7 +26,7 @@ As an example the code can be executed as follows:
 
 .. code:: shell
     
-    python linear_svm.py
+    python multiclass_SVM.py
 
 ----------------------------
 How to run the code in IDEs?
