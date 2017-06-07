@@ -2,7 +2,10 @@
 Multi-Class Kernel SVM
 =======================
 
-This document is dedicated to explain how to run the python script for this tutorial. For this tutorial, we will create a Kernel SVM for separation of the data. The data that is used for this code is MNIST dataset.
+This document is dedicated to explain how to run the python script for this tutorial. For this tutorial, we will create a Kernel SVM for separation of the data. The data that is used for this code is MNIST dataset. This document is inspired on a the `Implementing Multiclass SVMs <Multiclasssvm_>`_ open source code. However, in ours we extend it to MNIST dataset and modify its method. 
+
+.. _Multiclasssvm: https://github.com/nfmcclure/tensorflow_cookbook/tree/master/04_Support_Vector_Machines/06_Implementing_Multiclass_SVMs
+
 
 -------------------
 Python Environment
