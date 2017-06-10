@@ -155,7 +155,7 @@ with graph.as_default():
     ##################################################
     ########### Model + Loss + Accuracy ##############
     ##################################################
-
+    # A simple fully connected with two class and a softmax is equivalent to Logistic Regression.
     logits = tf.contrib.layers.fully_connected(inputs=image_place, num_outputs = FLAGS.num_classes, scope='fc')
 
     # Define loss
