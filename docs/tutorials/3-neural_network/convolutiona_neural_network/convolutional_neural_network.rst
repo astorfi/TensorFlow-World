@@ -185,7 +185,7 @@ default been set to **'SAME'** by the arg\_scope operation. Now it's the
 time to explain the architecture itself by describing of how to create
 cnvolutional and pooling layers.
 
-ReLU has been used as the non-==============================================ar activation function for all the
+ReLU has been used as the non-linear activation function for all the
 layers except the last layer(embedding layer). The famous xavier
 initialization has not been used for initialization of the network and
 instead the Variance-Scaling-Initializer has been used which provided
