@@ -1,18 +1,8 @@
-==============================
-Convolutional Neural Network
-==============================
+=========================
+Multi Layer Perceptron
+=========================
 
-This is the code repository for the blog post `Train a Convolutional Neural Network as a Classifier`__. Please refer to this `wiki page`__ for more details.
-
-.. _cnn_classifier_post: http://machinelearninguru.com/deep_learning/tensorflow/neural_networks/cnn_classifier/cnn_classifier.html
-__ cnn_classifier_post_
-
-.. _cnn_classifier_wiki: https://github.com/astorfi/TensorFlow-World/wiki/Convolutional-Neural-Networks
-__ cnn_classifier_wiki_
-
-
-
-
+This code is developed for trainin a ``Multi Layer Perceptron`` architecture in which the input will be feed-forwarded to the network that contains some hidden layers.
 
 
 --------
@@ -32,7 +22,7 @@ The bash script is as below:
 
 .. code-block:: bash
 
-   python train_classifier.py \
+   python train_mlp.py \
      --batch_size=512 \
      --max_num_checkpoint=10 \
      --num_classes=10 \
@@ -51,10 +41,10 @@ In order to realize that what are the parameters as input running the following 
 
 .. code-block:: bash
 
-   python train_classifier.py --help
+   python train_mlp.py --help
 
 
-In which `train_classifier.py` is the main file for running the training. The result of the above command will be as below:
+In which `train_mlp.py` is the main file for running the training. The result of the above command will be as below:
 
 .. code-block:: bash
 
