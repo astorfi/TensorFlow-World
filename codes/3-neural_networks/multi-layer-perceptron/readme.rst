@@ -4,6 +4,10 @@ Multi Layer Perceptron
 
 This code is developed for trainin a ``Multi Layer Perceptron`` architecture in which the input will be feed-forwarded to the network that contains some hidden layers.
 
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/3-neural_network/multi-layer-perceptron/neural-network.png
+   :scale: 50 %
+   :align: center
+   
 
 --------
 Training
