@@ -92,11 +92,15 @@ The tutorials in this section are related to neural network architectures.
 .. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/convolutional-neural-network
 .. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/3-neural_network/convolutiona_neural_network/convolutional_neural_network.rst
 
+.. _Multi Layer Perceptron: https://github.com/astorfi/TensorFlow-World/blob/master/codes/3-neural_networks/multi-layer-perceptron/readme.rst
+
 
 +---+---------------------------------------------+----------------------------------------+ 
 | # |          Source Code                        |                                        | 
 +===+=============================================+========================================+ 
 | 1 |    `Convolutional Neural Networks`_         |  `Documentation <Documentationcnn_>`_  | 
++---+---------------------------------------------+----------------------------------------+ 
+| 1 |    `Multi Layer Perceptron`_                |                                        | 
 +---+---------------------------------------------+----------------------------------------+ 
 
 
