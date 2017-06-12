@@ -100,7 +100,7 @@ Process Dataset
 
 At first we need to extract "0" and "1" digits from MNIST dataset:
 
-::
+.. code::python
 
     from tensorflow.examples.tutorials.mnist import input_data
     mnist = input_data.read_data_sets("MNIST_data/", reshape=True, one_hot=False)
@@ -151,8 +151,7 @@ features through a fully-connected layer in which the last layer only
 has two classes. The fully-connected architecture can be defined as
 below:
 
-::
-
+.. code::python
     ###############################################
         ########### Defining place holders ############
         ###############################################
@@ -173,8 +172,7 @@ post <http://www.machinelearninguru.com/deep_learning/tensorflow/neural_networks
 for further details. The desired loss function can easily be implemented
 using TensorFlow using the following script:
 
-::
-
+.. code::python
     # Define loss
         with tf.name_scope('loss'):
             loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_one_hot))
