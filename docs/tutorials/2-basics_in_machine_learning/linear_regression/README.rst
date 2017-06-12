@@ -51,7 +51,7 @@ dataset:
 
 .. code:: python
 
-     
+
     # Data file provided by the Stanford course CS 20SI: TensorFlow for Deep Learning Research.
     # https://github.com/chiphuyen/tf-stanford-tutorials
     DATA_FILE = "data/fire_theft.xls"
@@ -73,7 +73,7 @@ dataset:
 Then we continue by defining and initializing the necessary variables:
 
 .. code:: python
- 
+
     # creating the weight and bias.
     # The defined variables will be initialized to zero.
     W = tf.Variable(0.0, name="weights")
@@ -83,7 +83,7 @@ After that, we should define the necessary functions. Different tabs
 demonstrate the defined functions:
 
 .. code:: python
-     
+
     def inputs():
         """
         Defining the place_holders.
@@ -95,7 +95,7 @@ demonstrate the defined functions:
         return X,Y
 
 .. code:: python
-     
+
     def inference():
         """
         Forward passing the X.
@@ -105,7 +105,7 @@ demonstrate the defined functions:
         return X * W + b
 
 .. code:: python
-     
+
     def loss(X, Y):
         """
         compute the loss by comparing the predicted value to the actual label.
@@ -119,7 +119,7 @@ demonstrate the defined functions:
         return tf.squared_difference(Y, Y_predicted)
 
 .. code:: python
-     
+
     # The training function.
     def train(loss):
         learning_rate = 0.0001
@@ -129,7 +129,7 @@ Next, we are going to loop through different epochs of data and perform
 the optimization process:
 
 .. code:: python
-     
+
     with tf.Session() as sess:
 
         # Initialize the variables[w and b].
@@ -164,7 +164,7 @@ For evaluation, the prediction line and the original data will be
 demonstrated to show how the model fits the data:
 
 .. code:: python
-     
+
     ###############################
     #### Evaluate and plot ########
     ###############################
@@ -184,7 +184,7 @@ The result is depicted in the following figure:
 .. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/2-basics_in_machine_learning/linear_regression/updating_model.gif
    :scale: 50 %
    :align: center
-   
+
 **Figure 1:** The original data alongside with the estimated linear
 model.
 
@@ -201,4 +201,3 @@ TensorFlow. The line which was found after training, is not guaranteed
 to be the best one. Different parameters affect the convergence
 accuracy. The linear model is found using stochastic optimization and
 its simplicity makes our world easier.
-
