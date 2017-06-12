@@ -74,7 +74,7 @@ We are going to present concepts of basic machine learning models and methods an
 +===+=============================================+========================================+ 
 | 1 |    `Linear Regression`_                     |  `Documentation <Documentationlr_>`_   | 
 +---+---------------------------------------------+----------------------------------------+ 
-| 2 |    `Logistic Regression`_                   | `Documentation <LogisticRegDOC_>`_    | 
+| 2 |    `Logistic Regression`_                   |  `Documentation <LogisticRegDOC_>`_    | 
 +---+---------------------------------------------+----------------------------------------+ 
 | 3 |    `Linear SVM`_                            |                                        | 
 +---+---------------------------------------------+----------------------------------------+ 
