@@ -21,8 +21,6 @@ The tutorials in this repository are partitioned into relevent categories.
 +===+====================+===================================================+==============================================+ 
 | 1 | Start-up           |  `Welcome <welcomesourcecode_>`_                  |  `Documentation <Documentationcnnwelcome_>`_ | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+
-|                                                       Basics                                                              | 
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
 | 2 | *TensoFLow Basics* |  `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_  | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+
 | 3 | *TensoFLow Basics* | `TensorFlow Variables <variablssourcecode_>`_     |  `Documentation <Documentationvariabls_>`_   | 
