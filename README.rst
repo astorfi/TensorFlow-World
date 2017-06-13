@@ -16,6 +16,28 @@ TensorFlow Tutorials
 ====================
 The tutorials in this repository are partitioned into relevent categories.
 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| # |          Source Code                                |                                                 | 
++===+=====================================================+=================================================+ 
+| 1 |    `Welcome <welcomesourcecode_>`_                  |  `Documentation <Documentationcnnwelcome_>`_    | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| 1 |    `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_     | 
++---+-----------------------------------------------------+-------------------------------------------------+
+| 2 |    `TensorFlow Variables <variablssourcecode_>`_    |  `Documentation <Documentationvariabls_>`_      | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| 1 |    `Linear Regression`_                             |  `Documentation <Documentationlr_>`_            | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| 2 |    `Logistic Regression`_                           |  `Documentation <LogisticRegDOC_>`_             | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| 3 |    `Linear SVM`_                                    |                                                 | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| 4 |    `MultiClass Kernel SVM`_                         |                                                 | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| 1 |    `Multi Layer Perceptron`_                        |                                                 | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+| 2 |    `Convolutional Neural Networks`_                 |        `Documentation <Documentationcnn_>`_     | 
++---+-----------------------------------------------------+-------------------------------------------------+ 
+
 
 ~~~~~~~~~~~~
 **Welcome**
@@ -25,6 +47,7 @@ The tutorial in this section is just a simple entrance to TensorFlow wolrd.
 
 .. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/0-welcome
 .. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/0-welcome/welcome.rst
+
 
 
 +---+---------------------------------------------+-------------------------------------------------+ 
