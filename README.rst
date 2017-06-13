@@ -21,21 +21,21 @@ The tutorials in this repository are partitioned into relevent categories.
 +===+====================+===================================================+==============================================+ 
 | 1 | Start-up           |  `Welcome <welcomesourcecode_>`_                  |  `Documentation <Documentationcnnwelcome_>`_ | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+ 
-| 1 | *TensoFLow Basics* |  `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_  | 
+| 2 | *TensoFLow Basics* |  `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_  | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 2 | *TensoFLow Basics* | `TensorFlow Variables <variablssourcecode_>`_     |  `Documentation <Documentationvariabls_>`_   | 
+| 3 | *TensoFLow Basics* | `TensorFlow Variables <variablssourcecode_>`_     |  `Documentation <Documentationvariabls_>`_   | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+ 
-| 1 | *Machine Learning* |`Linear Regression`_                               |  `Documentation <Documentationlr_>`_         | 
+| 4 | *Machine Learning* |`Linear Regression`_                               |  `Documentation <Documentationlr_>`_         | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+ 
-| 2 | *Machine Learning* | `Logistic Regression`_                            |  `Documentation <LogisticRegDOC_>`_          | 
+| 5 | *Machine Learning* | `Logistic Regression`_                            |  `Documentation <LogisticRegDOC_>`_          | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+ 
-| 3 | *Machine Learning* | `Linear SVM`_                                     |                                              | 
+| 6 | *Machine Learning* | `Linear SVM`_                                     |                                              | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+ 
-| 4 | *Machine Learning* |`MultiClass Kernel SVM`_                           |                                              | 
+| 7 | *Machine Learning* |`MultiClass Kernel SVM`_                           |                                              | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+ 
-| 1 | *Neural Networks*  |`Multi Layer Perceptron`_                          |                                              | 
+| 8 | *Neural Networks*  |`Multi Layer Perceptron`_                          |                                              | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+ 
-| 2 | *Neural Networks*  | `Convolutional Neural Networks`_                  |       `Documentation <Documentationcnn_>`_   | 
+| 9 | *Neural Networks*  | `Convolutional Neural Networks`_                  |       `Documentation <Documentationcnn_>`_   | 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+ 
 
 
