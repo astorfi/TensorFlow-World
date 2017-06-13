@@ -5,6 +5,10 @@ TensorFLow World
 
 .. image:: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
     :target: https://github.com/astorfi/TensorFlow-World/issues
+ 
+.. image:: https://hitt.herokuapp.com/{astorfi||org}/{TensorFlow-World}.svg
+    :target: https://github.com/{astorfi||org}/{TensorFlow-World}
+    
 
 This repository is aimed to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository. Each tutorial has a ``source code`` and its ``documetation``.
 
