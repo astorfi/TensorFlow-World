@@ -12,12 +12,12 @@ import sys
 ######### Necessary Flags ############
 ######################################
 tf.app.flags.DEFINE_string(
-    'test_dir', os.path.dirname(os.path.abspath(__file__)) + '/test_logs',
+    'evaluation_path', os.path.dirname(os.path.abspath(__file__)) + '/test_log',
     'Directory where event logs are written to.')
 
 tf.app.flags.DEFINE_string(
-    'checkpoint_dir',
-    os.path.dirname(os.path.abspath(__file__)) + '/checkpoints',
+    'checkpoints_directory',
+    os.path.dirname(os.path.abspath(__file__)) + '/checkpoint_path',
     'Directory where checkpoints are written to.')
 
 tf.app.flags.DEFINE_integer('num_classes', 10,
@@ -44,8 +44,8 @@ FLAGS = tf.app.flags.FLAGS
 ################################################
 ################# handling errors!##############
 ################################################
-if not os.path.isabs(FLAGS.checkpoint_dir):
-    raise ValueError('You must assign absolute path for --checkpoint_dir')
+if not os.path.isabs(FLAGS.checkpoints_directory):
+    raise ValueError('You must assign absolute path for --checkpoints_directory')
 
 ##########################################
 ####### Load and Organize Data ###########
@@ -110,15 +110,15 @@ with graph.as_default():
 
     # Define loss
     with tf.name_scope('loss'):
-        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_place))
+        loss_test = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_place))
 
     # Accuracy
-    with tf.name_scope('accuracy'):
+    with tf.name_scope('accuracy_test'):
         # Evaluate the model
-        correct_pred = tf.equal(tf.argmax(logits, 1), tf.argmax(label_place, 1))
+        correct_test_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(label_place, 1))
 
         # Accuracy calculation
-        accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+        accuracy_test = tf.reduce_mean(tf.cast(correct_test_prediction, tf.float32))
 
     ###############################################
     ############ Define Sammaries #################
@@ -140,8 +140,8 @@ with graph.as_default():
                           tf.nn.zero_fraction(x), collections=['test'])
 
     # Summaries for loss and accuracy
-    tf.summary.scalar("loss", loss, collections=['test'])
-    tf.summary.scalar("accuracy", accuracy, collections=['test'])
+    tf.summary.scalar("loss", loss_test, collections=['test'])
+    tf.summary.scalar("accuracy_test", accuracy_test, collections=['test'])
     tf.summary.scalar("global_step", global_step, collections=['test'])
 
     # Merge all summaries together.
@@ -151,9 +151,9 @@ with graph.as_default():
     ############ # Defining the tensors list ###############
     ########################################################
 
-    tensors_key = ['loss', 'accuracy', 'global_step', 'image_place', 'label_place',
+    tensors_key = ['loss_test', 'accuracy_test', 'global_step', 'image_place', 'label_place',
                    'summary_test_op']
-    tensors_values = [loss, accuracy, global_step, image_place, label_place, summary_test_op]
+    tensors_values = [loss_test, accuracy_test, global_step, image_place, label_place, summary_test_op]
     tensors = dict(zip(tensors_key, tensors_values))
 
     ############################################
@@ -176,7 +176,7 @@ with graph.as_default():
         ########## Defining the summary writers for test ###########
         ###################################################################
 
-        test_summary_dir = os.path.join(FLAGS.test_dir, "summaries", "test")
+        test_summary_dir = os.path.join(FLAGS.evaluation_path, "summaries", "test")
         test_summary_writer = tf.summary.FileWriter(test_summary_dir)
         test_summary_writer.add_graph(sess.graph)
 
@@ -184,13 +184,14 @@ with graph.as_default():
         checkpoint_prefix = 'model'
 
         # Restoring the saved weights.
-        saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        saver.restore(sess, os.path.join(FLAGS.checkpoints_directory, checkpoint_prefix))
         print("Model restored...")
 
         ###################################################################
         ########## Run the training and loop over the batches #############
         ###################################################################
-        total_batch_test = int(data.test.images.shape[0] / FLAGS.batch_size)
+        num_test_samples = data.test.images.shape[0]
+        total_batch_test = int(num_test_samples / FLAGS.batch_size)
 
         # go through the batches
         test_accuracy = 0
