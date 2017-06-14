@@ -17,7 +17,7 @@ tf.app.flags.DEFINE_string(
 
 tf.app.flags.DEFINE_string(
     'checkpoints_directory',
-    os.path.dirname(os.path.abspath(__file__)) + '/checkpoint_path',
+    os.path.dirname(os.path.abspath(__file__)) + '/checkpoints',
     'Directory where checkpoints are written to.')
 
 tf.app.flags.DEFINE_integer('num_classes', 10,
@@ -95,27 +95,27 @@ with graph.as_default():
     ###############################################
     image_place = tf.placeholder(tf.float32, shape=([None, height, width, num_channels]), name='image')
     label_place = tf.placeholder(tf.float32, shape=([None, FLAGS.num_classes]), name='gt')
-    dropout_param = tf.placeholder(tf.float32)
+    dropout_parameter = tf.placeholder(tf.float32)
 
     ##################################################
     ########### Model + loss + accuracy ##############
     ##################################################
 
     # MODEL
-    arg_scope = net.net_arg_scope(weight_decay=0.0005, is_training=FLAGS.is_training)
-    with tf.contrib.framework.arg_scope(arg_scope):
-        logits, end_points = net.net_architecture(image_place, num_classes=FLAGS.num_classes,
-                                                  dropout_keep_prob=dropout_param,
+    joint_arg_scope = net.net_arg_scope(weight_decay=0.0005, is_training=FLAGS.is_training)
+    with tf.contrib.framework.arg_scope(joint_arg_scope):
+        logits_features, end_points = net.net_architecture(image_place, num_classes=FLAGS.num_classes,
+                                                  dropout_keep_prob=dropout_parameter,
                                                   is_training=FLAGS.is_training)
 
     # Define loss
     with tf.name_scope('loss'):
-        loss_test = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_place))
+        loss_test = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits_features, labels=label_place))
 
     # Accuracy
     with tf.name_scope('accuracy_test'):
         # Evaluate the model
-        correct_test_prediction = tf.equal(tf.argmax(logits, 1), tf.argmax(label_place, 1))
+        correct_test_prediction = tf.equal(tf.argmax(logits_features, 1), tf.argmax(label_place, 1))
 
         # Accuracy calculation
         accuracy_test = tf.reduce_mean(tf.cast(correct_test_prediction, tf.float32))
@@ -215,7 +215,7 @@ with graph.as_default():
             # When the tensor tensors['global_step'] is evaluated, it will be incremented by one.
 
             test_batch_accuracy, batch_loss, test_summaries, test_step = sess.run(
-                [tensors['accuracy'], tensors['loss'], tensors['summary_test_op'],
+                [tensors['accuracy_test'], tensors['loss_test'], tensors['summary_test_op'],
                  tensors['global_step']],
                 feed_dict={tensors['image_place']: test_batch_data,
                            tensors['label_place']: test_batch_label})
