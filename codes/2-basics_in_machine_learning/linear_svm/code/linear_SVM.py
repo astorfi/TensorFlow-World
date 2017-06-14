@@ -15,9 +15,6 @@ tf.app.flags.DEFINE_integer('batch_size', 32,
 tf.app.flags.DEFINE_integer('num_steps', 3000,
                             'Number of steps for training.')
 
-tf.app.flags.DEFINE_integer('log_step', 100,
-                            'Number of steps per each display.')
-
 tf.app.flags.DEFINE_boolean('is_evaluation', True,
                             'Whether or not the model should be evaluated.')
 
@@ -128,8 +125,8 @@ for step_idx in range(FLAGS.num_steps):
     test_acc_step = sess.run(accuracy, feed_dict={x_data: x_test, y_target: np.transpose([y_test])})
 
     # Displaying the desired values.
-    if (step_idx+1) % FLAGS.log_step == 0:
-        print('Step #%d, Loss= %f, training accuracy= %f, testing accuracy= %f ' % (step_idx+1, loss_step, train_acc_step, test_acc_step))
+    if step_idx % 100 ==0:
+        print('Step #%d, training accuracy= %% %.2f, testing accuracy= %% %.2f ' % (step_idx, float(100 * train_acc_step), float(100 * test_acc_step)))
 
 if FLAGS.is_evaluation:
     [[w1], [w2]] = sess.run(W)
@@ -140,10 +137,18 @@ if FLAGS.is_evaluation:
     line = []
     line = [-w2/w1*i+b/w1 for i in x_line]
 
-    positive_X = [data[1] for index,data in enumerate(X) if y[index]==1]
-    positive_y = [data[0] for index,data in enumerate(X) if y[index]==1]
-    negative_X = [data[1] for index,data in enumerate(X) if y[index]==-1]
-    negative_y = [data[0] for index,data in enumerate(X) if y[index]==-1]
+    # coor_pos_list = [positive_X, positive_y]
+    # coor_neg_list = [negative_X, negative_y]
+
+    for index, data in enumerate(X):
+        if y[index] == 1:
+            positive_X = data[1]
+            positive_y = data[0]
+        elif y[index] == 0:
+            negative_X = data[1]
+            negative_y = data[0]
+        else:
+            sys.exit("Invalid label!")
 
     # Plotting the SVM decision boundary.
     plt.plot(positive_X, positive_y, '+', label='Positive')
