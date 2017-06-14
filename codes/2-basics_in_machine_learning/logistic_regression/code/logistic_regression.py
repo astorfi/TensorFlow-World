@@ -90,24 +90,25 @@ data['train/label'] = mnist.train.labels
 data['test/image'] = mnist.test.images
 data['test/label'] = mnist.test.labels
 
+def extract_samples_Fn(data):
+    index_list = []
+    for sample_index in range(data.shape[0]):
+        label = data[sample_index]
+        if label == 1 or label == 0:
+            index_list.append(sample_index)
+    return index_list
+
+
 # Get only the samples with zero and one label for training.
-index_list_train = []
-for sample_index in range(data['train/label'].shape[0]):
-    label = data['train/label'][sample_index]
-    if label == 1 or label == 0:
-        index_list_train.append(sample_index)
+index_list_train = extract_samples_Fn(data['train/label'])
+
+
+# Get only the samples with zero and one label for test set.
+index_list_test = extract_samples_Fn(data['test/label'])
 
 # Reform the train data structure.
 data['train/image'] = mnist.train.images[index_list_train]
 data['train/label'] = mnist.train.labels[index_list_train]
-
-
-# Get only the samples with zero and one label for test set.
-index_list_test = []
-for sample_index in range(data['test/label'].shape[0]):
-    label = data['test/label'][sample_index]
-    if label == 1 or label == 0:
-        index_list_test.append(sample_index)
 
 # Reform the test data structure.
 data['test/image'] = mnist.test.images[index_list_test]
@@ -162,12 +163,11 @@ with graph.as_default():
         loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_one_hot))
 
     # Accuracy
-    with tf.name_scope('accuracy'):
-        # Evaluate the model
-        correct_pred = tf.equal(tf.argmax(logits, 1), tf.argmax(label_one_hot, 1))
+    # Evaluate the model
+    prediction_correct = tf.equal(tf.argmax(logits, 1), tf.argmax(label_one_hot, 1))
 
-        # Accuracy calculation
-        accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+    # Accuracy calculation
+    accuracy = tf.reduce_mean(tf.cast(prediction_correct, tf.float32))
 
     #############################################
     ########### training operation ##############
