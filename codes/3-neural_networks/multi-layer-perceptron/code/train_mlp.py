@@ -4,18 +4,16 @@ import tensorflow as tf
 import numpy as np
 import os
 
-
-
 ######################################
 ######### Necessary Flags ############
 ######################################
 
 tf.app.flags.DEFINE_string(
-    'train_dir', os.path.dirname(os.path.abspath(__file__)) + '/train_logs',
+    'train_root', os.path.dirname(os.path.abspath(__file__)) + '/train_logs',
     'Directory where event logs are written to.')
 
 tf.app.flags.DEFINE_string(
-    'checkpoint_dir',
+    'checkpoint_root',
     os.path.dirname(os.path.abspath(__file__)) + '/checkpoints',
     'Directory where checkpoints are written to.')
 
@@ -63,15 +61,14 @@ tf.app.flags.DEFINE_boolean('log_device_placement', False,
 # Store all elemnts in FLAG structure!
 FLAGS = tf.app.flags.FLAGS
 
-
 ################################################
 ################# handling errors!##############
 ################################################
-if not os.path.isabs(FLAGS.train_dir):
-    raise ValueError('You must assign absolute path for --train_dir')
+if not os.path.isabs(FLAGS.train_root):
+    raise ValueError('You must assign absolute path for --train_root')
 
-if not os.path.isabs(FLAGS.checkpoint_dir):
-    raise ValueError('You must assign absolute path for --checkpoint_dir')
+if not os.path.isabs(FLAGS.checkpoint_root):
+    raise ValueError('You must assign absolute path for --checkpoint_root')
 
 ##########################################
 ####### Load and Organize Data ###########
@@ -90,12 +87,16 @@ In this part the input must be prepared.
 # It checks and download MNIST if it's not already downloaded then extract it.
 # The 'reshape' is True by default to extract feature vectors but we set it to false to we get the original images.
 mnist = input_data.read_data_sets("MNIST_data/", reshape=True, one_hot=True)
+train_data = mnist.train.images
+train_label = mnist.train.labels
+test_data = mnist.test.images
+test_label = mnist.test.labels
 
 # # The 'input.provide_data' is provided to organize any custom dataset which has specific characteristics.
 # data = input.provide_data(mnist)
 
 # Dimentionality of train
-dimensionality_train = mnist.train.images.shape
+dimensionality_train = train_data.shape
 
 # Dimensions
 num_train_samples = dimensionality_train[0]
@@ -146,12 +147,13 @@ with graph.as_default():
     # SOFTMAX
     logits_pre_softmax = tf.contrib.layers.fully_connected(inputs=net, num_outputs=FLAGS.num_classes, scope='fc-3')
 
-
     # Define loss
-    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits_pre_softmax, labels=label_place))
+    softmax_loss = tf.reduce_mean(
+        tf.nn.softmax_cross_entropy_with_logits(logits=logits_pre_softmax, labels=label_place))
 
     # Accuracy
-    accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(logits_pre_softmax, 1), tf.argmax(label_place, 1)), tf.float32))
+    accuracy = tf.reduce_mean(
+        tf.cast(tf.equal(tf.argmax(logits_pre_softmax, 1), tf.argmax(label_place, 1)), tf.float32))
 
     #############################################
     ########### training operation ##############
@@ -166,9 +168,9 @@ with graph.as_default():
     # update the 'global_step' and increment it by one!
 
     # gradient update.
-    with tf.name_scope('train'):
-        grads_and_vars = optimizer.compute_gradients(loss)
-        train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
+    with tf.name_scope('train_scope'):
+        grads = optimizer.compute_gradients(softmax_loss)
+        train_op = optimizer.apply_gradients(grads, global_step=global_step)
 
     ###############################################
     ############ Define Sammaries #################
@@ -221,24 +223,24 @@ with graph.as_default():
         ########## Defining the summary writers for train/test ###########
         ###################################################################
 
-        train_summary_dir = os.path.join(FLAGS.train_dir, "summaries", "train")
+        train_summary_dir = os.path.join(FLAGS.train_root, "summaries", "train")
         train_summary_writer = tf.summary.FileWriter(train_summary_dir)
         train_summary_writer.add_graph(sess.graph)
 
-        test_summary_dir = os.path.join(FLAGS.train_dir, "summaries", "test")
+        test_summary_dir = os.path.join(FLAGS.train_root, "summaries", "test")
         test_summary_writer = tf.summary.FileWriter(test_summary_dir)
         test_summary_writer.add_graph(sess.graph)
 
         # If fie-tuning flag in 'True' the model will be restored.
         if FLAGS.fine_tuning:
-            saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+            saver.restore(sess, os.path.join(FLAGS.checkpoint_root, checkpoint_prefix))
             print("Model restored for fine-tuning...")
 
         ###################################################################
         ########## Run the training and loop over the batches #############
         ###################################################################
         for epoch in range(FLAGS.num_epochs):
-            total_batch_training = int(mnist.train.images.shape[0] / FLAGS.batch_size)
+            total_batch_training = int(train_data.shape[0] / FLAGS.batch_size)
 
             # go through the batches
             for batch_num in range(total_batch_training):
@@ -250,8 +252,8 @@ with graph.as_default():
                 end_idx = (batch_num + 1) * FLAGS.batch_size
 
                 # Fit training using batch data
-                train_batch_data, train_batch_label = mnist.train.images[start_idx:end_idx], mnist.train.labels[
-                                                                                                        start_idx:end_idx]
+                train_batch_data, train_batch_label = train_data[start_idx:end_idx], train_label[
+                                                                                     start_idx:end_idx]
 
                 ########################################
                 ########## Run the session #############
@@ -281,9 +283,8 @@ with graph.as_default():
                 ########## Plot the progressive bar #############
                 #################################################
 
-            print("Epoch " + str(epoch + 1) + ", Training Loss= " + \
-                  "{:.5f}".format(batch_loss))
-
+            print("Epoch #" + str(epoch + 1) + ", Train Loss=" + \
+                  "{:.3f}".format(batch_loss))
 
             #####################################################
             ########## Evaluation on the test data #############
@@ -295,11 +296,11 @@ with graph.as_default():
                 #          recommended as in the training phase.
                 test_accuracy_epoch, test_summaries = sess.run(
                     [accuracy, summary_test_op],
-                    feed_dict={image_place: mnist.test.images,
-                               label_place: mnist.test.labels,
+                    feed_dict={image_place: test_data,
+                               label_place: test_label,
                                dropout_param: 1.})
-                print("Epoch " + str(epoch + 1) + ", Testing Accuracy= " + \
-                      "{:.5f}".format(test_accuracy_epoch))
+                print("Test Accuracy= " + \
+                      "{:.4f}".format(test_accuracy_epoch))
 
                 ###########################################################
                 ########## Write the summaries for test phase #############
@@ -318,13 +319,12 @@ with graph.as_default():
         # # The model will be saved when the training is done.
 
         # Create the path for saving the checkpoints.
-        if not os.path.exists(FLAGS.checkpoint_dir):
-            os.makedirs(FLAGS.checkpoint_dir)
+        if not os.path.exists(FLAGS.checkpoint_root):
+            os.makedirs(FLAGS.checkpoint_root)
 
         # save the model
-        save_path = saver.save(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        save_path = saver.save(sess, os.path.join(FLAGS.checkpoint_root, checkpoint_prefix))
         print("Model saved in file: %s" % save_path)
-
 
         ############################################################################
         ########## Run the session for pur evaluation on the test data #############
@@ -334,13 +334,13 @@ with graph.as_default():
         checkpoint_prefix = 'model'
 
         # Restoring the saved weights.
-        saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        saver.restore(sess, os.path.join(FLAGS.checkpoint_root, checkpoint_prefix))
         print("Model restored...")
 
         # Evaluation of the model
         total_test_accuracy = sess.run(accuracy, feed_dict={
-            image_place: mnist.test.images,
-            label_place: mnist.test.labels,
+            image_place: test_data,
+            label_place: test_label,
             dropout_param: 1.})
 
         print("Final Test Accuracy is %.2f" % total_test_accuracy)
