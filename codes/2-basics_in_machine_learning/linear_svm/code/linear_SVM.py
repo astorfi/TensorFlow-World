@@ -125,7 +125,7 @@ for step_idx in range(FLAGS.num_steps):
     test_acc_step = sess.run(accuracy, feed_dict={x_data: x_test, y_target: np.transpose([y_test])})
 
     # Displaying the desired values.
-    if step_idx % 100 ==0:
+    if step_idx % 100 == 0:
         print('Step #%d, training accuracy= %% %.2f, testing accuracy= %% %.2f ' % (step_idx, float(100 * train_acc_step), float(100 * test_acc_step)))
 
 if FLAGS.is_evaluation:

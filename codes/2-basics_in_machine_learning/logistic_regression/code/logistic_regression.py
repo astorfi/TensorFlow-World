@@ -12,11 +12,11 @@ from tensorflow.examples.tutorials.mnist import input_data
 ######################################
 
 tf.app.flags.DEFINE_string(
-    'train_dir', os.path.dirname(os.path.abspath(__file__)) + '/train_logs',
+    'train_path', os.path.dirname(os.path.abspath(__file__)) + '/train_logs',
     'Directory where event logs are written to.')
 
 tf.app.flags.DEFINE_string(
-    'checkpoint_dir',
+    'checkpoint_path',
     os.path.dirname(os.path.abspath(__file__)) + '/checkpoints',
     'Directory where checkpoints are written to.')
 
@@ -68,11 +68,11 @@ FLAGS = tf.app.flags.FLAGS
 ################################################
 ################# handling errors!##############
 ################################################
-if not os.path.isabs(FLAGS.train_dir):
-    raise ValueError('You must assign absolute path for --train_dir')
+if not os.path.isabs(FLAGS.train_path):
+    raise ValueError('You must assign absolute path for --train_path')
 
-if not os.path.isabs(FLAGS.checkpoint_dir):
-    raise ValueError('You must assign absolute path for --checkpoint_dir')
+if not os.path.isabs(FLAGS.checkpoint_path):
+    raise ValueError('You must assign absolute path for --checkpoint_path')
 
 # Download and get MNIST dataset(available in tensorflow.contrib.learn.python.learn.datasets.mnist)
 # It checks and download MNIST if it's not already downloaded then extract it.
@@ -208,18 +208,17 @@ with graph.as_default():
 
         # If fie-tuning flag in 'True' the model will be restored.
         if FLAGS.fine_tuning:
-            saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+            saver.restore(sess, os.path.join(FLAGS.checkpoint_path, checkpoint_prefix))
             print("Model restored for fine-tuning...")
 
         ###################################################################
         ########## Run the training and loop over the batches #############
         ###################################################################
-        total_batch_test = int(mnist.test.images.shape[0] / FLAGS.batch_size)
 
         # go through the batches
         test_accuracy = 0
         for epoch in range(FLAGS.num_epochs):
-            total_batch_training = int(mnist.train.images.shape[0] / FLAGS.batch_size)
+            total_batch_training = int(data['train/image'].shape[0] / FLAGS.batch_size)
 
             # go through the batches
             for batch_num in range(total_batch_training):
@@ -231,7 +230,7 @@ with graph.as_default():
                 end_idx = (batch_num + 1) * FLAGS.batch_size
 
                 # Fit training using batch data
-                train_batch_data, train_batch_label = mnist.train.images[start_idx:end_idx], mnist.train.labels[
+                train_batch_data, train_batch_label = data['train/image'][start_idx:end_idx], data['train/label'][
                                                                                              start_idx:end_idx]
 
                 ########################################
@@ -266,11 +265,11 @@ with graph.as_default():
         # # The model will be saved when the training is done.
 
         # Create the path for saving the checkpoints.
-        if not os.path.exists(FLAGS.checkpoint_dir):
-            os.makedirs(FLAGS.checkpoint_dir)
+        if not os.path.exists(FLAGS.checkpoint_path):
+            os.makedirs(FLAGS.checkpoint_path)
 
         # save the model
-        save_path = saver.save(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        save_path = saver.save(sess, os.path.join(FLAGS.checkpoint_path, checkpoint_prefix))
         print("Model saved in file: %s" % save_path)
 
         ############################################################################
@@ -281,13 +280,13 @@ with graph.as_default():
         checkpoint_prefix = 'model'
 
         # Restoring the saved weights.
-        saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        saver.restore(sess, os.path.join(FLAGS.checkpoint_path, checkpoint_prefix))
         print("Model restored...")
 
         # Evaluation of the model
         test_accuracy = 100 * sess.run(accuracy, feed_dict={
-            image_place: mnist.test.images,
-            label_place: mnist.test.labels,
+            image_place: data['test/image'],
+            label_place: data['test/label'],
             dropout_param: 1.})
 
         print("Final Test Accuracy is %% %.2f" % test_accuracy)
