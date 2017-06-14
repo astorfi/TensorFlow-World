@@ -6,7 +6,6 @@ import urllib
 import pandas as pd
 import os
 from tensorflow.examples.tutorials.mnist import input_data
-import train_evaluation
 
 ######################################
 ######### Necessary Flags ############
@@ -187,44 +186,6 @@ with graph.as_default():
         grads_and_vars = optimizer.compute_gradients(loss)
         train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
 
-    ###############################################
-    ############ Define Sammaries #################
-    ###############################################
-
-    # # Image summaries(draw three random images from data in both training and testing phases)
-    # # The image summaries is only cerated for train summaries and it get three random images from the training set.
-    # arr = np.random.randint(data.train.images.shape[0], size=(3,))
-    # tf.summary.image('images', data.train.images[arr], max_outputs=3,
-    #                  collections=['per_epoch_train'])
-
-    # Histogram and scalar summaries sammaries
-    # sparsity: This summary is the fraction of zero activation for the output of each layer!
-    # activations: This summary is the histogram of activation for the output of each layer!
-    # WARNING: tf.summary.histogram can be very time consuming so it will be calculated per epoch!
-    tf.summary.scalar('sparsity',
-                      tf.nn.zero_fraction(logits), collections=['train', 'test'])
-    tf.summary.histogram('activations', logits, collections=['per_epoch_train'])
-
-    # Summaries for loss and accuracy
-    tf.summary.scalar("loss", loss, collections=['train', 'test'])
-    tf.summary.scalar("accuracy", accuracy, collections=['train', 'test'])
-    tf.summary.scalar("global_step", global_step, collections=['train'])
-    tf.summary.scalar("learning_rate", learning_rate, collections=['train'])
-
-    # Merge all summaries together.
-    summary_train_op = tf.summary.merge_all('train')
-    summary_test_op = tf.summary.merge_all('test')
-    summary_epoch_train_op = tf.summary.merge_all('per_epoch_train')
-
-    ########################################################
-    ############ # Defining the tensors list ###############
-    ########################################################
-
-    tensors_key = ['cost', 'accuracy', 'train_op', 'global_step', 'image_place', 'label_place', 'dropout_param',
-                   'summary_train_op', 'summary_test_op', 'summary_epoch_train_op']
-    tensors = [loss, accuracy, train_op, global_step, image_place, label_place, dropout_param, summary_train_op,
-               summary_test_op, summary_epoch_train_op]
-    tensors_dictionary = dict(zip(tensors_key, tensors))
 
     ############################################
     ############ Run the Session ###############
@@ -235,22 +196,98 @@ with graph.as_default():
     sess = tf.Session(graph=graph, config=session_conf)
 
     with sess.as_default():
-        # Run the saver.
-        # 'max_to_keep' flag determines the maximum number of models that the tensorflow save and keep. default by TensorFlow = 5.
-        saver = tf.train.Saver(max_to_keep=FLAGS.max_num_checkpoint)
+
+        # The saver op.
+        saver = tf.train.Saver()
 
         # Initialize all variables
         sess.run(tf.global_variables_initializer())
 
-        ###################################################
-        ############ Training / Evaluation ###############
-        ###################################################
-        train_evaluation.train(sess=sess, saver=saver, tensors=tensors_dictionary, data=data,
-                               train_dir=FLAGS.train_dir,
-                               finetuning=FLAGS.fine_tuning, online_test=FLAGS.online_test,
-                               num_epochs=FLAGS.num_epochs, checkpoint_dir=FLAGS.checkpoint_dir,
-                               batch_size=FLAGS.batch_size)
+        # The prefix for checkpoint files
+        checkpoint_prefix = 'model'
 
-        # Test in the end of experiment.
-        train_evaluation.evaluation(sess=sess, saver=saver, tensors=tensors_dictionary, data=data,
-                                    checkpoint_dir=FLAGS.checkpoint_dir)
+        # If fie-tuning flag in 'True' the model will be restored.
+        if FLAGS.fine_tuning:
+            saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+            print("Model restored for fine-tuning...")
+
+        ###################################################################
+        ########## Run the training and loop over the batches #############
+        ###################################################################
+        total_batch_test = int(mnist.test.images.shape[0] / FLAGS.batch_size)
+
+        # go through the batches
+        test_accuracy = 0
+        for epoch in range(FLAGS.num_epochs):
+            total_batch_training = int(mnist.train.images.shape[0] / FLAGS.batch_size)
+
+            # go through the batches
+            for batch_num in range(total_batch_training):
+                #################################################
+                ########## Get the training batches #############
+                #################################################
+
+                start_idx = batch_num * FLAGS.batch_size
+                end_idx = (batch_num + 1) * FLAGS.batch_size
+
+                # Fit training using batch data
+                train_batch_data, train_batch_label = mnist.train.images[start_idx:end_idx], mnist.train.labels[
+                                                                                             start_idx:end_idx]
+
+                ########################################
+                ########## Run the session #############
+                ########################################
+
+                # Run optimization op (backprop) and Calculate batch loss and accuracy
+                # When the tensor tensors['global_step'] is evaluated, it will be incremented by one.
+                batch_loss, _, training_step = sess.run(
+                    [loss, train_op,
+                     global_step],
+                    feed_dict={image_place: train_batch_data,
+                               label_place: train_batch_label,
+                               dropout_param: 0.5})
+
+                ########################################
+                ########## Write summaries #############
+                ########################################
+
+
+                #################################################
+                ########## Plot the progressive bar #############
+                #################################################
+
+            print("Epoch " + str(epoch + 1) + ", Training Loss= " + \
+                  "{:.5f}".format(batch_loss))
+
+        ###########################################################
+        ############ Saving the model checkpoint ##################
+        ###########################################################
+
+        # # The model will be saved when the training is done.
+
+        # Create the path for saving the checkpoints.
+        if not os.path.exists(FLAGS.checkpoint_dir):
+            os.makedirs(FLAGS.checkpoint_dir)
+
+        # save the model
+        save_path = saver.save(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        print("Model saved in file: %s" % save_path)
+
+        ############################################################################
+        ########## Run the session for pur evaluation on the test data #############
+        ############################################################################
+
+        # The prefix for checkpoint files
+        checkpoint_prefix = 'model'
+
+        # Restoring the saved weights.
+        saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        print("Model restored...")
+
+        # Evaluation of the model
+        test_accuracy = 100 * sess.run(accuracy, feed_dict={
+            image_place: mnist.test.images,
+            label_place: mnist.test.labels,
+            dropout_param: 1.})
+
+        print("Final Test Accuracy is %% %.2f" % test_accuracy)

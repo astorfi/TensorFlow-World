@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/sina/GITHUB/TensorFlow-World/codes/2-basics_in_machine_learning/logistic_regression/code/checkpoints/model"
+all_model_checkpoint_paths: "/home/sina/GITHUB/TensorFlow-World/codes/2-basics_in_machine_learning/logistic_regression/code/checkpoints/model"
