@@ -5,6 +5,7 @@ from auxiliary import progress_bar
 import os
 import sys
 
+
 def train(**keywords):
     """
     This function run the session whether in training or evaluation mode.
@@ -62,8 +63,9 @@ def train(**keywords):
             end_idx = (batch_num + 1) * keywords['batch_size']
 
             # Fit training using batch data
-            train_batch_data, train_batch_label = keywords['data'].train.images[start_idx:end_idx], keywords['data'].train.labels[
-                                                                                        start_idx:end_idx]
+            train_batch_data, train_batch_label = keywords['data'].train.images[start_idx:end_idx], keywords[
+                                                                                                        'data'].train.labels[
+                                                                                                    start_idx:end_idx]
 
             ########################################
             ########## Run the session #############
@@ -98,10 +100,11 @@ def train(**keywords):
         # ################################################################
         # ############ Summaries per epoch of training ###################
         # ################################################################
-        train_epoch_summaries = keywords['sess'].run(keywords['tensors']['summary_epoch_train_op'],
-                                         feed_dict={keywords['tensors']['image_place']: train_batch_data,
-                                                    keywords['tensors']['label_place']: train_batch_label,
-                                                    keywords['tensors']['dropout_param']: 0.5})
+        summary_epoch_train_op = keywords['tensors']['summary_epoch_train_op']
+        train_epoch_summaries = keywords['sess'].run(summary_epoch_train_op,
+                                                     feed_dict={keywords['tensors']['image_place']: train_batch_data,
+                                                                keywords['tensors']['label_place']: train_batch_label,
+                                                                keywords['tensors']['dropout_param']: 1.0})
 
         # Put the summaries to the train summary writer.
         train_summary_writer.add_summary(train_epoch_summaries, global_step=training_step)
@@ -111,16 +114,16 @@ def train(**keywords):
         #####################################################
 
         if keywords['online_test']:
-
             # WARNING: In this evaluation the whole test data is fed. In case the test data is huge this implementation
             #          may lead to memory error. In presense of large testing samples, batch evaluation on testing is
             #          recommended as in the training phase.
-            test_accuracy_epoch, test_summaries = keywords['sess'].run([keywords['tensors']['accuracy'], keywords['tensors']['summary_test_op']],
-                                                           feed_dict={keywords['tensors']['image_place']: keywords['data'].test.images,
-                                                                      keywords['tensors'][
-                                                                          'label_place']: keywords['data'].test.labels,
-                                                                      keywords['tensors'][
-                                                                          'dropout_param']: 1.})
+            test_accuracy_epoch, test_summaries = keywords['sess'].run(
+                [keywords['tensors']['accuracy'], keywords['tensors']['summary_test_op']],
+                feed_dict={keywords['tensors']['image_place']: keywords['data'].test.images,
+                           keywords['tensors'][
+                               'label_place']: keywords['data'].test.labels,
+                           keywords['tensors'][
+                               'dropout_param']: 1.})
             print("Epoch " + str(epoch + 1) + ", Testing Accuracy= " + \
                   "{:.5f}".format(test_accuracy_epoch))
 
@@ -152,20 +155,33 @@ def train(**keywords):
     ############################################################################
     ########## Run the session for pur evaluation on the test data #############
     ############################################################################
+
+
 def evaluation(**keywords):
+    # The prefix for checkpoint files
+    checkpoint_prefix = 'model'
 
-        # The prefix for checkpoint files
-        checkpoint_prefix = 'model'
+    # Get the input arguments
+    saver = keywords['saver']
+    sess = keywords['sess']
+    checkpoint_dir = keywords['checkpoint_dir']
+    data = keywords['data']
+    accuracy_tensor = keywords['tensors']['accuracy']
+    image_place = keywords['tensors']['image_place']
+    label_place = keywords['tensors']['label_place']
+    dropout_param = keywords['tensors']['dropout_param']
 
-        # Restoring the saved weights.
-        keywords['saver'].restore(keywords['sess'], os.path.join(keywords['checkpoint_dir'], checkpoint_prefix))
-        print("Model restored...")
 
-        # Evaluation of the model
-        test_accuracy = 100 * keywords['sess'].run(keywords['tensors']['accuracy'], feed_dict={keywords['tensors']['image_place']: keywords['data'].test.images,
-                                                                                               keywords['tensors'][
-                                                                           'label_place']: keywords['data'].test.labels,
-                                                                                               keywords['tensors'][
-                                                                           'dropout_param']: 1.})
+    # Restoring the saved weights.
+    saver.restore(sess, os.path.join(checkpoint_dir, checkpoint_prefix))
+    print("Model restored...")
 
-        print("Final Test Accuracy is %% %.2f" % test_accuracy)
+    test_set = data.test.images
+    test_label = data.test.labels
+    # Evaluation of the model
+    test_accuracy = 100 * keywords['sess'].run(accuracy_tensor, feed_dict={
+        image_place: test_set,
+        label_place: test_label,
+        dropout_param: 1.})
+
+    print("Final Test Accuracy is %% %.2f" % test_accuracy)
