@@ -1,6 +1,6 @@
 
 # Run training.
-python train_mlp.py \
+python train_classifier.py \
   --batch_size=512 \
   --max_num_checkpoint=10 \
   --num_classes=10 \

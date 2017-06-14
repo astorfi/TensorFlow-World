@@ -2,10 +2,9 @@ from __future__ import print_function
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
 import numpy as np
-from net_structure import net
-from input_function import input
 import os
-import train_evaluation
+
+
 
 ######################################
 ######### Necessary Flags ############
@@ -29,7 +28,7 @@ tf.app.flags.DEFINE_integer('num_classes', 10,
 tf.app.flags.DEFINE_integer('batch_size', np.power(2, 7),
                             'Number of model clones to deploy.')
 
-tf.app.flags.DEFINE_integer('num_epochs', 50,
+tf.app.flags.DEFINE_integer('num_epochs', 10,
                             'Number of epochs for training.')
 
 ##########################################
@@ -90,13 +89,13 @@ In this part the input must be prepared.
 # Download and get MNIST dataset(available in tensorflow.contrib.learn.python.learn.datasets.mnist)
 # It checks and download MNIST if it's not already downloaded then extract it.
 # The 'reshape' is True by default to extract feature vectors but we set it to false to we get the original images.
-mnist = input_data.read_data_sets("MNIST_data/", reshape=True, one_hot=False)
+mnist = input_data.read_data_sets("MNIST_data/", reshape=True, one_hot=True)
 
-# The 'input.provide_data' is provided to organize any custom dataset which has specific characteristics.
-data = input.provide_data(mnist)
+# # The 'input.provide_data' is provided to organize any custom dataset which has specific characteristics.
+# data = input.provide_data(mnist)
 
 # Dimentionality of train
-dimensionality_train = data.train.images.shape
+dimensionality_train = mnist.train.images.shape
 
 # Dimensions
 num_train_samples = dimensionality_train[0]
@@ -195,11 +194,11 @@ with graph.as_default():
     ############ # Defining the tensors list ###############
     ########################################################
 
-    tensors_key = ['cost', 'accuracy', 'train_op', 'global_step', 'image_place', 'label_place', 'dropout_param',
-                   'summary_train_op', 'summary_test_op']
-    tensors = [loss, accuracy, train_op, global_step, image_place, label_place, dropout_param, summary_train_op,
-               summary_test_op]
-    tensors_dictionary = dict(zip(tensors_key, tensors))
+    # tensors_key = ['cost', 'accuracy', 'train_op', 'global_step', 'image_place', 'label_place', 'dropout_param',
+    #                'summary_train_op', 'summary_test_op']
+    # tensors = [loss, accuracy, train_op, global_step, image_place, label_place, dropout_param, summary_train_op,
+    #            summary_test_op]
+    # tensors_dictionary = dict(zip(tensors_key, tensors))
 
     ############################################
     ############ Run the Session ###############
@@ -220,12 +219,134 @@ with graph.as_default():
         ###################################################
         ############ Training / Evaluation ###############
         ###################################################
-        train_evaluation.train(sess=sess, saver=saver, tensors=tensors_dictionary, data=data,
-                               train_dir=FLAGS.train_dir,
-                               finetuning=FLAGS.fine_tuning, online_test=FLAGS.online_test,
-                               num_epochs=FLAGS.num_epochs, checkpoint_dir=FLAGS.checkpoint_dir,
-                               batch_size=FLAGS.batch_size)
 
-        # Test in the end of experiment.
-        train_evaluation.evaluation(sess=sess, saver=saver, tensors=tensors_dictionary, data=data,
-                                    checkpoint_dir=FLAGS.checkpoint_dir)
+        # The prefix for checkpoint files
+        checkpoint_prefix = 'model'
+
+        ###################################################################
+        ########## Defining the summary writers for train/test ###########
+        ###################################################################
+
+        train_summary_dir = os.path.join(FLAGS.train_dir, "summaries", "train")
+        train_summary_writer = tf.summary.FileWriter(train_summary_dir)
+        train_summary_writer.add_graph(sess.graph)
+
+        test_summary_dir = os.path.join(FLAGS.train_dir, "summaries", "test")
+        test_summary_writer = tf.summary.FileWriter(test_summary_dir)
+        test_summary_writer.add_graph(sess.graph)
+
+        # If fie-tuning flag in 'True' the model will be restored.
+        if FLAGS.fine_tuning:
+            saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+            print("Model restored for fine-tuning...")
+
+        ###################################################################
+        ########## Run the training and loop over the batches #############
+        ###################################################################
+        for epoch in range(FLAGS.num_epochs):
+            total_batch_training = int(mnist.train.images.shape[0] / FLAGS.batch_size)
+
+            # go through the batches
+            for batch_num in range(total_batch_training):
+                #################################################
+                ########## Get the training batches #############
+                #################################################
+
+                start_idx = batch_num * FLAGS.batch_size
+                end_idx = (batch_num + 1) * FLAGS.batch_size
+
+                # Fit training using batch data
+                train_batch_data, train_batch_label = mnist.train.images[start_idx:end_idx], mnist.train.labels[
+                                                                                                        start_idx:end_idx]
+
+                ########################################
+                ########## Run the session #############
+                ########################################
+
+                # Run optimization op (backprop) and Calculate batch loss and accuracy
+                # When the tensor tensors['global_step'] is evaluated, it will be incremented by one.
+                batch_loss, _, train_summaries, training_step = sess.run(
+                    [loss, train_op,
+                     summary_train_op,
+                     global_step],
+                    feed_dict={image_place: train_batch_data,
+                               label_place: train_batch_label,
+                               dropout_param: 0.5})
+
+                ########################################
+                ########## Write summaries #############
+                ########################################
+
+                # Write the summaries
+                train_summary_writer.add_summary(train_summaries, global_step=training_step)
+
+                # # Write the specific summaries for training phase.
+                # train_summary_writer.add_summary(train_image_summary, global_step=training_step)
+
+                #################################################
+                ########## Plot the progressive bar #############
+                #################################################
+
+            print("Epoch " + str(epoch + 1) + ", Training Loss= " + \
+                  "{:.5f}".format(batch_loss))
+
+
+            #####################################################
+            ########## Evaluation on the test data #############
+            #####################################################
+
+            if FLAGS.online_test:
+                # WARNING: In this evaluation the whole test data is fed. In case the test data is huge this implementation
+                #          may lead to memory error. In presense of large testing samples, batch evaluation on testing is
+                #          recommended as in the training phase.
+                test_accuracy_epoch, test_summaries = sess.run(
+                    [accuracy, summary_test_op],
+                    feed_dict={image_place: mnist.test.images,
+                               label_place: mnist.test.labels,
+                               dropout_param: 1.})
+                print("Epoch " + str(epoch + 1) + ", Testing Accuracy= " + \
+                      "{:.5f}".format(test_accuracy_epoch))
+
+                ###########################################################
+                ########## Write the summaries for test phase #############
+                ###########################################################
+
+                # Returning the value of global_step if necessary
+                current_step = tf.train.global_step(sess, global_step)
+
+                # Add the couter of global step for proper scaling between train and test summuries.
+                test_summary_writer.add_summary(test_summaries, global_step=current_step)
+
+        ###########################################################
+        ############ Saving the model checkpoint ##################
+        ###########################################################
+
+        # # The model will be saved when the training is done.
+
+        # Create the path for saving the checkpoints.
+        if not os.path.exists(FLAGS.checkpoint_dir):
+            os.makedirs(FLAGS.checkpoint_dir)
+
+        # save the model
+        save_path = saver.save(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        print("Model saved in file: %s" % save_path)
+
+
+        ############################################################################
+        ########## Run the session for pur evaluation on the test data #############
+        ############################################################################
+
+        # The prefix for checkpoint files
+        checkpoint_prefix = 'model'
+
+        # Restoring the saved weights.
+        saver.restore(sess, os.path.join(FLAGS.checkpoint_dir, checkpoint_prefix))
+        print("Model restored...")
+
+        # Evaluation of the model
+        test_accuracy = 100 * sess.run(accuracy, feed_dict={
+            image_place: mnist.test.images,
+            label_place: mnist.test.labels,
+            dropout_param: 1.})
+
+        print("Final Test Accuracy is %% %.2f" % test_accuracy)
