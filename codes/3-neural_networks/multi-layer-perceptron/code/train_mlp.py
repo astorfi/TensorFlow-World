@@ -144,20 +144,14 @@ with graph.as_default():
     net = tf.contrib.layers.fully_connected(inputs=net, num_outputs=250, scope='fc-2')
 
     # SOFTMAX
-    logits = tf.contrib.layers.fully_connected(inputs=net, num_outputs=FLAGS.num_classes, scope='fc-3')
+    logits_pre_softmax = tf.contrib.layers.fully_connected(inputs=net, num_outputs=FLAGS.num_classes, scope='fc-3')
 
 
     # Define loss
-    with tf.name_scope('loss'):
-        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_place))
+    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits_pre_softmax, labels=label_place))
 
     # Accuracy
-    with tf.name_scope('accuracy'):
-        # Evaluate the model
-        correct_pred = tf.equal(tf.argmax(logits, 1), tf.argmax(label_place, 1))
-
-        # Accuracy calculation
-        accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+    accuracy = tf.reduce_mean(tf.cast(tf.equal(tf.argmax(logits_pre_softmax, 1), tf.argmax(label_place, 1)), tf.float32))
 
     #############################################
     ########### training operation ##############
@@ -344,9 +338,9 @@ with graph.as_default():
         print("Model restored...")
 
         # Evaluation of the model
-        test_accuracy = 100 * sess.run(accuracy, feed_dict={
+        total_test_accuracy = sess.run(accuracy, feed_dict={
             image_place: mnist.test.images,
             label_place: mnist.test.labels,
             dropout_param: 1.})
 
-        print("Final Test Accuracy is %% %.2f" % test_accuracy)
+        print("Final Test Accuracy is %.2f" % total_test_accuracy)

@@ -103,19 +103,17 @@ with graph.as_default():
     net = tf.contrib.layers.fully_connected(inputs=net, num_outputs=250, scope='fc-2')
 
     # SOFTMAX
-    logits = tf.contrib.layers.fully_connected(inputs=net, num_outputs=FLAGS.num_classes, scope='fc-3')
+    logits_last = tf.contrib.layers.fully_connected(inputs=net, num_outputs=FLAGS.num_classes, scope='fc-3')
 
     # Define loss
-    with tf.name_scope('loss'):
-        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_place))
+    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits_last, labels=label_place))
 
     # Accuracy
-    with tf.name_scope('accuracy'):
-        # Evaluate the model
-        correct_pred = tf.equal(tf.argmax(logits, 1), tf.argmax(label_place, 1))
+    # Evaluate the model
+    pred_classifier = tf.equal(tf.argmax(logits, 1), tf.argmax(label_place, 1))
 
-        # Accuracy calculation
-        accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
+    # Accuracy calculation
+    accuracy = tf.reduce_mean(tf.cast(pred_classifier, tf.float32))
 
     ###############################################
     ############ Define Sammaries #################

@@ -160,7 +160,7 @@ with graph.as_default():
 
     # Define loss
     with tf.name_scope('loss'):
-        loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_one_hot))
+        loss_tensor = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=logits, labels=label_one_hot))
 
     # Accuracy
     # Evaluate the model
@@ -182,9 +182,9 @@ with graph.as_default():
     # update the 'global_step' and increment it by one!
 
     # gradient update.
-    with tf.name_scope('train'):
-        grads_and_vars = optimizer.compute_gradients(loss)
-        train_op = optimizer.apply_gradients(grads_and_vars, global_step=global_step)
+    with tf.name_scope('train_op'):
+        gradients_and_variables = optimizer.compute_gradients(loss_tensor)
+        train_op = optimizer.apply_gradients(gradients_and_variables, global_step=global_step)
 
 
     ############################################
@@ -241,7 +241,7 @@ with graph.as_default():
                 # Run optimization op (backprop) and Calculate batch loss and accuracy
                 # When the tensor tensors['global_step'] is evaluated, it will be incremented by one.
                 batch_loss, _, training_step = sess.run(
-                    [loss, train_op,
+                    [loss_tensor, train_op,
                      global_step],
                     feed_dict={image_place: train_batch_data,
                                label_place: train_batch_label,
