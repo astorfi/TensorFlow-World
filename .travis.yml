@@ -12,7 +12,7 @@ install:
 
 script:
 
-  - coverage run --omit=*.virtualenvs*,*virtualenv* codes/3-neural_networks/multi-layer-perceptron/code/train_mlp.py test
+  - coverage run --omit=*.virtualenvs*,*virtualenv* codes/3-neural_networks/convolutional-neural-network/code/train_classifier.py test
 
 
 after_success:
