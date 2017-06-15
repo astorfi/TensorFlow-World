@@ -3,10 +3,12 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import xlrd
 import matplotlib.pyplot as plt
+import os
+
 
 # Data file provided by the Stanford course CS 20SI: TensorFlow for Deep Learning Research.
 # https://github.com/chiphuyen/tf-stanford-tutorials
-DATA_FILE = "data/fire_theft.xls"
+DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),'data/fire_theft.xls')
 
 # read the data from the .xls file.
 book = xlrd.open_workbook(DATA_FILE, encoding_override="utf-8")
