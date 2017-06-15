@@ -9,6 +9,9 @@ TensorFLow World
     :target: https://github.com/ellerbrock/open-source-badge/
 .. image:: https://img.shields.io/badge/License-MIT-yellow.svg
     :target: https://opensource.org/licenses/MIT 
+.. image:: https://coveralls.io/repos/github/astorfi/TensorFlow-World/badge.svg?branch=master
+    :target: https://coveralls.io/github/astorfi/TensorFlow-World?branch=master
+
 
     
 
