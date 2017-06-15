@@ -2,7 +2,8 @@
 ************************
 TensorFLow World
 ************************
-
+.. image:: https://travis-ci.org/astorfi/TensorFlow-World.svg?branch=master
+    :target: https://travis-ci.org/astorfi/TensorFlow-World
 .. image:: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
     :target: https://github.com/astorfi/TensorFlow-World/issues
 .. image:: https://badges.frapsoft.com/os/v2/open-source.svg?v=102
