@@ -18,6 +18,8 @@ script:
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/2-basics_in_machine_learning/linear_svm/code/linear_SVM.py test
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/2-basics_in_machine_learning/logistic_regression/code/logistic_regression.py test
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/2-basics_in_machine_learning/multiclass_svm/code/multiclass_SVM.py test
+  - coverage run --omit=*.virtualenvs*,*virtualenv* codes/3-neural_networks/convolutional-neural-network/code/train_classifier.py test
+  - coverage run --omit=*.virtualenvs*,*virtualenv* codes/3-neural_networks/multi-layer-perceptron/code/train_mlp.py test
 
 
 after_success:
