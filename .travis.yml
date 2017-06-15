@@ -1,0 +1,20 @@
+language: python
+python:
+
+  - "2.7"
+  - "3.4"
+  - "3.5"
+
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install coveralls
+
+script:
+  - coverage run --omit=*.virtualenvs*,*virtualenv* codes/0-welcome/code/1-welcome.py test
+
+after_success:
+  coveralls
+
+sudo: enabled
+dist: trusty
