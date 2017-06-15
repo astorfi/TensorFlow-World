@@ -103,10 +103,12 @@ with tf.Session() as sess:
 Input_values = data[:,0]
 Labels = data[:,1]
 Prediction_values = data[:,0] * wcoeff + bias
-plt.plot(Input_values, Labels, 'ro', label='main')
-plt.plot(Input_values, Prediction_values, label='Predicted')
 
-# Saving the result.
-plt.legend()
-plt.savefig('plot.png')
-plt.close()
+# # uncomment if plotting is desired!
+# plt.plot(Input_values, Labels, 'ro', label='main')
+# plt.plot(Input_values, Prediction_values, label='Predicted')
+
+# # Saving the result.
+# plt.legend()
+# plt.savefig('plot.png')
+# plt.close()

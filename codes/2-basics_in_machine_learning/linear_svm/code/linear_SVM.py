@@ -150,14 +150,15 @@ if FLAGS.is_evaluation:
             negative_y = data[0]
         else:
             sys.exit("Invalid label!")
-
+    
+    # # uncomment if plotting is desired!
     # Plotting the SVM decision boundary.
-    plt.plot(positive_X, positive_y, '+', label='Positive')
-    plt.plot(negative_X, negative_y, 'o', label='Negative')
-    plt.plot(x_line, line, 'r-', label='Separator', linewidth=3)
-    plt.legend(loc='best')
-    plt.title('Linear SVM')
-    plt.show()
+    # plt.plot(positive_X, positive_y, '+', label='Positive')
+    # plt.plot(negative_X, negative_y, 'o', label='Negative')
+    # plt.plot(x_line, line, 'r-', label='Separator', linewidth=3)
+    # plt.legend(loc='best')
+    # plt.title('Linear SVM')
+    # plt.show()
 
 
 
