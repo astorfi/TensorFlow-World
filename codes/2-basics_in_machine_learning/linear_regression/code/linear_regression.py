@@ -20,7 +20,7 @@ num_samples = sheet.nrows - 1
 ## Defining flags #####
 #######################
 tf.app.flags.DEFINE_integer(
-    'num_epochs', 50, 'The number of epochs for training the model. Default=50')
+    'num_epochs', 5, 'The number of epochs for training the model. Default=50')
 # Store all elemnts in FLAG structure!
 FLAGS = tf.app.flags.FLAGS
 

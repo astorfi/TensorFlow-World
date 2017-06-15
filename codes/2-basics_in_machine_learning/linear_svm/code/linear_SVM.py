@@ -13,7 +13,7 @@ import sys
 tf.app.flags.DEFINE_integer('batch_size', 32,
                             'Number of samples per batch.')
 
-tf.app.flags.DEFINE_integer('num_steps', 3000,
+tf.app.flags.DEFINE_integer('num_steps', 500,
                             'Number of steps for training.')
 
 tf.app.flags.DEFINE_boolean('is_evaluation', True,
