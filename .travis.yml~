@@ -13,7 +13,7 @@ install:
 script:
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/0-welcome/code/1-welcome.py test
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/1-basics/basic_math_operations/code/basic_math_operation.py test
-  - coverage run --omit=*.virtualenvs*,*virtualenv* codes/1-basics/variables/code/variables.py test
+  - coverage run --omit=*.virtualenvs*,*virtualenv* codes/0-welcome/code/1-welcome.py test
 
 
 after_success:
