@@ -177,7 +177,7 @@ with graph.as_default():
     ###############################################
 
     # Summaries for loss and accuracy
-    tf.summary.scalar("loss", loss, collections=['train', 'test'])
+    tf.summary.scalar("loss", softmax_loss, collections=['train', 'test'])
     tf.summary.scalar("accuracy", accuracy, collections=['train', 'test'])
     tf.summary.scalar("global_step", global_step, collections=['train'])
     tf.summary.scalar("learning_rate", learning_rate, collections=['train'])
@@ -185,16 +185,6 @@ with graph.as_default():
     # Merge all summaries together.
     summary_train_op = tf.summary.merge_all('train')
     summary_test_op = tf.summary.merge_all('test')
-
-    ########################################################
-    ############ # Defining the tensors list ###############
-    ########################################################
-
-    # tensors_key = ['cost', 'accuracy', 'train_op', 'global_step', 'image_place', 'label_place', 'dropout_param',
-    #                'summary_train_op', 'summary_test_op']
-    # tensors = [loss, accuracy, train_op, global_step, image_place, label_place, dropout_param, summary_train_op,
-    #            summary_test_op]
-    # tensors_dictionary = dict(zip(tensors_key, tensors))
 
     ############################################
     ############ Run the Session ###############
