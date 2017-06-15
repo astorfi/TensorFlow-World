@@ -252,7 +252,7 @@ with graph.as_default():
                 # Run optimization op (backprop) and Calculate batch loss and accuracy
                 # When the tensor tensors['global_step'] is evaluated, it will be incremented by one.
                 batch_loss, _, train_summaries, training_step = sess.run(
-                    [loss, train_op,
+                    [softmax_loss, train_op,
                      summary_train_op,
                      global_step],
                     feed_dict={image_place: train_batch_data,
