@@ -20,7 +20,7 @@ num_samples = sheet.nrows - 1
 ## Defining flags #####
 #######################
 tf.app.flags.DEFINE_integer(
-    'num_epochs', 50, 'The number of epochs for training the model. Default=50')
+    'num_epochs', 5, 'The number of epochs for training the model. Default=50')
 # Store all elemnts in FLAG structure!
 FLAGS = tf.app.flags.FLAGS
 
@@ -103,10 +103,12 @@ with tf.Session() as sess:
 Input_values = data[:,0]
 Labels = data[:,1]
 Prediction_values = data[:,0] * wcoeff + bias
-plt.plot(Input_values, Labels, 'ro', label='main')
-plt.plot(Input_values, Prediction_values, label='Predicted')
 
-# Saving the result.
-plt.legend()
-plt.savefig('plot.png')
-plt.close()
+# # uncomment if plotting is desired!
+# plt.plot(Input_values, Labels, 'ro', label='main')
+# plt.plot(Input_values, Prediction_values, label='Predicted')
+
+# # Saving the result.
+# plt.legend()
+# plt.savefig('plot.png')
+# plt.close()

@@ -26,7 +26,7 @@ tf.app.flags.DEFINE_integer('num_classes', 10,
 tf.app.flags.DEFINE_integer('batch_size', np.power(2, 7),
                             'Number of model clones to deploy.')
 
-tf.app.flags.DEFINE_integer('num_epochs', 10,
+tf.app.flags.DEFINE_integer('num_epochs', 5,
                             'Number of epochs for training.')
 
 ##########################################
@@ -177,7 +177,7 @@ with graph.as_default():
     ###############################################
 
     # Summaries for loss and accuracy
-    tf.summary.scalar("loss", loss, collections=['train', 'test'])
+    tf.summary.scalar("loss", softmax_loss, collections=['train', 'test'])
     tf.summary.scalar("accuracy", accuracy, collections=['train', 'test'])
     tf.summary.scalar("global_step", global_step, collections=['train'])
     tf.summary.scalar("learning_rate", learning_rate, collections=['train'])
@@ -185,16 +185,6 @@ with graph.as_default():
     # Merge all summaries together.
     summary_train_op = tf.summary.merge_all('train')
     summary_test_op = tf.summary.merge_all('test')
-
-    ########################################################
-    ############ # Defining the tensors list ###############
-    ########################################################
-
-    # tensors_key = ['cost', 'accuracy', 'train_op', 'global_step', 'image_place', 'label_place', 'dropout_param',
-    #                'summary_train_op', 'summary_test_op']
-    # tensors = [loss, accuracy, train_op, global_step, image_place, label_place, dropout_param, summary_train_op,
-    #            summary_test_op]
-    # tensors_dictionary = dict(zip(tensors_key, tensors))
 
     ############################################
     ############ Run the Session ###############
@@ -262,7 +252,7 @@ with graph.as_default():
                 # Run optimization op (backprop) and Calculate batch loss and accuracy
                 # When the tensor tensors['global_step'] is evaluated, it will be incremented by one.
                 batch_loss, _, train_summaries, training_step = sess.run(
-                    [loss, train_op,
+                    [softmax_loss, train_op,
                      summary_train_op,
                      global_step],
                     feed_dict={image_place: train_batch_data,
