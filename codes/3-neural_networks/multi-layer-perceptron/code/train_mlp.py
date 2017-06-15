@@ -26,7 +26,7 @@ tf.app.flags.DEFINE_integer('num_classes', 10,
 tf.app.flags.DEFINE_integer('batch_size', np.power(2, 7),
                             'Number of model clones to deploy.')
 
-tf.app.flags.DEFINE_integer('num_epochs', 10,
+tf.app.flags.DEFINE_integer('num_epochs', 5,
                             'Number of epochs for training.')
 
 ##########################################
