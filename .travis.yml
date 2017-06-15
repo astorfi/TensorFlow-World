@@ -10,9 +10,6 @@ install:
 
 script:
 
-<<<<<<< HEAD
-=======
-
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/3-neural_networks/convolutional-neural-network/code/train_classifier.py test
 
 
