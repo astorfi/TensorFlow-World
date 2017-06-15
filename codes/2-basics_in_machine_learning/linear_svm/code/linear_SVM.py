@@ -145,7 +145,7 @@ if FLAGS.is_evaluation:
         if y[index] == 1:
             positive_X = data[1]
             positive_y = data[0]
-        elif y[index] == 0:
+        elif y[index] == -1:
             negative_X = data[1]
             negative_y = data[0]
         else:
