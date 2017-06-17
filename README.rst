@@ -12,6 +12,8 @@ TensorFLow World
     :target: https://opensource.org/licenses/MIT
 .. image:: https://coveralls.io/repos/github/astorfi/TensorFlow-World/badge.svg?branch=master
     :target: https://coveralls.io/github/astorfi/TensorFlow-World?branch=master
+.. image:: https://zenodo.org/badge/86115145.svg
+   :target: https://zenodo.org/badge/latestdoi/86115145
 
 This repository is aimed to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository. Each tutorial has a ``source code`` and its ``documetation``.
 
