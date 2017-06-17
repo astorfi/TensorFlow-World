@@ -25,7 +25,7 @@ This repository is aimed to provide simple and ready-to-use tutorials for Tensor
 Motivation
 ============
 
-The are different motivations for this reporsity. Some are TensorFlow-related which is one of the bests up to the moment that
+There are different motivations for this reposity. Some are TensorFlow-related which is one of the bests up to the moment that
 this document is being written! The question is why this reposity has been created among all other available tutorials on the web?
 
 ~~~~~~~~~~~~~~~~~~~~~
@@ -33,7 +33,7 @@ Why using TensorFlow?
 ~~~~~~~~~~~~~~~~~~~~~
 
 A deep learning is of great interest these days, the crucial necessity for rapid and optimized implementation of the algorithms
-and designing architectures is the software environment. TensorFlow is designed to facilate this goal. The strong advantage of
+and designing architectures is the software environment. TensorFlow is designed to facilitate this goal. The strong advantage of
 TensorFlow is it flexibility is designing highly modular model which also can be a disadvantage too for beginers since lots of
 the pieces must be considered together for creating the model. This issue been facilitated as well by developing high level APIs
 such as `Keras <https://keras.io/>`_ and `Slim <https://github.com/tensorflow/models/blob/master/inception/inception/slim/README.md//>`_
@@ -45,14 +45,14 @@ be overcome easily since they might be the issues of lots of other people consid
 What's the point of this repository?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Developing open source project for the sake of just developing somethings has not been the behing reason for this effort**.
+**Developing open source project for the sake of just developing somethings has not been the behind reason for this effort**.
 Considering the large number of tutorials that are being added to this large community, this repository has been created to break the
 jump-in and jump-out process usually happens to most of the open source projects, **but why and how**?
 
 First of all what's the point of putting effort on something that most of the people won't stop by and take a look? What's the point of creating something that does not
 help anyone in the developers and researchers community? Why spending time for something that can easily be forgotten? But **how we try to do it?** Even up to this
 very moment there are countless tutorials on TensorFlow whether on the model design or TensorFlow
-workflow. Most of the are too complex or have a lack of documention. There are only few avalable tutorials which are concise and well-structured
+workflow. Most of them are too complicated or suffer from a lack of documention. There are only few avalable tutorials which are concise and well-structured
 and provide enough insight for their specific implemented models. The goal of this project is to help the community with structured tutorials
 and simple and optimized code implementation to provide better insight about how to use TensorFlow *fast and efficient*. It is worth
 noting that, **the main goal of this project is providing well-documented tutorials and less-complicated codes**!
@@ -62,7 +62,7 @@ noting that, **the main goal of this project is providing well-documented tutori
 ====================
 TensorFlow Tutorials
 ====================
-The tutorials in this repository are partitioned into relevent categories.
+The tutorials in this repository are partitioned into relevant categories.
 
 +---+--------------------+---------------------------------------------------+----------------------------------------------+
 | # |       topic        |   Source Code                                     |                                              |
@@ -188,7 +188,7 @@ In order to install TensorFlow please refer to the following link:
     :target: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
 
 
-The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environmen. The TensorFlow version employed for these tutorials is `1.1`. However the files from previous versions can be transformed to newer versions (ex: version `1.1`) using the instructions available in the following link:
+The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environment. The TensorFlow version employed for these tutorials is `1.1`. However, the files from previous versions can be transformed to newer versions (ex: version `1.1`) using the instructions available in the following link:
 
   * `Transitioning to TensorFlow 1.0 <https://www.tensorflow.org/install/migration/>`_
 
