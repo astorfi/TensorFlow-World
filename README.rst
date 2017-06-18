@@ -179,7 +179,7 @@ The tutorials in this repository are partitioned into relevant categories.
 TensorFlow Installation and Setup the Environment
 =================================================
 
-.. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/installation/install_from_the_source.rst
+.. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
 
 In order to install TensorFlow please refer to the following link:
 
