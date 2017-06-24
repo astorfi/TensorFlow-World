@@ -89,7 +89,6 @@ The tutorials in this repository are partitioned into relevant categories.
 | 10 | *Neural Networks*  | `Undercomplete Autoencoder <udercompleteautoencodercode_>`_                  |                                              |
 +----+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
 
-udercompleteautoencodercode
 .. ~~~~~~~~~~~~
 .. **Welcome**
 .. ~~~~~~~~~~~~
