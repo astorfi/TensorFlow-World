@@ -20,7 +20,7 @@ Please consider the following criterions in order to help us in a better way:
 2. Add comments with details of changes to the interface, this includes new environment 
    variables, exposed ports, useful file locations and container parameters.
 4. You may merge the Pull Request in once you have the sign-off of one other developers, or if you 
-   do not have permission to do that, you may request the owner to merge it for you if you believe all checks are paased.
+   do not have permission to do that, you may request the owner to merge it for you if you believe all checks are passed.
 
 ============
 Final Note
