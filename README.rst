@@ -64,9 +64,14 @@ TensorFlow Tutorials
 ====================
 The tutorials in this repository are partitioned into relevant categories.
 
+<<<<<<< HEAD
 +---+--------------------+---------------------------------------------------+----------------------------------------------
 +
 | # |       topic        |   Source Code                                     |                                              
+=======
++---+--------------------+---------------------------------------------------+----------------------------------------------+
+| # |       topic        |   Source Code                                     |                                              |
+>>>>>>> parent of d8cf36e... Update README.rst
 +===+====================+===================================================+==============================================+
 | 1 | Start-up           |  `Welcome <welcomesourcecode_>`_                  |  `Documentation <Documentationcnnwelcome_>`_ |
 +---+--------------------+---------------------------------------------------+----------------------------------------------+
@@ -96,7 +101,6 @@ The tutorials in this repository are partitioned into relevant categories.
 
 .. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/0-welcome
 .. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/0-welcome/welcome.rst
-.. _ipythonwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/codes/0-welcome/code/ipython/0-welcome.ipynb
 
 
 
