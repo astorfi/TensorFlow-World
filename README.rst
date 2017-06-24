@@ -65,27 +65,27 @@ TensorFlow Tutorials
 The tutorials in this repository are partitioned into relevant categories.
 
 
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| # |       topic        |   Source Code                                     |                                              |
-+===+====================+===================================================+==============================================+
-| 1 | Start-up           |  `Welcome <welcomesourcecode_>`_                  |  `Documentation <Documentationcnnwelcome_>`_ |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 2 | *TensoFLow Basics* |  `Basic Math Operations <basicmathsourcecode_>`_  |  `Documentation <Documentationbasicmath_>`_  |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 3 | *TensoFLow Basics* | `TensorFlow Variables <variablssourcecode_>`_     |  `Documentation <Documentationvariabls_>`_   |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 4 | *Machine Learning* |`Linear Regression`_                               |  `Documentation <Documentationlr_>`_         |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 5 | *Machine Learning* | `Logistic Regression`_                            |  `Documentation <LogisticRegDOC_>`_          |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 6 | *Machine Learning* | `Linear SVM`_                                     |                                              |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 7 | *Machine Learning* |`MultiClass Kernel SVM`_                           |                                              |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 8 | *Neural Networks*  |`Multi Layer Perceptron`_                          |                                              |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
-| 9 | *Neural Networks*  | `Convolutional Neural Networks`_                  |       `Documentation <Documentationcnn_>`_   |
-+---+--------------------+---------------------------------------------------+----------------------------------------------+
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| # |       topic        |   Source Code                                                                |                                              |
++===+====================+==============================================================================+==============================================+
+| 1 | Start-up           |  `Welcome <welcomesourcecode_>`_  / `IPython <ipythonwelcome_>`_             |  `Documentation <Documentationcnnwelcome_>`_ |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| 2 | *TensoFLow Basics* |  `Basic Math Operations <basicmathsourcecode_>`_                             |  `Documentation <Documentationbasicmath_>`_  |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| 3 | *TensoFLow Basics* | `TensorFlow Variables <variablssourcecode_>`_                                |  `Documentation <Documentationvariabls_>`_   |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| 4 | *Machine Learning* |`Linear Regression`_                                                          |  `Documentation <Documentationlr_>`_         |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| 5 | *Machine Learning* | `Logistic Regression`_                                                       |  `Documentation <LogisticRegDOC_>`_          |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| 6 | *Machine Learning* | `Linear SVM`_                                                                |                                              |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| 7 | *Machine Learning* |`MultiClass Kernel SVM`_                                                      |                                              |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| 8 | *Neural Networks*  |`Multi Layer Perceptron`_                                                     |                                              |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
+| 9 | *Neural Networks*  | `Convolutional Neural Networks`_                                             |       `Documentation <Documentationcnn_>`_   |
++---+--------------------+------------------------------------------------------------------------------+----------------------------------------------+
 
 
 .. ~~~~~~~~~~~~
@@ -96,6 +96,7 @@ The tutorials in this repository are partitioned into relevant categories.
 
 .. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/0-welcome
 .. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/0-welcome/welcome.rst
+.. _ipythonwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/codes/0-welcome/code/ipython/0-welcome.ipynb
 
 
 
