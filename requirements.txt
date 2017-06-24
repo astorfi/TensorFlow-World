@@ -6,3 +6,4 @@ matplotlib
 xlrd
 scikit-learn
 pandas
+scikit-image
