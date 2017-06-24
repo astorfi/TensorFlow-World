@@ -212,7 +212,7 @@ Some Useful Tutorials
 Contribution
 =============
 
-We are looking forward to your kind feedback. Please help us to improve this open source project and make our work better. For contribution, please create a `pull request <https://github.com/astorfi/TensorFlow-World/issues>`_ and we will investigate it promptly. Once again, we appreciate your kind
+We are looking forward to your kind feedback. Please help us to improve this open source project and make our work better. For contribution, please create a `pull request <https://github.com/astorfi/TensorFlow-World/pulls>`_ and we will investigate it promptly. Once again, we appreciate your kind
 feedback and elaborate code inspections.
 
 
