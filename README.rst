@@ -39,7 +39,7 @@ the pieces must be considered together for creating the model. This issue been f
 such as `Keras <https://keras.io/>`_ and `Slim <https://github.com/tensorflow/models/blob/master/inception/inception/slim/README.md//>`_
 which gather lots of the design puzzle pieces. The interesting point about TensorFlow is that **its trace can be found anywhere these days**.
 Lots of the researchers and developers are using it and *its community is growing with the speed of light*! So the possible issues can
-be overcome easily since they might be the issues of lots of other people considering the large number of people involved in TensorFlow community.
+be overcomed easily since they might be the issues of lots of other people considering the large number of people involved in TensorFlow community.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 What's the point of this repository?
