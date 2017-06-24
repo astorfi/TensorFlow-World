@@ -1,7 +1,7 @@
 ﻿
-************************
-TensorFLow World
-************************
+*****************************************
+TensorFLow Tutorials in TensorFLow World
+*****************************************
 .. image:: https://travis-ci.org/astorfi/TensorFlow-World.svg?branch=master
     :target: https://travis-ci.org/astorfi/TensorFlow-World
 .. image:: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
