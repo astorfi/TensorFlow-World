@@ -80,6 +80,7 @@ with tf.Session() as sess:
     for i in range(50):
         plt.subplot(5, 10, i+1)
         plt.imshow(recon_img[i, ..., 0], cmap='gray')
+
     plt.figure(2)
     plt.title('Input Images')
     for i in range(50):
