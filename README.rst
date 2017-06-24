@@ -45,7 +45,7 @@ be overcome easily since they might be the issues of lots of other people consid
 What's the point of this repository?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Developing open source project for the sake of just developing somethings has not been the behind reason for this effort**.
+**Developing open source project for the sake of just developing something is not the behind reason for this effort**.
 Considering the large number of tutorials that are being added to this large community, this repository has been created to break the
 jump-in and jump-out process usually happens to most of the open source projects, **but why and how**?
 
