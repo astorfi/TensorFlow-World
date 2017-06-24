@@ -36,7 +36,7 @@ def inputs():
     """
     Defining the place_holders.
     :return:
-            Returning the data and label lace holders.
+            Returning the data and label place holders.
     """
     X = tf.placeholder(tf.float32, name="X")
     Y = tf.placeholder(tf.float32, name="Y")
