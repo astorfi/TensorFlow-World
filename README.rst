@@ -206,3 +206,13 @@ Some Useful Tutorials
   * `Sungjoon's TensorFlow-101 <https://github.com/sjchoi86/Tensorflow-101>`_ - TensorFlow tutorials written in Python with Jupyter Notebook
   * `Terry Um’s TensorFlow Exercises <https://github.com/terryum/TensorFlow_Exercises>`_ - Re-create the codes from other TensorFlow examples
   * `Classification on time series <https://github.com/guillaume-chevalier/LSTM-Human-Activity-Recognition>`_ - Recurrent Neural Network classification in TensorFlow with LSTM on cellphone sensor data
+  
+  
+=============
+Contribution
+=============
+
+We are looking forward to your kind feedback. Please help us to improve this open source project and make our work better. For contribution, please create a `pull request <https://github.com/astorfi/TensorFlow-World/issues>`_ and we will investigate it promptly. Once again, we appreciate for your kind
+feedback and elaborate code inspections.
+
+
