@@ -1,5 +1,5 @@
 ==================
-Linear Regression
+Logistic Regression
 ==================
 
 This document is dedicated to explain how to run the python script for this tutorial. ``Logistic regression`` is a binary
