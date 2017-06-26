@@ -3,7 +3,7 @@ Convolutional Neural Networks using TensorFlow
 ==============================================
 
 This tutorial deals with training a classifier using convolutional
-neural networks. The source code is available at `this link <https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/3-neural_networks/convolutional-neural-network/>`_.
+neural networks. The source code is available at `this link <https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/convolutional-neural-network/>`_.
 
 ------------
 Introduction
