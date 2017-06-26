@@ -10,7 +10,7 @@ Introduction
 ------------
 
 
-In this tutorial we try to teach you how to implement a simple neural
+In this tutorial, we try to teach you how to implement a simple neural
 network image classifier using **Convolutional Neural Networks(CNNs)**.
 The main goal of this post is to show hot to train a CNN classifier
 using `TensorFlow <https://www.tensorflow.org/>`__ deep learning
@@ -19,7 +19,7 @@ details of CNNs will not be discussed here. In order to get a better
 idea of convolutional layers and realize how the work please refer to
 `this
 post <http://machinelearninguru.com/computer_vision/basics/convolution/convolution_layer.html>`__.
-In the next section we start to describe procedure of learning the
+In the next section, we start to describe procedure of learning the
 classifier.
 
 --------------
@@ -29,10 +29,10 @@ Input Pipeline
 The dataset that we work on that in this tutorial is the
 `MNIST <http://yann.lecun.com/exdb/mnist/>`__ dataset probably the most
 famous dataset in computer vision because of its simplicity! The main
-dataset consist of 60000 training and 10000 test images. However there
+dataset consists of 60000 training and 10000 test images. However, there
 might be different setups for these images. The one we use is the same
 in the test set but we split the training set to 55000 images as train
-and 5000 images as validation set in the case that using
+and 5000 images as the validation set in the case that using
 cross-validation for determining some hyper-parameters is desired. The
 images are 28x28x1 which each of them represent a hand-written digit
 from 0 to 9. Since this tutorial is supposed to be ready-to-use, we
@@ -53,9 +53,9 @@ The code for downloading and extracting MNIST dataset is as is as below:
 The above code download and extract MNIST data in the MNIST\_data/
 folder in the current directory that we are running the python script.
 The reshape flag is set to **False** because we want the image format as
-it is which is 28x28x1. The reason is because we are aimed to train a
+it is which is 28x28x1. The reason is that we are aimed to train a
 CNN classifier which takes images as input. If the one\_hot flag is set
-to **True** it returns class labels as a one\_hot label. However we set
+to **True** it returns class labels as a one\_hot label. However, we set
 the one\_hot flag to **False** for customized preprocessing and data
 organization. The **input.provide\_data** function is provided to get
 any data with specific format separated by training and testing sets and
@@ -67,7 +67,7 @@ images and labels exist. The have just not been depicted for the
 simplicity of the above chart presentation. As an example if
 **data.train.imege** is called its shape is
 [number\_of\_training\_sample,28,28,1]. It is recommended to play around
-a little bit with data object to grasp a better idea of how it works and
+a little bit with the data object to grasp a better idea of how it works and
 what is its output. The codes are available in the GitHub repository for
 this post.
 
@@ -80,10 +80,10 @@ through the neural network architecture used for this tutorial. The
 implemented architecture is very similar to
 `LeNet <http://yann.lecun.com/exdb/lenet/>`__ although our architecture
 is implemented in a fully-convolutional fashion, i.e., there is no
-fully-connected layer and all fully-connected layers are transform to
-corresponding convolutional layer. In order to grasp a better idea of
+fully-connected layer and all fully-connected layers are transformed to
+corresponding convolutional layers. In order to grasp a better idea of
 how to go from a fully-connected layer to a convolutional one and vice
-versa please refer to `this
+verse please refer to `this
 link <http://cs231n.github.io/convolutional-networks/>`__. The general
 architecture schematic is as below:
 
@@ -96,7 +96,7 @@ architecture schematic is as below:
    
 The image is depicted by
 `Tensorboard <https://www.tensorflow.org/get_started/summaries_and_tensorboard>`__
-as a visualization tool for TensorFlow. Later on in this tutorial the
+as a visualization tool for TensorFlow. Later on in this tutorial, the
 way of using Tensorboard and make the most of it will be explained. As
 it can be seen by the figure, the convolutional layers are followed by
 pooling layers and the last fully-connected layer is followed by a
@@ -168,13 +168,13 @@ Default Parameters and Operations
 
 The function net\_arg\_scope is defined to share some attributes between
 layers. It is very useful in the cases which some attributes like 'SAME'
-padding(which is zero-padding in essense) are joint between different
+padding (which is zero-padding in essence) are joint between different
 layer. It basically does the sharing variable with some pre-definitions.
-Basically it enables us to specify different operations and/or a set of
+Basically, it enables us to specify different operations and/or a set of
 arguments to be passed to any of the defined operations in the
 arg\_scope. So for this specific case the argument
 **tf.contrib.layers.conv2d** is defined and so all the convolutional
-layers default parameters(which are ser by the arg\_scope) are as
+layers default parameters (which are set by the arg\_scope) are as
 defined in the arg\_scope. The is more work to use this useful
 arg\_scope operation and it will be explained in the general TensorFlow
 implementation details later on in this tutorial. It is worth noting
@@ -183,13 +183,13 @@ locally in the specific layer definition. As an example take a look at defining 
 convolutional layer), the padding is set to **'VALID'** although its
 default been set to **'SAME'** by the arg\_scope operation. Now it's the
 time to explain the architecture itself by describing of how to create
-cnvolutional and pooling layers.
+convolutional and pooling layers.
 
 ReLU has been used as the non-linear activation function for all the
-layers except the last layer(embedding layer). The famous xavier
+layers except for the last layer(embedding layer). The famous Xavier
 initialization has not been used for initialization of the network and
-instead the Variance-Scaling-Initializer has been used which provided
-more promising results in the case of using ReLU activation. It's
+instead, the Variance-Scaling-Initializer has been used which provided
+more promising results in the case of using ReLU activation. The
 advantage is to keep the scale of the input variance constant, so it is
 claimed that it does not explode or diminish by getting to the final
 layer\ `[reference] <https://www.tensorflow.org/api_docs/python/tf/contrib/layers/variance_scaling_initializer>`__.
@@ -212,7 +212,7 @@ net\_architecture panel in the above python script. It is worth noting
 that since the output of layers(output tensors) are different by the
 size the output sizes decrease gradually as we go through the depth of
 the network, the matching between inputs-outputs of the layers must be
-considered and in the end the output of the last layer should be form
+considered and at the end, the output of the last layer should be transformed
 into a feature vector in order to be fed to the embedding layer.
 
 Defining pooling layers is straightforward as it is shown. The defined pooling layer has the kernel size of 2x2 and a stride
@@ -227,7 +227,7 @@ Convolution layers can be defined using
 The default padding is set to 'SAME' as mentioned before. loosely
 speaking, 'SAME' padding equals to same spatial dimensions for output
 feature map and input feature map which contains zero padding to
-matching the shapes and theoretically it is done equally on every side
+matching the shapes and theoretically, it is done equally on every side
 of the input map. One the other hand, 'VALID' means no padding. The
 overall architecture of the convolution layer is as depicted below:
 
@@ -235,7 +235,7 @@ overall architecture of the convolution layer is as depicted below:
    :scale: 30 %
    :align: center
        
-   **Figure 2:** The operations in convolutional layer.
+   **Figure 2:** The operations in the convolutional layer.
 
 
 The number of **output feature maps** is set to 32 and the **spatial kernel size** is set to [5,5]. The
@@ -243,15 +243,15 @@ The number of **output feature maps** is set to 32 and the **spatial kernel size
 the name for the layer which is useful in different scenarios such as
 returning the output of the layer, fine-tuning the network and graphical
 advantages like drawing a nicer graph of the network using Tensorboard.
-Basically it is the representative of the layer and adds all the
+Basically, it is the representative of the layer and adds all the
 operations into a higher-level node.
 
-We overwritten the padding type. It is changed to
+We overwrote the padding type. It is changed to
 'VALID' padding. The reason is behind the characteristics of the
 convolutional layer. It is operating as a
 fully-connected layer. *It is not because of the 'VALID' padding
 though*. The 'VALID' padding is just part of the mathematical operation.
-The reason is because the input to this layer has the spatial size of
+The reason is that the input to this layer has the spatial size of
 **7x7** and the kernel size of the layer is the same. This is obvious
 because when the input size of the convolutional layer equals to its
 kernel size and 'VALID' pooling is used, the output is only one single
@@ -264,22 +264,21 @@ Dropout Layer
 ~~~~~~~~~~~~~
 
 The dropout is one of the most famous methods in order to prevent
-over-fitting. This operation randomly kills a portion of neuron to
-stochastically force the neuron to learn more useful information.
-Although the method is stochastic but it's been widely used in neural
+over-fitting. This operation randomly kills a portion of the neurons to
+stochastically force the neurons to learn more useful information.
+The method is stochastic and it's been widely used in neural
 network architecture and presented promising results. The dropout\_keep\_prob argument determines
 the portion of the neurons which remains untouched and will not be
-disables by the dropout layer. Moreover the flag is\_training is
-supposed to active and deactive the dropout layer which force the
-dropout to be **active** in the training phase and **deactivate** it in
+disabled by the dropout layer. Moreover, the flag is\_training is
+supposed to affect the dropout layer and force it to be **active** in the training phase and **deactive** in
 the test/evaluation phase.
 
 ~~~~~~~~~~~~~~~
 Embedding Layer
 ~~~~~~~~~~~~~~~
 
-Convolutional layers results a 4-dimensional tensor with dimensions as
-[batch\_size, width, height, channel]. As a result, the embedding layer
+A Convolutional layer results in a 4-dimensional tensor with the dimensionality of
+ [batch\_size, width, height, channel]. As a result, the embedding layer
 combines all the channels except the first one indicating the batches.
 So the dimension of [batch\_size, width, height, channel] becomes
 [batch\_size, width x height x channel]. This
@@ -288,7 +287,7 @@ its output units must be equal to the number of classes. The output of
 this layer has the dimensionality of [batch\_size, 1, 1, num\_classes].
 The ``tf.squeeze`` function does the embedding operation which its output dimension
 is [batch\_size, num\_classes]. It is worth noting that the scope of the
-last layer overwrite the scope='fc4'.
+last layer overwrites the scope='fc4'.
 
 --------------------
 The TensorFlow Graph
@@ -297,20 +296,20 @@ The TensorFlow Graph
 At this time, after describing the network design and different layers,
 it is the time to present how to implement this architecture using
 TensorFlow. With TensorFlow everything should be defined on something
-called GRAPH. The graphs has the duty to tell the TensorFlow backend to
+called GRAPH. The graphs have the duty to tell the TensorFlow backend to
 what to do and how to do the desired operations. TensorFlow uses Session
 to run the operations.
 
 The graph operations are executed in session environment which contains
 state of variables. For running each created session a specific graph is
 needed because each session can only be operated on a single graph. So
-multiple graphs cannot be used in a single session. If the users does
+multiple graphs cannot be used in a single session. If the users do
 not explicitly use a session by its name, the default session will be
 used by TensorFlow.
 
 A graph contains tensors and the operations defined on that graph. So
 the graph can be used on multiple sessions. Again like the sessions, if
-a graph is not explicitly defined by the user, the TensorFlow itself set
+a graph is not explicitly defined by the user, the TensorFlow itself sets
 a default graph. Although there is no harm working with the default
 graph, but explicitly defining the graph is recommended. The general
 graph of out experimental setup is as below:
@@ -402,7 +401,7 @@ script, panel by panel, shows the graph design of our experiments:
         summary_epoch_train_op = tf.summary.merge_all('per_epoch_train')
 
 
-Each of the above sections, will be explained in the following subsections
+Each of the above sections will be explained in the following subsections
 using the same naming convention for convenience.
 
 ~~~~~~~~~~~~~
@@ -410,7 +409,7 @@ Graph Default
 ~~~~~~~~~~~~~
 
 As mentioned before, it is recommended to set the graph manually and in
-that section, we named the graph to be **graph**. Later on it will be
+that section, we named the graph to be **graph**. Later on, it will 
 notice that this definition is useful because we can pass the graph to
 other functions and sessions and it will be recognized.
 
@@ -437,16 +436,16 @@ counter to realize when it has to change the learning rate.
 Place Holders
 ~~~~~~~~~~~~~
 
-The tf.placeholder operation, creates a placeholder variable tensor
+The tf.placeholder operation creates a placeholder variable tensor
 which will be fed to the network in testing/training phase. The images
 and labels must have placeholders because they are in essence the inputs
 to the network in training/testing phase. The *type* and *shape* of the
-place holders must be defined as required parameters. The first dimension of the shape argument is set to
+place-holders must be defined as required parameters. The first dimension of the shape argument is set to
 **None** which allows the place holder to get any dimension. The first
 dimension is the *batch\_size* and is flexible.
 
-The dropout\_param placeholder, takes the probability of keeping a
-neuron active. The reason behind defining a placeholder for dropout
+The dropout\_param placeholder takes the probability of keeping a
+neuron active. The reason behind defining a place-holder for the dropout
 parameter is to enable the setup to take this parameter in running each
 any session arbitrary which enrich the experiment to disable it when
 running the testing session.
@@ -457,17 +456,17 @@ Model and Evaluation Tensors
 
 The default provided parameters are determined by
 **arg\_scope** operator. The
-*tf.nn.softmax\_cross\_entropy\_with\_logits* on the un-normalized
-logits is used as the loss function. This function computes the softmax
-activation internally which makes it more stable. Finally the accuracy is computed.
+*tf.nn.softmax\_cross\_entropy\_with\_logits* is operating on the un-normalized
+logits as the loss function. This function computes the softmax
+activation internally which makes it more stable. Finally, the accuracy is computed.
 
 ~~~~~~~~~~~~~~~~
 Training Tensors
 ~~~~~~~~~~~~~~~~
 
 Now it's the time to define the training tensors. The Adam Optimizer is used as one of the best current optimization
-algorithms which is widely used and is famous because of its adaptive
-characteristics. The gradients must
+algorithms and has been utilized widely used because of its adaptive
+characteristics and outstanding performance. The gradients must
 be computed using the *defined loss tensor* and those computations must
 be added as the *train operations* to the graph. Basically 'train\_op'
 is an operation that is run for gradient update on parameters. Each
@@ -479,34 +478,34 @@ update the 'global\_step' and increment it by one!
 Summaries
 ~~~~~~~~~
 
-In this section we describe how to create summary operations and save
-them into allocated tensors. Eventually the summaries should be
+In this section, we describe how to create summary operations and save
+them into allocated tensors. Eventually, the summaries should be
 presented in *Tensorboard* in order to visualize what is happening
-inside of the network blackbox. There are different types of summaries.
+inside of the network black-box. There are different types of summaries.
 Three type of image, scalar and histogram summaries are used in this
 implementations. In order to avoid this post to becoming too verbose, we
 do not go in depth of the explanation for summary operations and we will
 get back to it in another post.
 
 The image summaries are created which has the duty of
-visualize the input elements to the summary tensor. This elements here
-are 3 random images from the train data. In The outputs of different layers will be fed to the relevent summary tensor.
-Finally some scalar summaries are created in order
+visualizing the input elements to the summary tensor. These elements here
+are 3 random images from the train data. In The outputs of different layers will be fed to the relevant summary tensor.
+Finally, some scalar summaries are created in order
 to track the *training convergence* and *testing performance*. The
 collections argument in summary definitions is a supervisor which direct
-each summary tensor to the relevent operation. For example some
-summaries only needs to be generated in training phase and some are only
+each summary tensor to the relevant operation. For example, some
+summaries only need to be generated in training phase and some are only
 needed in testing. We have a collection named 'per\_epoch\_train' too
 and the summaries which only have to be generated once per epoch in the
-training phase, will be stored in this list. Eventually the summaries are gathered in the
+training phase will be stored in this list. Eventually, the summaries are gathered in the
 corresponding summary lists using the collections key.
 
 --------
 Training
 --------
 
-Now it's the time to go through the training procedure. In consists of
-different steps which starts by **session configuration** to saving the
+Now it's the time to go through the training procedure. It consists of
+different steps which start by **session configuration** to saving the
 **model checkpoint**.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -532,19 +531,19 @@ session must be configured. The code is as below:
     sess = tf.Session(graph=graph, config=session_conf)
 
 
-As it is clear, all the tensors are store in a
+As it is clear, all the tensors are stored in a
 dictionary to be used later by the corresponding keys. The allow\_soft\_placement
-flag, allows the switching back-and-forth between different devices.
+flag allows the switching back-and-forth between different devices.
 This is useful when the user allocated 'GPU' to all operations without
 considering the fact that not all operations are supported by GPU using
-the TensorFlow. In this case if the *allow\_soft\_placement* operator is
-disabled, errors can be show up and the user must start the debugging
-process but using the active flag prevent this issue by automatically
+the TensorFlow. In this case, if the *allow\_soft\_placement* operator is
+disabled, errors can block the program to continue and the user must start the debugging
+process but the usage of the active flag prevent this issue by automatically
 switch from a non-supported device to the supported one. The
 log\_device\_placement flag is to present which operations are set on
 what devices. This is useful for debugging and it projects a verbose
-dialog in the terminal. Eventually the session is taken
-using the defined **graph**. The training phase start using the
+dialog in the terminal. Eventually, the session is taken
+using the defined **graph**. The training phase starts using the
 following script:
 
 .. code:: python
@@ -552,7 +551,7 @@ following script:
      
     with sess.as_default():
         # Run the saver.
-        # 'max_to_keep' flag determines the maximum number of models that the tensorflow save and keep. default by TensorFlow = 5.
+        # 'max_to_keep' flag determine the maximum number of models that the tensorflow save and keep. default by TensorFlow = 5.
         saver = tf.train.Saver(max_to_keep=FLAGS.max_num_checkpoint)
 
         # Initialize all variables
@@ -573,11 +572,11 @@ following script:
 
 The tf.train.Saver is run in order to provide an
 operation to save and load the models. The **max\_to\_keep** flags
-determines the maximum number of the saved models that the TensorFlow
+determine the maximum number of the saved models that the TensorFlow
 keeps and its default is set to '5' by TensorFlow. The
 session is run in order to initialize all the variable which is
-necessary. Finally train\_evaluation function is
-provided to run the training/tesing phase.
+necessary. Finally, train\_evaluation function is
+provided to run the training/testing phase.
 
 ~~~~~~~~~~~~~~~~~~~
 Training Operations
@@ -756,7 +755,7 @@ The training function is as below:
             print("Final Test Accuracy is %% %.2f" % test_accuracy)
 
 
-The input parameters to the function are described by the comments. The summary writers are defined
+The input parameters to the function are described in the comments. The summary writers are defined
 separately for train and test phases. The program
 checks if fine-tuning is desired then the model is loaded and the
 operation will be continued afterward. The batches
@@ -769,7 +768,7 @@ saved.
 Training Summaries and Results
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The training loops saves the summaries in the train summary part. By
+The training loop saves the summaries in the train summary part. By
 using the Tensorboard and pointing to the directory that the logs are
 saved, we can visualize the training procedure. The loss and accuracy
 for the train are depicted jointly as below:
@@ -791,7 +790,7 @@ following figure:
    **Figure 5:** The activation of the last layer.
 
 
-For the last layer it is good to have a visualization of the
+For the last layer, it is good to have a visualization of the
 distribution of the neurons outputs. By using the histogram summary the
 distribution can be shown over the whole training steps. The result is
 as below:
@@ -803,7 +802,7 @@ as below:
    **Figure 6:** The histogram summary of the last layer.
 
 
-Eventually the test accuracy per step is plotted as the following curve:
+Eventually, the test accuracy per step is plotted as the following curve:
 
 .. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/3-neural_network/convolutiona_neural_network/test_accuracy.png
    :scale: 50 %
@@ -820,20 +819,20 @@ is as below:
    :scale: 50 %
    :align: center
    
-   **Figure 8:** Terminal scene in training phase.
+   **Figure 8:** The terminal in training phase.
 
 
 
-Few things needs to be considered in order to clarify the results:
+Few things need to be considered in order to clarify the results:
 
 -  The initial learning rate by the **Adam optimizer** has been set to a
-   small number. By setting that to a larger number, the speech of
-   accuracy increasing could go higher. We deliberately set that to a
+   small number. By setting that to a larger number, the speed of
+   increasing the accuracy could go higher.However, this is not always the case. We deliberately set that to a
    small number to be able to track the procedure easier.
 -  The **histogram summaries** are saved per each epoch and not per
-   step. Since the generation of histogram summaries are very
+   step. Since the generation of histogram summaries is very
    time-consuming, there are only generated per epoch of training.
--  While the training is under process, per each epoch an evaluation
+-  While the training is under process, per each epoch, an evaluation
    will be performed over the whole test set. If the test set is too
    big, isolated evaluation is recommended in order to avoid the memory
    exhaustion issue.
@@ -842,7 +841,7 @@ Few things needs to be considered in order to clarify the results:
 Summary
 -------
 
-In this tutorial we train a neural network classifier using
+In this tutorial, we train a neural network classifier using
 convolutional neural networks. MNIST data has been used for simplicity
 and its wide usage. The TensorFlow has been used as the deep learning
 framework. The main goal of this tutorial was to present an easy
