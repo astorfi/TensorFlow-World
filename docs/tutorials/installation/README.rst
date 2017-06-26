@@ -10,7 +10,7 @@ Install TensorFlow from the source
 
 
 
-The installation is available at `TensorFlow`_. Installation from the source is recommended becasue the user can build the desired TensorFlow binary for the specific architecture. It enriches the TensoFlow with a better systam compatibility and it will run much faster. Instaling from the source is available at `Installing TensorFlow from Sources`_ link. The official TensorFlow explanations are concise and to the point, however few things might become important as we go through the installation. We try to project the step by step process to avoid any confusion. The following sections must be considered in the written order.
+The installation is available at `TensorFlow`_. Installation from the source is recommended because the user can build the desired TensorFlow binary for the specific architecture. It enriches the TensoFlow with a better system compatibility and it will run much faster. Installing from the source is available at `Installing TensorFlow from Sources`_ link. The official TensorFlow explanations are concise and to the point. However. few things might become important as we go through the installation. We try to project the step by step process to avoid any confusion. The following sections must be considered in the written order.
 
 The assumption is that installing TensorFlow in the ``Ubuntu`` using ``GPU support`` is desired. ``Python2.7`` is chosen for installation.
 
@@ -32,14 +32,14 @@ The following should be done in order:
 TensorFlow Python Dependencies Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For installaion of the required dependencies, the following command must be executed in the terminal:
+For installation of the required dependencies, the following command must be executed in the terminal:
 
 .. code:: bash
 
     sudo apt-get install python-numpy python-dev python-pip python-wheel python-virtualenv
     sudo apt-get install python3-numpy python3-dev python3-pip python3-wheel python3-virtualenv
     
-The second line is for ``python3`` instalaltion.
+The second line is for ``python3`` installation.
 
 ~~~~~~~~~~~~~~~~~~~
 Bazel Installation
@@ -47,7 +47,7 @@ Bazel Installation
 
 Please refer to `Bazel Installation`_.
 
-``WARNING:`` The Bazel installation may change the supported kernel by the GPU! After that you may need to refresh your GPU installation or update it other wise you may get the following error when evaluating the TensorFlow installation:
+``WARNING:`` The Bazel installation may change the supported kernel by the GPU! After that you may need to refresh your GPU installation or update it, otherwise, you may get the following error when evaluating the TensorFlow installation:
 
 .. code:: bash
 
@@ -71,7 +71,7 @@ The following requirements must be satisfied:
 Creating a Virtual Environment (Optional)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assume the installation of TensorFlow in a ``python virtual environment`` is desired. First we need to create adirectory to contain all the environments. It can be done by executing the following in the terminal:
+Assume the installation of TensorFlow in a ``python virtual environment`` is desired. First, we need to create a directory to contain all the environments. It can be done by executing the following in the terminal:
 
 .. code:: bash
 
@@ -91,7 +91,7 @@ Up to now, the virtual environment named *tensorflow* has been created. For envi
 
     source ~/virtualenvs/tensorflow/bin/activate
 
-However the command is too verbose! 
+However, the command is too verbose! 
 
 **Alias**
 
@@ -119,7 +119,7 @@ To double check let's check the ``~/.bash_aliases`` from the terminal using the 
 
 **check the ``.bashrc``**
 
-Also let's check the ``.bashrc`` shell script using the ``sudo gedit ~/.bashrc`` command. It should contain the following:
+Also, let's check the ``.bashrc`` shell script using the ``sudo gedit ~/.bashrc`` command. It should contain the following:
  
 .. code:: shell
 
@@ -133,13 +133,13 @@ Also let's check the ``.bashrc`` shell script using the ``sudo gedit ~/.bashrc``
 Configuration of the Installation
 ---------------------------------
 
-At first the Tensorflow repository must be cloned:
+At first, the Tensorflow repository must be cloned:
 
 .. code:: bash
 
      git clone https://github.com/tensorflow/tensorflow 
 
-After preparing the environment, the installation must be configured. The ``flags`` of the cofiguration are of great importance becasue they determine how well and compatible the TensorFlow will be installed!! At first we have to go to the TensorFlow root:
+After preparing the environment, the installation must be configured. The ``flags`` of the configuration are of great importance because they determine how well and compatible the TensorFlow will be installed!! At first, we have to go to the TensorFlow root:
 
 .. code:: bash
 
@@ -231,7 +231,7 @@ Two types of installation can be used. The native installation using system root
 Native Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following command will install the pip package created by bazel build:
+The following command will install the pip package created by Bazel build:
 
 .. code:: bash
 
@@ -242,7 +242,7 @@ The following command will install the pip package created by bazel build:
 Using Virtual Environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At first, the environment must be activation. Since we already defined the environment alias as ``tensorflow``, by the terminal execution of the simple command of ``tensorflow``, the environment will be activated. Then like the previous part we execute the following:
+At first, the environment must be activation. Since we already defined the environment alias as ``tensorflow``, by the terminal execution of the simple command of ``tensorflow``, the environment will be activated. Then like the previous part, we execute the following:
 
 .. code:: bash
     
@@ -250,13 +250,13 @@ At first, the environment must be activation. Since we already defined the envir
 
 **WARNING**:
            * By using the virtual environment installation method, the sudo command should not be used anymore because if we use sudo, it points to native system packages and not the one available in the virtual environment.
-           * Since ``sudo mkdir ~/virtualenvs`` is used for creating of the virtual environment, using the ``pip install`` returns ``permission error``. In this case the root priviledge of the environment directory must be change using the ``sudo chmod -R 777 ~/virtualenvs`` command.
+           * Since ``sudo mkdir ~/virtualenvs`` is used for creating of the virtual environment, using the ``pip install`` returns ``permission error``. In this case, the root privilege of the environment directory must be changed using the ``sudo chmod -R 777 ~/virtualenvs`` command.
     
 --------------------------
 Validate the Installation
 --------------------------
 
-In the terminal, the following script must be run (``in the home directory``) correctly without any error and preferablely any warning:
+In the terminal, the following script must be run (``in the home directory``) correctly without any error and preferably any warning:
 
 .. code:: bash
 
@@ -270,17 +270,17 @@ In the terminal, the following script must be run (``in the home directory``) co
 Common Errors
 --------------------------
 
-Different errors reported to block the compiling and running TensorFlow.
+Different errors reported blocking the compiling and running TensorFlow.
 
-   * ``Mismatch between the supported kernel versions:`` This error mentioned earlier in this documentation. The naive solution reported to be reinstallation of the CUDA driver.
+   * ``Mismatch between the supported kernel versions:`` This error mentioned earlier in this documentation. The naive solution reported being the reinstallation of the CUDA driver.
    * ``ImportError: cannot import name pywrap_tensorflow:`` This error usually occurs when the Python loads the tensorflow libraries from the wrong directory, i.e., not the version installed by the user in the root. The first step is to make sure we are in the system root such that the python libraries are utilized correctly. So basically we can open a new terminal and test TensorFlow installation again. 
-   * ``ImportError: No module named packaging.version":`` Most likely it might be related to the ``pip`` installation. Reinstalling that using ``python -m pip install -U pip`` or ``sudo python -m pip install -U pip`` may fixed it!
+   * ``ImportError: No module named packaging.version":`` Most likely it might be related to the ``pip`` installation. Reinstalling that using ``python -m pip install -U pip`` or ``sudo python -m pip install -U pip`` may fix it!
 
 --------------------------
 Summary
 --------------------------
 
-In this tutorial, we described how to install TensorFlow from the source which has the advantage of more compatibility with the system configuration. Python virtual environment installation has been investigated as well to separate the TensorFlow environment from other environments. Conda environments can be used as well as python virtual environments which will be explained in a separated post. In any case, the TensorFlow installed from the source can be run much faster than the pre-build binary packages provided by the TensorFlow although it adds the complexity for installation.
+In this tutorial, we described how to install TensorFlow from the source which has the advantage of more compatibility with the system configuration. Python virtual environment installation has been investigated as well to separate the TensorFlow environment from other environments. Conda environments can be used as well as Python virtual environments which will be explained in a separated post. In any case, the TensorFlow installed from the source can be run much faster than the pre-build binary packages provided by the TensorFlow although it adds the complexity to installation process.
 
 
 
