@@ -74,7 +74,7 @@ The tutorials in this repository are partitioned into relevant categories.
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | 3  | *TensorFLow Basics* | `TensorFlow Variables <variablssourcecode_>`_   / `IPython <ipythonvariabls_>`_        |  `Documentation <Documentationvariabls_>`_   |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 4  | *Machine Learning*  |`Linear Regression`_                                                                    |  `Documentation <Documentationlr_>`_         |
+| 4  | *Machine Learning*  |`Linear Regression`_  / `IPython <LinearRegressionipython_>`_                           |  `Documentation <Documentationlr_>`_         |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | 5  | *Machine Learning*  | `Logistic Regression`_  / `IPython <LogisticRegressionipython_>`_                      |  `Documentation <LogisticRegDOC_>`_          |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
@@ -135,6 +135,7 @@ The tutorials in this repository are partitioned into relevant categories.
 .. We are going to present concepts of basic machine learning models and methods and showing how to implement them in Tensorflow.
 
 .. _Linear Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_regression
+.. _LinearRegressionipython: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_regression/code/linear_regression.ipynb
 .. _Documentationlr: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/2-basics_in_machine_learning/linear_regression
 
 .. _Logistic Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/logistic_regression
