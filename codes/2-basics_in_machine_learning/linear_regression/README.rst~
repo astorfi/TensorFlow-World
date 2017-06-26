@@ -32,7 +32,7 @@ As an example the code can be executed as follows:
     
     python linear_regression.py --num_epochs=50
 
-The ``--num_epochs`` flag is to provide the number of epochs that will be used for training. The ``--num_epochs`` flag is not required because its default value is ``50`` and is provided in the source code as follows:
+The ``--num_epochs`` flag is to provide the number of epochs that will be used for training. The ``--num_epochs`` flag is not required becasue its default value is ``50`` and is provided in the source code as follows:
 
 .. code:: python
     
