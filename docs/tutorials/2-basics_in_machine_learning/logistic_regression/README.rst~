@@ -200,5 +200,5 @@ Summary
 In this tutorial, we described logistic regression and represented how to
 implement it in code. Instead of making a decision based on the output
 probability based on a targeted class, we extended the problem to a two
-class problem in which for each class we predict the probability. In the future posts, we will extend this problem to multi-class problem and we
+class problem in which for each class we predict the probability. In the future posts we will extend this problem to multi-class problem and we
 show it can be done with the similar approach.
