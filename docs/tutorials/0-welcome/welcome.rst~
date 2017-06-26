@@ -25,7 +25,7 @@ At first we have to import the necessary libraries.
        import tensorflow as tf
        import os
 
-Since we are aimed to use Tensorboard, we need a directory to store the information (the operations and their corresponding outputs if desired by the user). These information are exported to ``event files`` by TensorFlow. The event files can be transformed to visual data such that the user be able to evaluate the architecture and the operations. The ``path`` to store these event files is defined as below:
+Since we are aimed to use Tensorboard, we need a directory to store the information (the operations and their corresponding outputs if desired by the user). These information are exported to ``event files`` by TensorFlow. The even files can be transformed to visual data such that the user be able to evaluate the architecture and the operations. The ``path`` to store these even files is defined as below:
 
 .. code:: python
     
