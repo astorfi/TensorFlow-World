@@ -131,12 +131,12 @@ for step_idx in range(FLAGS.num_steps):
 
 if FLAGS.is_evaluation:
     [[w1], [w2]] = sess.run(W)
-    [[b]] = sess.run(b)
+    [[bias]] = sess.run(b)
     x_line = [data[1] for data in X]
 
     # Find the separator line.
     line = []
-    line = [-w2/w1*i+b/w1 for i in x_line]
+    line = [-w2/w1*i+bias/w1 for i in x_line]
 
     # coor_pos_list = [positive_X, positive_y]
     # coor_neg_list = [negative_X, negative_y]
@@ -152,7 +152,7 @@ if FLAGS.is_evaluation:
             sys.exit("Invalid label!")
     
     # # uncomment if plotting is desired!
-    # Plotting the SVM decision boundary.
+    # # Plotting the SVM decision boundary.
     # plt.plot(positive_X, positive_y, '+', label='Positive')
     # plt.plot(negative_X, negative_y, 'o', label='Negative')
     # plt.plot(x_line, line, 'r-', label='Separator', linewidth=3)

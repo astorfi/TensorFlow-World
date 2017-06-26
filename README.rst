@@ -76,11 +76,11 @@ The tutorials in this repository are partitioned into relevant categories.
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | 4  | *Machine Learning*  |`Linear Regression`_                                                                    |  `Documentation <Documentationlr_>`_         |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 5  | *Machine Learning*  | `Logistic Regression`_                                                                 |  `Documentation <LogisticRegDOC_>`_          |
+| 5  | *Machine Learning*  | `Logistic Regression`_  / `IPython <LogisticRegressionipython_>`_                      |  `Documentation <LogisticRegDOC_>`_          |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 6  | *Machine Learning*  | `Linear SVM`_                                                                          |                                              |
+| 6  | *Machine Learning*  | `Linear SVM`_  / `IPython <LinearSVMipython_>`_                                        |                                              |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 7  | *Machine Learning*  |`MultiClass Kernel SVM`_                                                                |                                              |
+| 7  | *Machine Learning*  |`MultiClass Kernel SVM`_  / `IPython <MultiClassKernelSVMipython_>`_                    |                                              |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | 8  | *Neural Networks*   |`Multi Layer Perceptron`_                                                               |                                              |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
@@ -138,12 +138,15 @@ The tutorials in this repository are partitioned into relevant categories.
 .. _Documentationlr: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/2-basics_in_machine_learning/linear_regression
 
 .. _Logistic Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/logistic_regression
+.. _LogisticRegressionipython: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/logistic_regression/code/logistic_regression.ipynb
 .. _LogisticRegDOC: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/2-basics_in_machine_learning/logistic_regression
 
 .. _Linear SVM: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_svm
+.. _LinearSVMipython: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_svm/code/linear_svm.ipynb
 
 
 .. _MultiClass Kernel SVM: https://github.com/astorfi/TensorFlow-World/blob/master/codes/2-basics_in_machine_learning/multiclass_svm
+.. _MultiClassKernelSVMipython: https://github.com/astorfi/TensorFlow-World/blob/master/codes/2-basics_in_machine_learning/multiclass_svm/code/multiclass_svm.ipynb
 
 
 .. +---+---------------------------------------------+----------------------------------------+
