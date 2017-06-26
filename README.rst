@@ -96,7 +96,7 @@ The tutorials in this repository are partitioned into relevant categories.
 .. The tutorial in this section is just a simple entrance to TensorFlow world.
 
 .. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/0-welcome
-.. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/0-welcome/welcome.rst
+.. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/0-welcome
 .. _ipythonwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/codes/0-welcome/code/ipython/0-welcome.ipynb
 
 
@@ -113,10 +113,10 @@ The tutorials in this repository are partitioned into relevant categories.
 .. These tutorials are related to basics of TensorFlow.
 
 .. _basicmathsourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/basic_math_operations
-.. _Documentationbasicmath: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/basic_math_operations/basic_math_operations.rst
+.. _Documentationbasicmath: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/basic_math_operations
 
 .. _variablssourcecode: https://github.com/astorfi/TensorFlow-World/blob/master/codes/1-basics/variables/README.rst
-.. _Documentationvariabls: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/variables/README.rst
+.. _Documentationvariabls: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/variables
 
 
 .. +---+-----------------------------------------------------+-------------------------------------------------+
@@ -133,14 +133,14 @@ The tutorials in this repository are partitioned into relevant categories.
 .. We are going to present concepts of basic machine learning models and methods and showing how to implement them in Tensorflow.
 
 .. _Linear Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_regression
-.. _Documentationlr: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/2-basics_in_machine_learning/linear_regression/README.rst
+.. _Documentationlr: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/2-basics_in_machine_learning/linear_regression
 
 .. _Logistic Regression: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/logistic_regression
 
 .. _LogisticRegDOC: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/2-basics_in_machine_learning/logistic_regression
 
 .. _Linear SVM: https://github.com/astorfi/TensorFlow-World/tree/master/codes/2-basics_in_machine_learning/linear_svm
-.. _MultiClass Kernel SVM: https://github.com/astorfi/TensorFlow-World/blob/master/codes/2-basics_in_machine_learning/multiclass_svm/README.rst
+.. _MultiClass Kernel SVM: https://github.com/astorfi/TensorFlow-World/blob/master/codes/2-basics_in_machine_learning/multiclass_svm
 
 
 .. +---+---------------------------------------------+----------------------------------------+
@@ -161,9 +161,9 @@ The tutorials in this repository are partitioned into relevant categories.
 .. The tutorials in this section are related to neural network architectures.
 
 .. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/convolutional-neural-network
-.. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/3-neural_network/convolutiona_neural_network/convolutional_neural_network.rst
+.. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/3-neural_network/convolutiona_neural_network
 
-.. _Multi Layer Perceptron: https://github.com/astorfi/TensorFlow-World/blob/master/codes/3-neural_networks/multi-layer-perceptron/readme.rst
+.. _Multi Layer Perceptron: https://github.com/astorfi/TensorFlow-World/blob/master/codes/3-neural_networks/multi-layer-perceptron
 
 
 .. _udercompleteautoencodercode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/undercomplete-autoencoder
