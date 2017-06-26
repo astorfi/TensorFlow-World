@@ -4,20 +4,20 @@ Welcome to TensorFlow World
 
 .. _this link: https://github.com/astorfi/TensorFlow-World/tree/master/Tutorials/0-welcome
 
-The tutorials in this section is just a start for going into TensorFlow world. The source code is available at `this link`_.
+The tutorials in this section are just a start for going into the TensorFlow world. The source code is available at `this link`_.
 
 We using Tensorboard for visualizing the outcomes. TensorBoard is the graph visualization tools provided by TensorFlow. Using Google’s words: “The computations you'll use TensorFlow for - like training a massive deep neural network - can be complex and confusing. To make it easier to understand, debug, and optimize TensorFlow programs, we've included a suite of visualization tools called TensorBoard.” A simple Tensorboard implementation is used in this tutorial. 
 
 **NOTE:*** 
      
-     * The details of summary operations, Tensorboard and their advantages are beyond the scope of this tutorial and will be presented in more advanced tutorials.
+     * The details of summary operations, Tensorboard, and their advantages are beyond the scope of this tutorial and will be presented in more advanced tutorials.
 
 
 --------------------------
-Prepairing the environment
+Preparing the environment
 --------------------------
 
-At first we have to import the necessary libraries.
+At first, we have to import the necessary libraries.
 
 .. code:: python
     
@@ -25,7 +25,7 @@ At first we have to import the necessary libraries.
        import tensorflow as tf
        import os
 
-Since we are aimed to use Tensorboard, we need a directory to store the information (the operations and their corresponding outputs if desired by the user). These information are exported to ``event files`` by TensorFlow. The event files can be transformed to visual data such that the user be able to evaluate the architecture and the operations. The ``path`` to store these event files is defined as below:
+Since we are aimed to use Tensorboard, we need a directory to store the information (the operations and their corresponding outputs if desired by the user). This information is exported to ``event files`` by TensorFlow. The event files can be transformed to visual data such that the user is able to evaluate the architecture and the operations. The ``path`` to store these event files is defined as below:
 
 .. code:: python
     
@@ -34,12 +34,12 @@ Since we are aimed to use Tensorboard, we need a directory to store the informat
        'log_dir', os.path.dirname(os.path.abspath(__file__)) + '/logs',
        'Directory where event logs are written to.')
 
-       # Store all elemnts in FLAG structure!
+       # Store all elements in FLAG structure!
        FLAGS = tf.app.flags.FLAGS
 
 The ``os.path.dirname(os.path.abspath(__file__))`` gets the directory name of the current python file. The ``tf.app.flags.FLAGS`` points to all defined flags using the ``FLAGS`` indicator. From now on the flags can be called using ``FLAGS.flag_name``.
 
-For convenience it is useful to only work with ``absolute paths``. By using the following script, the user is prompt to use absolute paths for the ``log_dir`` directory.
+For convenience, it is useful to only work with ``absolute paths``. By using the following script, the user is prompt to use absolute paths for the ``log_dir`` directory.
 
 .. code:: python
 
@@ -60,13 +60,13 @@ Some sentence can be defined by TensorFlow:
      # Defining some sentence!
      welcome = tf.constant('Welcome to TensorFlow world!')
     
-The ``tf.`` operator dperforms the specific operation and the output will be a ``Tensor``. The attribute ``name="some_name"`` is defined for better Tensorboard visualization as we see later in this tutorial.
+The ``tf.`` operator performs the specific operation and the output will be a ``Tensor``. The attribute ``name="some_name"`` is defined for better Tensorboard visualization as we see later in this tutorial.
 
 -------------------
 Run the Experiment
 -------------------
 
-The ``seesion``, which is the environment for running the operations, is executed as below:
+The ``session``, which is the environment for running the operations, is executed as below:
 
 .. code:: python
 
