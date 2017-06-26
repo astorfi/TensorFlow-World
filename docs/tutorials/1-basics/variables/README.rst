@@ -6,7 +6,7 @@ This tutorial deals with defining and initializing TensorFlow variables.
 Introduction
 ------------
 
-Definign ``variables`` is necessary because the hold the parameter.
+Defining ``variables`` is necessary because they hold the parameters.
 Without having parameters, training, updating, saving, restoring and any
 other operations cannot be performed. The defined variables in
 TensorFlow are just tensors with certain shapes and types. The tensors
@@ -19,9 +19,9 @@ is available on the dedicated GitHub repository.
 Creating variables
 ------------------
 
-For variable generation, the class of tf.Variable() will be used. When
+For a variable generation, the class of tf.Variable() will be used. When
 we define a variable, we basically pass a ``tensor`` and its ``value``
-to the graph. Basically the following will happen:
+to the graph. Basically, the following will happen:
 
     -  A ``variable`` tensor that holds a value will be pass to the
        graph.
@@ -67,7 +67,7 @@ Initializing Specific Variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 By using tf.variables\_initializer, we can explicitly command the
-TensorFlow to only initialize certain variable. The script is as follows
+TensorFlow to only initialize a certain variable. The script is as follows
 
 .. code:: python
      
@@ -80,15 +80,15 @@ TensorFlow to only initialize certain variable. The script is as follows
 Noted that custom initialization does not mean that we don't need to
 initialize other variables! All variables that some operations will be
 done upon them over the graph, must be initialized or restored from
-saved variables. This only let's us to realize how we can initialize
+saved variables. This only allows us to realize how we can initialize
 specific variables by hand.
 
 Golobal variable initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 All variables can be initialized at once using the
-tf.global\_variables\_initializer(). This op must be run after the model
-being fully constructed. The script is as below:
+tf.global\_variables\_initializer(). This op must be run after the model constructed. 
+The script is as below:
 
 .. code:: python
      
@@ -101,8 +101,7 @@ being fully constructed. The script is as below:
 
 Both the above methods are identical. We only provide the second one to
 demonstrate that the ``tf.global_variables_initializer()`` is nothing
-but ``tf.variables_initializer`` when you yield all the variables as the
-its input argument.
+but ``tf.variables_initializer`` when you yield all the variables as the input argument.
 
 Initilization of a variables using other existing variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -126,7 +125,7 @@ initialized with the values of the ``weights`` predefined value.
 Running the session
 -------------------
 
-All we did so far was to define the initilizers' ops and put them on the
+All we did so far was to define the initializers' ops and put them on the
 graph. In order to truly initialize variables, the defined initializers'
 ops must be run in the session. The script is as follows:
 
