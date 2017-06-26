@@ -97,7 +97,7 @@ The tutorials in this repository are partitioned into relevant categories.
 
 .. _welcomesourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/0-welcome
 .. _Documentationcnnwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/0-welcome
-.. _ipythonwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/codes/0-welcome/code/ipython/0-welcome.ipynb
+.. _ipythonwelcome: https://github.com/astorfi/TensorFlow-World/blob/master/codes/0-welcome/code/0-welcome.ipynb
 
 
 
