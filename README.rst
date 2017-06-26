@@ -114,9 +114,9 @@ The tutorials in this repository are partitioned into relevant categories.
 
 .. _basicmathsourcecode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/basic_math_operations
 .. _Documentationbasicmath: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/basic_math_operations
-.. _ipythonbasicmath: https://github.com/astorfi/TensorFlow-World/tree/master/codes/1-basics/basic_math_operations/basic_math_operations.ipynb
+.. _ipythonbasicmath: https://github.com/astorfi/TensorFlow-World/blob/master/codes/1-basics/basic_math_operations/code/basic_math_operation.ipynb
 
-.. _ipythonvariabls: https://github.com/astorfi/TensorFlow-World/blob/master/codes/1-basics/variables/variables.ipynb
+.. _ipythonvariabls: https://github.com/astorfi/TensorFlow-World/blob/master/codes/1-basics/variables/code/variables.ipynb
 .. _variablssourcecode: https://github.com/astorfi/TensorFlow-World/blob/master/codes/1-basics/variables/README.rst
 .. _Documentationvariabls: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/1-basics/variables
 
