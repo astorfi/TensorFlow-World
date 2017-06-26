@@ -82,7 +82,7 @@ The tutorials in this repository are partitioned into relevant categories.
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | 7  | *Machine Learning*  |`MultiClass Kernel SVM`_  / `IPython <MultiClassKernelSVMipython_>`_                    |                                              |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 8  | *Neural Networks*   |`Multi Layer Perceptron`_                                                               |                                              |
+| 8  | *Neural Networks*   |`Multi Layer Perceptron`_   / `IPython <MultiLayerPerceptronipython_>`_                 |                                              |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | 9  | *Neural Networks*   | `Convolutional Neural Networks`_                                                       |       `Documentation <Documentationcnn_>`_   |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
@@ -170,6 +170,7 @@ The tutorials in this repository are partitioned into relevant categories.
 .. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/3-neural_network/convolutiona_neural_network
 
 .. _Multi Layer Perceptron: https://github.com/astorfi/TensorFlow-World/blob/master/codes/3-neural_networks/multi-layer-perceptron
+.. _MultiLayerPerceptronipython: https://github.com/astorfi/TensorFlow-World/blob/master/codes/3-neural_networks/multi-layer-perceptron/code/train_mlp.ipynb
 
 
 .. _udercompleteautoencodercode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/undercomplete-autoencoder
