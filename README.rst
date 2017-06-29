@@ -15,7 +15,7 @@ TensorFlow World
 
 This repository is aimed to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository. Each tutorial has a ``source code`` and its ``documentation``.
 
-.. image:: docs/_img/mainpage/TensorFlow_World.gif
+.. image:: _img/mainpage/TensorFlow_World.gif
 
 .. The links.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
@@ -198,7 +198,7 @@ In order to install TensorFlow please refer to the following link:
   * `TensorFlow Installation`_
 
 
-.. image:: docs/_img/mainpage/installation.gif
+.. image:: _img/mainpage/installation.gif
     :target: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
 
 
