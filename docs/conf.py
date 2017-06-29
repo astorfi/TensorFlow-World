@@ -93,6 +93,14 @@ html_theme = 'alabaster'
 #
 # html_theme_options = {}
 
+html_theme_options = {
+    'show_powered_by': False,
+    'github_user': 'astorfi',
+    'github_repo': 'TensorFlow-World',
+    'github_banner': True,
+    'show_related': False
+}
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
