@@ -49,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 # project = u'TensorFlow-World'
-# copyright = u'2017, Amirsina Torfi'
+copyright = u'2017, Amirsina Torfi'
 author = u'Amirsina Torfi'
 
 # The version info for the project you're documenting, acts as replacement for
