@@ -1,7 +1,7 @@
 ﻿
-****************
-TensorFlow World
-****************
+********************
+`TensorFlow World`_
+********************
 .. image:: https://travis-ci.org/astorfi/TensorFlow-World.svg?branch=master
     :target: https://travis-ci.org/astorfi/TensorFlow-World
 .. image:: https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
@@ -12,6 +12,8 @@ TensorFlow World
     :target: https://coveralls.io/github/astorfi/TensorFlow-World?branch=master
 .. image:: https://zenodo.org/badge/86115145.svg
    :target: https://zenodo.org/badge/latestdoi/86115145
+
+.. _TensorFlow World: http://tensorflow-world.readthedocs.io/en/latest/
 
 This repository is aimed to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository. Each tutorial has a ``source code`` and its ``documentation``.
 
