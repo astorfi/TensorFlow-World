@@ -27,8 +27,7 @@ This repository is aimed to provide simple and ready-to-use tutorials for Tensor
 Motivation
 ============
 
-There are different motivations for this repository. Some are TensorFlow-related which is one of the bests up to the moment that
-this document is being written! The question is why this repository has been created among all other available tutorials on the web?
+There are different motivations for this open source project. TensorFlow is one of the best deep learning frameworks up to the moment that this document is being written! The question is why this repository has been created among all other available tutorials on TensorFlow on the web?
 
 ~~~~~~~~~~~~~~~~~~~~~
 Why using TensorFlow?
