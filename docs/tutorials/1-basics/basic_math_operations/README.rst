@@ -4,7 +4,7 @@ Welcome to TensorFlow World
 
 .. _this link: https://github.com/astorfi/TensorFlow-World/tree/master/codes/0-welcome
 
-The tutorials in this section are just a start for going into the TensorFlow world. The source code is available at `this link`_.
+The tutorials in this section are just a start for going into the TensorFlow world.
 
 We using Tensorboard for visualizing the outcomes. TensorBoard is the graph visualization tools provided by TensorFlow. Using Google’s words: “The computations you'll use TensorFlow for - like training a massive deep neural network - can be complex and confusing. To make it easier to understand, debug, and optimize TensorFlow programs, we've included a suite of visualization tools called TensorBoard.” A simple Tensorboard implementation is used in this tutorial. 
 
