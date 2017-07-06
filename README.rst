@@ -66,29 +66,55 @@ TensorFlow Tutorials
 The tutorials in this repository are partitioned into relevant categories.
 
 
+~~~~~~~~
+Warm-up
+~~~~~~~~
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | #  |       topic         |   Source Code                                                                          |                                              |
 +====+=====================+========================================================================================+==============================================+
-| 1  | Start-up            |  `Welcome <welcomesourcecode_>`_  / `IPython <ipythonwelcome_>`_                       |  `Documentation <Documentationcnnwelcome_>`_ |
+| 1  | Start-up            | `Welcome <welcomesourcecode_>`_  / `IPython <ipythonwelcome_>`_                        |  `Documentation <Documentationcnnwelcome_>`_ |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 2  | *TensorFLow Basics* |  `Basic Math Operations <basicmathsourcecode_>`_   / `IPython <ipythonbasicmath_>`_    |  `Documentation <Documentationbasicmath_>`_  |
+
+~~~~~~
+Basics
+~~~~~~
++----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
+| #  |       topic         |   Source Code                                                                          |                                              |
++====+=====================+========================================================================================+==============================================+
+| 2  | *TensorFLow Basics* | `Basic Math Operations <basicmathsourcecode_>`_   / `IPython <ipythonbasicmath_>`_     |  `Documentation <Documentationbasicmath_>`_  |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | 3  | *TensorFLow Basics* | `TensorFlow Variables <variablssourcecode_>`_   / `IPython <ipythonvariabls_>`_        |  `Documentation <Documentationvariabls_>`_   |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 4  | *Machine Learning*  |`Linear Regression`_  / `IPython <LinearRegressionipython_>`_                           |  `Documentation <Documentationlr_>`_         |
-+----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 5  | *Machine Learning*  | `Logistic Regression`_  / `IPython <LogisticRegressionipython_>`_                      |  `Documentation <LogisticRegDOC_>`_          |
-+----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 6  | *Machine Learning*  | `Linear SVM`_  / `IPython <LinearSVMipython_>`_                                        |                                              |
-+----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 7  | *Machine Learning*  |`MultiClass Kernel SVM`_  / `IPython <MultiClassKernelSVMipython_>`_                    |                                              |
-+----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 8  | *Neural Networks*   |`Multi Layer Perceptron`_   / `IPython <MultiLayerPerceptronipython_>`_                 |                                              |
-+----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 9  | *Neural Networks*   | `Convolutional Neural Networks`_                                                       |       `Documentation <Documentationcnn_>`_   |
-+----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
-| 10 | *Neural Networks*   | `Undercomplete Autoencoder <udercompleteautoencodercode_>`_                            |                                              |
-+----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
+
+~~~~~~~~~~~~~~~~~~~~~~
+Basic Machine Learning
+~~~~~~~~~~~~~~~~~~~~~~
+
++----+----------------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
+| #  |       topic                |   Source Code                                                                          |                                              |
++====+============================+========================================================================================+==============================================+
+| 4  | *Linear Models*            |`Linear Regression`_  / `IPython <LinearRegressionipython_>`_                           | `Documentation <Documentationlr_>`_          |
++----+----------------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
+| 5  | *Predictive Models*        | `Logistic Regression`_  / `IPython <LogisticRegressionipython_>`_                      | `Documentation <LogisticRegDOC_>`_           |
++----+----------------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
+| 6  | *Support Vector Machines*  | `Linear SVM`_  / `IPython <LinearSVMipython_>`_                                        |                                              |
++----+----------------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
+| 7  | *Support Vector Machines*  |`MultiClass Kernel SVM`_  / `IPython <MultiClassKernelSVMipython_>`_                    |                                              |
++----+----------------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
+
+~~~~~~~~~~~~~~~~
+Neural Networks
+~~~~~~~~~~~~~~~~
+
++----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
+| #  |       topic                       |   Source Code                                                                                 |                                              |
++====+===================================+===============================================================================================+==============================================+
+| 8  | *Multi Layer Perceptron*          |`Simple Multi Layer Perceptron`_   / `IPython <MultiLayerPerceptronipython_>`_                 |                                              |
++----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
+| 9  | *Convolutional Neural Networks*   | `Simple Convolutional Neural Networks`_                                                       |       `Documentation <Documentationcnn_>`_   |
++----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
+| 10 | *Autoencoders*                    | `Undercomplete Autoencoder <udercompleteautoencodercode_>`_                                   |                                              |
++----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. ~~~~~~~~~~~~
 .. **Welcome**
@@ -168,10 +194,10 @@ The tutorials in this repository are partitioned into relevant categories.
 .. ~~~~~~~~~~~~~~~~~~~
 .. The tutorials in this section are related to neural network architectures.
 
-.. _Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/convolutional-neural-network
+.. _Simple Convolutional Neural Networks: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/convolutional-neural-network
 .. _Documentationcnn: https://github.com/astorfi/TensorFlow-World/blob/master/docs/tutorials/3-neural_network/convolutiona_neural_network
 
-.. _Multi Layer Perceptron: https://github.com/astorfi/TensorFlow-World/blob/master/codes/3-neural_networks/multi-layer-perceptron
+.. _Simple Multi Layer Perceptron: https://github.com/astorfi/TensorFlow-World/blob/master/codes/3-neural_networks/multi-layer-perceptron
 .. _MultiLayerPerceptronipython: https://github.com/astorfi/TensorFlow-World/blob/master/codes/3-neural_networks/multi-layer-perceptron/code/train_mlp.ipynb
 
 
