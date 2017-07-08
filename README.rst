@@ -273,3 +273,12 @@ Final Note
 We are looking forward to your kind feedback. Please help us to improve this open source project and make our work better.
 For contribution, please create a pull request and we will investigate it promptly. Once again, we appreciate
 your kind feedback and elaborate code inspections.
+
+================
+Acknowledgement
+================
+
+I have taken huge efforts in this project. However, it would not have been plausible without the kind support and help of my friend and colleague `Domenick Poster <https://github.com/vonclites/>`_. for his valuable advices.
+
+
+
