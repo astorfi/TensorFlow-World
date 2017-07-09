@@ -4,17 +4,14 @@ import tensorflow as tf
 import xlrd
 import matplotlib.pyplot as plt
 import os
+from sklearn.utils import check_random_state
 
-
-# Data file provided by the Stanford course CS 20SI: TensorFlow for Deep Learning Research.
-# https://github.com/chiphuyen/tf-stanford-tutorials
-DATA_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)),'data/fire_theft.xls')
-
-# read the data from the .xls file.
-book = xlrd.open_workbook(DATA_FILE, encoding_override="utf-8")
-sheet = book.sheet_by_index(0)
-data = np.asarray([sheet.row_values(i) for i in range(1, sheet.nrows)])
-num_samples = sheet.nrows - 1
+# Generating artificial data.
+n = 50
+XX = np.arange(n)
+rs = check_random_state(0)
+YY = rs.randint(-20, 20, size=(n,)) + 2.0 * XX
+data = np.stack([XX,YY], axis=1)
 
 #######################
 ## Defining flags #####
@@ -36,7 +33,7 @@ def inputs():
     """
     Defining the place_holders.
     :return:
-            Returning the data and label lace holders.
+            Returning the data and label place holders.
     """
     X = tf.placeholder(tf.float32, name="X")
     Y = tf.placeholder(tf.float32, name="Y")

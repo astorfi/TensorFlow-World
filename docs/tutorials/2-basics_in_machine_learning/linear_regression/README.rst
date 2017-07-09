@@ -12,7 +12,7 @@ Linear Regression using TensorFlow
 ----------------------------------
 
 This tutorial is about training a linear model by TensorFlow to fit the
-data. Alternatively you can check this `blog post <blogpostlinearregression_>`_.
+data. Alternatively, you can check this `blog post <blogpostlinearregression_>`_.
 
 .. _blogpostlinearregression: http://www.machinelearninguru.com/deep_learning/tensorflow/machine_learning_basics/linear_regresstion/linear_regression.html
 
@@ -24,9 +24,9 @@ Introduction
 In machine learning and statistics, Linear Regression is the modeling of
 the relationship between a variable such as Y and at least one
 independent variable as X. In the linear regression, the linear
-relationships will be modeled by a predictor function which its
+relationship will be modeled by a predictor function which its
 parameters will be estimated by the data and is called a Linear Model.
-The main advantage of Linear Regression algorithm is it simplicity using
+The main advantage of Linear Regression algorithm is its simplicity using
 which it is very straightforward to interpret the new model and map the
 data into a new space. In this article, we will introduce how to train a
 linear model using TensorFLow and how to showcase the generated model.
@@ -36,9 +36,9 @@ Description of the Overall Process
 
 In order to train the model, the TensorFlow loops through the data and
 it should find the optimal line (as we have a linear model) that fits
-the data. The linear relationship between two variables of X,Y is
-estimated by designing an appropriate optimization problem which its
-requirement is a proper loss function. The dataset is available from the
+the data. The linear relationship between two variables of X, Y is
+estimated by designing an appropriate optimization problem for which the requirement
+ is a proper loss function. The dataset is available from the
 `Stanford course CS
 20SI <http://web.stanford.edu/class/cs20si/index.html>`__: TensorFlow
 for Deep Learning Research.
@@ -190,14 +190,14 @@ model.
 
 The above animated GIF shows the model with some tiny movements which
 demonstrate the updating process. As it can be observed, the linear
-model is not certainly kind of a bests! However, as we mentioned, its
+model is not certainly among the bests! However, as we mentioned, its
 simplicity is its advantage!
 
 Summary
 -------
 
 In this tutorial, we walked through the linear model creation using
-TensorFlow. The line which was found after training, is not guaranteed
+TensorFlow. The line which was found after training is not guaranteed
 to be the best one. Different parameters affect the convergence
 accuracy. The linear model is found using stochastic optimization and
 its simplicity makes our world easier.

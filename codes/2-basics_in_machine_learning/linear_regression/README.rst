@@ -2,7 +2,7 @@
 Linear Regression
 ==================
 
-This document is dedicated to explain how to run the python script for this tutorial. The documentation is available `here <Documentationlinearregression_>`_. Alternatively you can check this ``Linear Regression using TensorFlow`` `blog post <blogpostlinearregression_>`_ for futher details.
+This document is dedicated to explain how to run the python script for this tutorial. The documentation is available `here <Documentationlinearregression_>`_. Alternatively, you can check this ``Linear Regression using TensorFlow`` `blog post <blogpostlinearregression_>`_ for further details.
 
 .. _blogpostlinearregression: http://www.machinelearninguru.com/deep_learning/tensorflow/machine_learning_basics/linear_regresstion/linear_regression.html
 
@@ -32,7 +32,7 @@ As an example the code can be executed as follows:
     
     python linear_regression.py --num_epochs=50
 
-The ``--num_epochs`` flag is to provide the number of epochs that will be used for training. The flag of ``--log_dir`` is not required becasue its default value is ``50`` and is provided in the source code as follows:
+The ``--num_epochs`` flag is to provide the number of epochs that will be used for training. The ``--num_epochs`` flag is not required because its default value is ``50`` and is provided in the source code as follows:
 
 .. code:: python
     

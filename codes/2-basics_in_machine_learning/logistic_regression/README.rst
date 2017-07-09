@@ -1,9 +1,9 @@
 ==================
-Linear Regression
+Logistic Regression
 ==================
 
-This document is dedicated to explain how to run the python script for this tutorial. ``Logistic regression`` is a binary
-classification algorthim in which `yes` or `no` are the only possible responses. The linear output is transformed to a probability of course between zero and 1. The decision is made by thresholding the probability and saying it belongs to which class. We consider ``Softmax`` with ``cross entropy`` loss for minimizing the loss.
+This document is dedicated to explaining how to run the python script for this tutorial. ``Logistic regression`` is a binary
+classification algorithm in which `yes` or `no` are the only possible responses. The linear output is transformed to a probability of course between zero and 1. The decision is made by thresholding the probability and saying it belongs to which class. We consider ``Softmax`` with ``cross entropy`` loss for minimizing the loss.
 
 -------------------
 Python Environment

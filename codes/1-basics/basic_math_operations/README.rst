@@ -24,7 +24,7 @@ As an example the code can be executed as follows:
     
     python 1-welcome.py --log_dir='~/log_dir'
 
-The ``--log_dir`` flag is to provide the address which the event files (for visualizing in Tensorboard) will be saved. The flag of ``--log_dir`` is not required becasue its default value is available in the source code as follows:
+The ``--log_dir`` flag is to provide the address which the event files (for visualizing in Tensorboard) will be saved. The flag of ``--log_dir`` is not required because its default value is available in the source code as follows:
 
 .. code:: python
     

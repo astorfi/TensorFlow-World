@@ -2,7 +2,7 @@
 ########## Welcome to TensorFlow World ##############
 #####################################################
 
-# The tutorials in this section is just a start for going into TensorFlow world.
+# The tutorials in this section is just a start for math operations.
 # The TensorFlow flags are used for having a more user friendly environment.
 
 from __future__ import print_function

@@ -3,6 +3,21 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Numerous always-ignore extensions
+*.pyc
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*.cache
+*.egg-info
+*~
+*#
+
 # C extensions
 *.so
 
@@ -62,6 +77,9 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+docs/_static/
+docs/_templates/
+
 
 # PyBuilder
 target/
@@ -87,3 +105,5 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+
