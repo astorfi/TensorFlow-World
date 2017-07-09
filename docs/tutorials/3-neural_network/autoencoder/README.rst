@@ -1,15 +1,10 @@
----
-title: Autoencoders and their implimentations in TensorFlow
-viewport: 'width=device-width, initial-scale=1'
----
-
 Autoencoders and their implementations in TensorFlow
 ----------------------------------------------------
 
 In this post, you will learn the concept behind Autoencoders as well how
 to implement an autoencoder in TensorFlow.
 
-Introduction {#intro}
+Introduction 
 ------------
 
 Autoencoders are a type of neural networks which copy its input to its
@@ -18,33 +13,31 @@ Decoder. The encoder map the input into a hidden layer space which we
 refer to as a code. The decoder then reconstruct the input from the
 code. There are different types of Autoencoders:
 
-> -   **Undercomplete Autoencoders:** An autoencoder whose code
->     dimension is less than the input dimension. Learning such an
->     autoencoder forces it to capture the most salient features.
->     However, using a big encoder and decoder in the lack of enough
->     training data allows the network to memorized the task and omits
->     learning useful features. In case of having linear decoder it can
->     act as PCA. However, adding nonlinear activation functions to the
->     network makes it a nonlinear generalization of PCA.
-> -   **Regularized Autoencoders:** Rather than limiting the size of
->     autoencoder and the code dimension for the sake of feature
->     learning, we can add a loss function to prevent it memorizing the
->     task and the training data.
->
->     > -   **Sparse Autoencoders:** An autoencoder which has a sparsity
->     >     penalty in the training loss in addition to the
->     >     reconstruction error. They usually being used for the
->     >     porpuse of other tasks such as classification. The loss is
->     >     not as strightforward as other regularizers, and we will
->     >     discuss it in another post later.
->     > -   **Denoising Autoencoders (DAE):** The input of a DAE is a
->     >     corrupted copy of the real input which is supposed to be
->     >     reconstructed. Therfore, a DAE has to undo the corruption
->     >     (noise) as well as reconstruction.
->     > -   **Contractive Autoencoders (CAE):** The main idea behind
->     >     these type of autoencoders is to learn a representation of
->     >     the data which is robust to small changes of the input.
->
+-   **Undercomplete Autoencoders:** An autoencoder whose code
+    dimension is less than the input dimension. Learning such an
+    autoencoder forces it to capture the most salient features.
+    However, using a big encoder and decoder in the lack of enough
+    training data allows the network to memorized the task and omits
+    learning useful features. In case of having linear decoder it can
+    act as PCA. However, adding nonlinear activation functions to the
+    network makes it a nonlinear generalization of PCA.
+-   **Regularized Autoencoders:** Rather than limiting the size of
+    autoencoder and the code dimension for the sake of feature
+    learning, we can add a loss function to prevent it memorizing the
+    task and the training data.
+     -   **Sparse Autoencoders:** An autoencoder which has a sparsity
+         penalty in the training loss in addition to the
+         reconstruction error. They usually being used for the
+         porpuse of other tasks such as classification. The loss is
+         not as strightforward as other regularizers, and we will
+         discuss it in another post later.
+     -   **Denoising Autoencoders (DAE):** The input of a DAE is a
+         corrupted copy of the real input which is supposed to be
+         reconstructed. Therfore, a DAE has to undo the corruption
+         (noise) as well as reconstruction.
+     -   **Contractive Autoencoders (CAE):** The main idea behind
+         these type of autoencoders is to learn a representation of
+         the data which is robust to small changes of the input.
 > -   **Variational Autoencoders:** They maximize the probability of the
 >     training data instead of copying the input to the output and
 >     therefore does not need regularization to capture useful
@@ -54,7 +47,7 @@ In this post, we are going to create a simple Undercomplete Autoencoder
 in TensorFlow to learn a low dimension representation (code) of the
 MNIST dataset.
 
-Create an Undercomplete Autoencoder {#list}
+Create an Undercomplete Autoencoder 
 -----------------------------------
 
 We are going to create an autoencoder with a 3-layer encoder and 3-layer
@@ -65,17 +58,7 @@ Consequently, the dimension of the code is 2(width) X 2(height) X
 decoder upsamples its input by a factor of two (using transpose
 convolution with stride 2).
 
-<div class="panel panel-default">
-
-<div class="panel-heading">
-
-Autoencoder
-
-</div>
-
-<div id="pycode" class="panel-body">
-
-``` {data-enlighter-title="python Code"}
+```
 import tensorflow.contrib.layers as lays
 
 def autoencoder(inputs):
@@ -96,29 +79,11 @@ def autoencoder(inputs):
     return net
 ```
 
-</div>
-
-</div>
-
-<div align="center">
-
-<div class="responsive" style="padding: 0 6px;width: 80%;">
-
-<div class="img">
-
 [![](../../../../_images/topics/deep_learning/tensorflow/autoencoders/ae.png){width="600"
 height="400"}](../../../../_images/topics/deep_learning/tensorflow/autoencoders/ae.png)
 <div class="desc">
 
 **Figure 1:** Autoencoder
-
-</div>
-
-</div>
-
-</div>
-
-</div>
 
 The MNIST dataset contains vectorized images of 28X28. Therefore we
 define a new function to reshape each batch of MNIST images to 28X28 and
@@ -126,17 +91,7 @@ then resize to 32X32. The reason of resizing to 32X32 is to make it a
 power of two and therefore we can easily use stride of 2 for
 downsampling and upsampling.
 
-<div class="panel panel-default">
-
-<div class="panel-heading">
-
-Reshape and Resize a batch of MNIST images
-
-</div>
-
-<div id="pycode" class="panel-body">
-
-``` {data-enlighter-title="python Code"}
+``` 
 import numpy as np
 from skimage import transform
 
@@ -153,24 +108,11 @@ def resize_batch(imgs):
     return resized_imgs
 ```
 
-</div>
-
-</div>
-
 Now we create an autoencoder, define a square error loss and an
 optimizer.
 
-<div class="panel panel-default">
 
-<div class="panel-heading">
-
-Create an AE and loss
-
-</div>
-
-<div id="pycode" class="panel-body">
-
-``` {data-enlighter-title="python Code"}
+``` 
 import tensorflow as tf
 
 ae_inputs = tf.placeholder(tf.float32, (None, 32, 32, 1))  # input to the network (MNIST images)
@@ -184,24 +126,11 @@ train_op = tf.train.AdamOptimizer(learning_rate=lr).minimize(loss)
 init = tf.global_variables_initializer()
 ```
 
-</div>
-
-</div>
-
 Now we can read the batches, train the network and finally test the
 network by reconstructing a batch of test images.
 
-<div class="panel panel-default">
 
-<div class="panel-heading">
-
-Read batches and train the network
-
-</div>
-
-<div id="pycode" class="panel-body">
-
-``` {data-enlighter-title="python Code"}
+``` 
 from tensorflow.examples.tutorials.mnist import input_data
 
 batch_size = 500  # Number of samples in each batch
