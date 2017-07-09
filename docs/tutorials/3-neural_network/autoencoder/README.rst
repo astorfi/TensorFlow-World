@@ -79,7 +79,7 @@ convolution with stride 2).
         net = lays.conv2d_transpose(net, 1, [5, 5], stride=2, padding='SAME', activation_fn=tf.nn.tanh)
         return net
 
-.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/3-neural_network/autoencoder/ae.png
+.. figure:: ../../../_img/3-neural_network/autoencoder/ae.png
    :scale: 50 %
    :align: center
 
