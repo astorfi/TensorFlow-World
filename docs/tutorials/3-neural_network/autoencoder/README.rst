@@ -79,11 +79,11 @@ convolution with stride 2).
         net = lays.conv2d_transpose(net, 1, [5, 5], stride=2, padding='SAME', activation_fn=tf.nn.tanh)
         return net
 
-[![](../../../../_images/topics/deep_learning/tensorflow/autoencoders/ae.png){width="600"
-height="400"}](../../../../_images/topics/deep_learning/tensorflow/autoencoders/ae.png)
-<div class="desc">
+.. figure:: https://github.com/astorfi/TensorFlow-World/blob/master/docs/_img/3-neural_network/autoencoder/ae.png
+   :scale: 50 %
+   :align: center
 
-**Figure 1:** Autoencoder
+   **Figure 1:** Autoencoder
 
 The MNIST dataset contains vectorized images of 28X28. Therefore we
 define a new function to reshape each batch of MNIST images to 28X28 and
