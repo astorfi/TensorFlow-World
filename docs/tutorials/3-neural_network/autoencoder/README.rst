@@ -59,11 +59,12 @@ decoder upsamples its input by a factor of two (using transpose
 convolution with stride 2).
 
 .. code-block:: python
+
     import tensorflow.contrib.layers as lays
 
     def autoencoder(inputs):
         # encoder
-        # 32 x 32 x 1   ->  16 x 16 x 32
+        # 32 file code blockx 32 x 1   ->  16 x 16 x 32
         # 16 x 16 x 32  ->  8 x 8 x 16
         # 8 x 8 x 16    ->  2 x 2 x 8
         net = lays.conv2d(inputs, 32, [5, 5], stride=2, padding='SAME')
