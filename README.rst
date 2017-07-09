@@ -113,7 +113,7 @@ Neural Networks
 +----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
 | 9  | *Convolutional Neural Networks*   | `Simple Convolutional Neural Networks`_                                                       |       `Documentation <Documentationcnn_>`_   |
 +----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
-| 10 | *Autoencoders*                    | `Undercomplete Autoencoder <udercompleteautoencodercode_>`_                                   |                                              |
+| 10 | *Autoencoders*                    | `Undercomplete Autoencoder <udercompleteautoencodercode_>`_                                   |       `Documentation <Documentationauto_>`_  |
 +----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
 
 .. ~~~~~~~~~~~~
@@ -202,7 +202,7 @@ Neural Networks
 
 
 .. _udercompleteautoencodercode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/undercomplete-autoencoder
-
+.. _Documentationauto: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/3-neural_network/autoencoder
 
 .. +---+---------------------------------------------+----------------------------------------+
 .. | # |          Source Code                        |                                        |
@@ -279,6 +279,3 @@ Acknowledgement
 ================
 
 I have taken huge efforts in this project for hopefully being a small part of TensorFlow world. However, it would not have been plausible without the kind support and help of my friend and colleague `Domenick Poster <https://github.com/vonclites/>`_ for his valuable advices. He helped me for having a better understanding of TensorFlow and my special appreciation goes to him.
-
-
-
