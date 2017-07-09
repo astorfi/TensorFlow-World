@@ -92,6 +92,7 @@ power of two and therefore we can easily use stride of 2 for
 downsampling and upsampling.
 
 .. code-block:: python
+
     import numpy as np
     from skimage import transform
 
@@ -112,6 +113,7 @@ optimizer.
 
 
 .. code-block:: python
+
     import tensorflow as tf
 
     ae_inputs = tf.placeholder(tf.float32, (None, 32, 32, 1))  # input to the network (MNIST images)
@@ -129,6 +131,7 @@ network by reconstructing a batch of test images.
 
 
 .. code-block:: python
+
     from tensorflow.examples.tutorials.mnist import input_data
 
     batch_size = 500  # Number of samples in each batch
