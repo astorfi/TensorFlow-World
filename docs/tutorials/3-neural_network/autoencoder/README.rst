@@ -4,13 +4,13 @@ Autoencoders and their implementations in TensorFlow
 In this post, you will learn the concept behind Autoencoders as well how
 to implement an autoencoder in TensorFlow.
 
-Introduction 
+Introduction
 ------------
 
 Autoencoders are a type of neural networks which copy its input to its
-output. They usualy consist of two main parts, namely Encoder and
+output. They usually consist of two main parts, namely Encoder and
 Decoder. The encoder map the input into a hidden layer space which we
-refer to as a code. The decoder then reconstruct the input from the
+refer to as a code. The decoder then reconstructs the input from the
 code. There are different types of Autoencoders:
 
 -   **Undercomplete Autoencoders:** An autoencoder whose code
@@ -18,7 +18,7 @@ code. There are different types of Autoencoders:
     autoencoder forces it to capture the most salient features.
     However, using a big encoder and decoder in the lack of enough
     training data allows the network to memorized the task and omits
-    learning useful features. In case of having linear decoder it can
+    learning useful features. In case of having linear decoder, it can
     act as PCA. However, adding nonlinear activation functions to the
     network makes it a nonlinear generalization of PCA.
 -   **Regularized Autoencoders:** Rather than limiting the size of
@@ -29,15 +29,15 @@ code. There are different types of Autoencoders:
          penalty in the training loss in addition to the
          reconstruction error. They usually being used for the
          porpuse of other tasks such as classification. The loss is
-         not as strightforward as other regularizers, and we will
+         not as straightforward as other regularizers, and we will
          discuss it in another post later.
      -   **Denoising Autoencoders (DAE):** The input of a DAE is a
          corrupted copy of the real input which is supposed to be
-         reconstructed. Therfore, a DAE has to undo the corruption
+         reconstructed. Therefore, a DAE has to undo the corruption
          (noise) as well as reconstruction.
      -   **Contractive Autoencoders (CAE):** The main idea behind
          these type of autoencoders is to learn a representation of
-         the data which is robust to small changes of the input.
+         the data which is robust to small changes in the input.
 -   **Variational Autoencoders:** They maximize the probability of the
     training data instead of copying the input to the output and
     therefore does not need regularization to capture useful
@@ -47,7 +47,7 @@ In this post, we are going to create a simple Undercomplete Autoencoder
 in TensorFlow to learn a low dimension representation (code) of the
 MNIST dataset.
 
-Create an Undercomplete Autoencoder 
+Create an Undercomplete Autoencoder
 -----------------------------------
 
 We are going to create an autoencoder with a 3-layer encoder and 3-layer
@@ -88,7 +88,7 @@ convolution with stride 2).
 The MNIST dataset contains vectorized images of 28X28. Therefore we
 define a new function to reshape each batch of MNIST images to 28X28 and
 then resize to 32X32. The reason of resizing to 32X32 is to make it a
-power of two and therefore we can easily use stride of 2 for
+power of two and therefore we can easily use the stride of 2 for
 downsampling and upsampling.
 
 .. code-block:: python
