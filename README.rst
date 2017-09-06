@@ -25,6 +25,13 @@ Each tutorial includes ``source code`` and associated ``documentation``.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
 .. _TensorFlow: https://www.tensorflow.org/install/
 
+#################
+Table of Contents
+#################
+.. contents:: 
+  :local:
+  :depth: 3
+  
 ============
 Motivation
 ============
