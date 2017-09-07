@@ -110,7 +110,7 @@ with graph.as_default():
 
     # Accuracy
     # Evaluate the model
-    pred_classifier = tf.equal(tf.argmax(logits, 1), tf.argmax(label_place, 1))
+    pred_classifier = tf.equal(tf.argmax(logits_last, 1), tf.argmax(label_place, 1))
 
     # Accuracy calculation
     accuracy = tf.reduce_mean(tf.cast(pred_classifier, tf.float32))
