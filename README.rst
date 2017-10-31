@@ -15,7 +15,7 @@
 
 .. _TensorFlow World: http://tensorflow-world.readthedocs.io/en/latest/
 
-This repository aims to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository. 
+This repository aims to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository.
 
 Each tutorial includes ``source code`` and associated ``documentation``.
 
@@ -28,10 +28,10 @@ Each tutorial includes ``source code`` and associated ``documentation``.
 #################
 Table of Contents
 #################
-.. contents:: 
+.. contents::
   :local:
   :depth: 3
-  
+
 ============
 Motivation
 ============
@@ -42,11 +42,11 @@ There are different motivations for this open source project. TensorFlow (as we 
 Why use TensorFlow?
 ~~~~~~~~~~~~~~~~~~~~~
 
-Deep Learning is in very high interest these days - there's a crucial need for rapid and optimized implementations of the algorithms and architectures. TensorFlow is designed to facilitate this goal. 
+Deep Learning is in very high interest these days - there's a crucial need for rapid and optimized implementations of the algorithms and architectures. TensorFlow is designed to facilitate this goal.
 
-The strong advantage of TensorFlow is it flexibility in designing highly modular models which can also be a disadvantage for beginners since a lot of the pieces must be considered together when creating the model. 
+The strong advantage of TensorFlow is it flexibility in designing highly modular models which can also be a disadvantage for beginners since a lot of the pieces must be considered together when creating the model.
 
-This issue has been facilitated as well by developing high-level APIs such as `Keras <https://keras.io/>`_ and `Slim <https://github.com/tensorflow/models/blob/master/inception/inception/slim/README.md//>`_ which abstract a lot of the pieces used in designing machine learning algorithms. 
+This issue has been facilitated as well by developing high-level APIs such as `Keras <https://keras.io/>`_ and `Slim <https://github.com/tensorflow/models/blob/master/inception/inception/slim/README.md//>`_ which abstract a lot of the pieces used in designing machine learning algorithms.
 
 The interesting thing about TensorFlow is that **it can be found anywhere these days**. Lots of the researchers and developers are using it and *its community is growing at the speed of light*! So many issues can be dealt with easily since they're usually the same issues that a lot of other people run into considering the large number of people involved in the TensorFlow community.
 
@@ -59,11 +59,11 @@ Considering the large number of tutorials that are being added to this large com
 
 First of all, what's the point of putting effort into something that most of the people won't stop by and take a look? What's the point of creating something that does not help anyone in the developers and researchers community? Why spend time for something that can easily be forgotten? But **how we try to do it?** Even up to this
 very moment there are countless tutorials on TensorFlow whether on the model design or TensorFlow
-workflow. 
+workflow.
 
-Most of them are too complicated or suffer from a lack of documentation. There are only a few available tutorials which are concise and well-structured and provide enough insight for their specific implemented models. 
+Most of them are too complicated or suffer from a lack of documentation. There are only a few available tutorials which are concise and well-structured and provide enough insight for their specific implemented models.
 
-The goal of this project is to help the community with structured tutorials and simple and optimized code implementations to provide better insight about how to use TensorFlow *quick and effectively*. 
+The goal of this project is to help the community with structured tutorials and simple and optimized code implementations to provide better insight about how to use TensorFlow *quick and effectively*.
 
 It is worth noting that, **the main goal of this project is to provide well-documented tutorials and less-complicated code**!
 
@@ -95,18 +95,38 @@ TensorFlow Tutorials
 
 The tutorials in this repository are partitioned into relevant categories.
 
+==========================
+
 ~~~~~~~~
 Warm-up
 ~~~~~~~~
+
+.. image:: _img/mainpage/welcome.gif
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
+
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | #  |       topic         |   Source Code                                                                          |                                              |
 +====+=====================+========================================================================================+==============================================+
 | 1  | Start-up            | `Welcome <welcomesourcecode_>`_  / `IPython <ipythonwelcome_>`_                        |  `Documentation <Documentationcnnwelcome_>`_ |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 
+==========================
+
 ~~~~~~
 Basics
 ~~~~~~
+
+.. image:: _img/mainpage/basics.png
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
+
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | #  |       topic         |   Source Code                                                                          |                                              |
 +====+=====================+========================================================================================+==============================================+
@@ -115,9 +135,18 @@ Basics
 | 3  | *TensorFLow Basics* | `TensorFlow Variables <variablssourcecode_>`_   / `IPython <ipythonvariabls_>`_        |  `Documentation <Documentationvariabls_>`_   |
 +----+---------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 
+==========================
+
 ~~~~~~~~~~~~~~~~~~~~~~
 Basic Machine Learning
 ~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: _img/mainpage/logisticregression.png
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
 
 +----+----------------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 | #  |       topic                |   Source Code                                                                          |                                              |
@@ -131,9 +160,18 @@ Basic Machine Learning
 | 7  | *Support Vector Machines*  |`MultiClass Kernel SVM`_  / `IPython <MultiClassKernelSVMipython_>`_                    |                                              |
 +----+----------------------------+----------------------------------------------------------------------------------------+----------------------------------------------+
 
+==========================
+
 ~~~~~~~~~~~~~~~~
 Neural Networks
 ~~~~~~~~~~~~~~~~
+
+.. image:: _img/mainpage/CNNs.png
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
 
 +----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
 | #  |       topic                       |   Source Code                                                                                 |                                              |
