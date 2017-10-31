@@ -141,7 +141,7 @@ Basics
 Basic Machine Learning
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: _img/mainpage/basicmodels.gif
+.. image:: _img/mainpage/basicmodels.png
    :height: 100px
    :width: 200 px
    :scale: 50 %
