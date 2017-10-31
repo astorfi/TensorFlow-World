@@ -120,7 +120,7 @@ Warm-up
 Basics
 ~~~~~~
 
-.. image:: _img/mainpage/basics.png
+.. image:: _img/mainpage/basics.gif
    :height: 100px
    :width: 200 px
    :scale: 50 %
