@@ -221,7 +221,7 @@ with graph.as_default():
         test_summary_writer = tf.summary.FileWriter(test_summary_dir)
         test_summary_writer.add_graph(sess.graph)
 
-        # If fie-tuning flag in 'True' the model will be restored.
+        # If fine-tuning flag in 'True' the model will be restored.
         if FLAGS.fine_tuning:
             saver.restore(sess, os.path.join(FLAGS.checkpoint_root, checkpoint_prefix))
             print("Model restored for fine-tuning...")
