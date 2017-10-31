@@ -264,6 +264,13 @@ Neural Networks
 TensorFlow Installation and Setup the Environment
 =================================================
 
+.. image:: _img/mainpage/installation-logo.gif
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
+
 .. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
 
 In order to install TensorFlow please refer to the following link:
