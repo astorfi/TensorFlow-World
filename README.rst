@@ -71,6 +71,13 @@ It is worth noting that, **the main goal of this project is to provide well-docu
 TensorFlow Installation and Setup the Environment
 =================================================
 
+.. image:: _img/mainpage/installation-logo.gif
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
+
 .. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
 
 In order to install TensorFlow please refer to the following link:
@@ -82,8 +89,7 @@ In order to install TensorFlow please refer to the following link:
     :target: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
 
 
-The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environment.
-
+The virtual environment installation is recommended in order to prevent package conflict and provide the capacity to customize the working environment.
 
 
 ====================
@@ -276,36 +282,6 @@ Neural Networks
 .. | 2 |    `Convolutional Neural Networks`_         |  `Documentation <Documentationcnn_>`_  |
 .. +---+---------------------------------------------+----------------------------------------+
 
-
-
-<<<<<<< HEAD
-=======
-=================================================
-TensorFlow Installation and Setup the Environment
-=================================================
-
-.. image:: _img/mainpage/installation-logo.gif
-   :height: 100px
-   :width: 200 px
-   :scale: 50 %
-   :alt: alternate text
-   :align: right
-
-.. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
-
-In order to install TensorFlow please refer to the following link:
-
-  * `TensorFlow Installation`_
-
-
-.. image:: _img/mainpage/installation.gif
-    :target: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
-
-
-The virtual environment installation is recommended in order to prevent package conflict and provide the capacity to customize the working environment. The TensorFlow version employed for these tutorials is `1.1`. However, the files from previous versions can be transformed to newer versions (ex: version `1.1`) using the instructions available in the following link:
-
-  * `Transitioning to TensorFlow 1.0 <https://www.tensorflow.org/install/migration/>`_
->>>>>>> 528912a4d0287f7bd6efd7a58a54078d466c0f65
 
 =====================
 Some Useful Tutorials
