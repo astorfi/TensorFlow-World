@@ -77,6 +77,7 @@ TensorFlow Installation and Setup the Environment
    :scale: 50 %
    :alt: alternate text
    :align: right
+   :target: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
 
 .. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
 
