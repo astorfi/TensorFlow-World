@@ -1,4 +1,4 @@
-﻿
+
 ********************
 `TensorFlow World`_
 ********************
@@ -71,6 +71,14 @@ It is worth noting that, **the main goal of this project is to provide well-docu
 TensorFlow Installation and Setup the Environment
 =================================================
 
+.. image:: _img/mainpage/installation-logo.gif
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
+   :target: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
+
 .. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
 
 In order to install TensorFlow please refer to the following link:
@@ -81,10 +89,7 @@ In order to install TensorFlow please refer to the following link:
 .. image:: _img/mainpage/installation.gif
     :target: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
 
-
 The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environment.
-
-
 
 ====================
 TensorFlow Tutorials
@@ -251,7 +256,6 @@ Neural Networks
 .. | 3 |    `Linear SVM`_                            |                                        |
 .. +---+---------------------------------------------+----------------------------------------+
 .. | 4 |    `MultiClass Kernel SVM`_                 |                                        |
-.. +---+---------------------------------------------+----------------------------------------+
 
 .. ~~~~~~~~~~~~~~~~~~~
 .. **Neural Networks**
@@ -275,7 +279,6 @@ Neural Networks
 .. +---+---------------------------------------------+----------------------------------------+
 .. | 2 |    `Convolutional Neural Networks`_         |  `Documentation <Documentationcnn_>`_  |
 .. +---+---------------------------------------------+----------------------------------------+
-
 
 
 =====================
