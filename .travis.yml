@@ -2,15 +2,17 @@ language: python
 python:
 
   - "2.7"
-  - "3.4"
   - "3.5"
 
 # command to install dependencies
 install:
   - pip install -r requirements.txt
   - pip install coveralls
+  - pip install flake8
 
 script:
+  # stop the build if there are Python syntax errors or undefined names
+  - flake8 . --count --select=E901,E999,F821,F822,F823 --show-source --statistics
 
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/0-welcome/code/0-welcome.py test
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/1-basics/basic_math_operations/code/basic_math_operation.py test
@@ -19,9 +21,6 @@ script:
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/2-basics_in_machine_learning/linear_svm/code/linear_svm.py test
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/2-basics_in_machine_learning/logistic_regression/code/logistic_regression.py test
   - coverage run --omit=*.virtualenvs*,*virtualenv* codes/2-basics_in_machine_learning/multiclass_svm/code/multiclass_svm.py test
-
-
-
 
 after_success:
   coveralls

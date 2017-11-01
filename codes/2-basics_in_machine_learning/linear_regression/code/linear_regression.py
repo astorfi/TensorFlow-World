@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import tensorflow as tf
 import xlrd
 import matplotlib.pyplot as plt
@@ -16,8 +15,7 @@ data = np.stack([XX,YY], axis=1)
 #######################
 ## Defining flags #####
 #######################
-tf.app.flags.DEFINE_integer(
-    'num_epochs', 5, 'The number of epochs for training the model. Default=50')
+tf.app.flags.DEFINE_integer('num_epochs', 50, 'The number of epochs for training the model. Default=50')
 # Store all elemnts in FLAG structure!
 FLAGS = tf.app.flags.FLAGS
 
@@ -58,7 +56,7 @@ def loss(X, Y):
 
     # Making the prediction.
     Y_predicted = inference(X)
-    return tf.squared_difference(Y, Y_predicted)
+    return tf.reduce_sum(tf.squared_difference(Y, Y_predicted))/(2*data.shape[0])
 
 
 # The training function.
@@ -81,11 +79,8 @@ with tf.Session() as sess:
 
     # Step 8: train the model
     for epoch_num in range(FLAGS.num_epochs): # run 100 epochs
-        for x, y in data:
-          train_op = train(train_loss)
-
-          # Session runs train_op to minimize loss
-          loss_value,_ = sess.run([train_loss,train_op], feed_dict={X: x, Y: y})
+        loss_value, _ = sess.run([train_loss,train_op],
+                                 feed_dict={X: data[:,0], Y: data[:,1]})
 
         # Displaying the loss per epoch.
         print('epoch %d, loss=%f' %(epoch_num+1, loss_value))
