@@ -59,6 +59,24 @@ and simple and optimized code implementation to provide better insight about how
 noting that, **the main goal of this project is providing well-documented tutorials and less-complicated codes**!
 
 
+=================================================
+TensorFlow Installation and Setup the Environment
+=================================================
+
+.. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
+
+In order to install TensorFlow please refer to the following link:
+
+  * `TensorFlow Installation`_
+
+
+.. image:: _img/mainpage/installation.gif
+    :target: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
+
+
+The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environment.
+
+
 
 ====================
 TensorFlow Tutorials
@@ -214,24 +232,6 @@ Neural Networks
 
 
 
-=================================================
-TensorFlow Installation and Setup the Environment
-=================================================
-
-.. _TensorFlow Installation: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/installation
-
-In order to install TensorFlow please refer to the following link:
-
-  * `TensorFlow Installation`_
-
-
-.. image:: _img/mainpage/installation.gif
-    :target: https://www.youtube.com/watch?v=_3JFEPk4qQY&t=2s
-
-
-The virtual environment installation is recommended in order to prevent package conflict and having the capacity to customize the working environment. The TensorFlow version employed for these tutorials is `1.1`. However, the files from previous versions can be transformed to newer versions (ex: version `1.1`) using the instructions available in the following link:
-
-  * `Transitioning to TensorFlow 1.0 <https://www.tensorflow.org/install/migration/>`_
 
 =====================
 Some Useful Tutorials
