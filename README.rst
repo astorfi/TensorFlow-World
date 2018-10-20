@@ -184,6 +184,9 @@ Neural Networks
 +----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
 | 10 | *Autoencoders*                    | `Undercomplete Autoencoder <udercompleteautoencodercode_>`_                                   |       `Documentation <Documentationauto_>`_  |
 +----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
+| 11 | *Recurrent Neural Networks*       | `RNN`_  / `IPython <RNNIpython_>`_                                                            |                                              |
++----+-----------------------------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+
+
 
 .. ~~~~~~~~~~~~
 .. **Welcome**
@@ -271,6 +274,10 @@ Neural Networks
 
 .. _udercompleteautoencodercode: https://github.com/astorfi/TensorFlow-World/tree/master/codes/3-neural_networks/undercomplete-autoencoder
 .. _Documentationauto: https://github.com/astorfi/TensorFlow-World/tree/master/docs/tutorials/3-neural_network/autoencoder
+
+.. _RNN: codes/3-neural_networks/recurrent-neural-networks/code/rnn.py
+.. _RNNIpython: codes/3-neural_networks/recurrent-neural-networks/code/rnn.py
+
 
 .. +---+---------------------------------------------+----------------------------------------+
 .. | # |          Source Code                        |                                        |
