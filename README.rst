@@ -1,4 +1,11 @@
-
+.. image:: _img/follow-twitter.gif
+   :height: 100px
+   :width: 200 px
+   :scale: 50 %
+   :alt: alternate text
+   :align: right
+   :target: https://twitter.com/amirsinatorfi
+   
 ********************
 `TensorFlow World`_
 ********************
@@ -12,6 +19,8 @@
     :target: https://coveralls.io/github/astorfi/TensorFlow-World?branch=master
 .. image:: https://zenodo.org/badge/86115145.svg
    :target: https://zenodo.org/badge/latestdoi/86115145
+.. image:: https://img.shields.io/twitter/follow/amirsinatorfi.svg?label=Follow&style=social
+      :target: https://twitter.com/amirsinatorfi
 
 .. _TensorFlow World: http://tensorflow-world.readthedocs.io/en/latest/
 
