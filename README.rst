@@ -26,10 +26,6 @@ Each tutorial includes ``source code`` and associated ``documentation``.
 .. _TensorFlow: https://www.tensorflow.org/install/
 
 
-==========================================
-Download Free TensorFlow Roadmap EBook
-==========================================
-
 .. raw:: html
 
    <div align="center">
