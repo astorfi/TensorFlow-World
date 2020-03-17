@@ -21,11 +21,28 @@ This repository aims to provide simple and ready-to-use tutorials for TensorFlow
 
 Each tutorial includes ``source code`` and associated ``documentation``.
 
-.. image:: _img/mainpage/TensorFlow_World.gif
-
 .. The links.
 .. _wiki: https://github.com/astorfi/TensorFlow-World/wiki
 .. _TensorFlow: https://www.tensorflow.org/install/
+
+
+==========================================
+Download Free TensorFlow Roadmap EBook
+==========================================
+
+.. raw:: html
+
+   <div align="center">
+
+.. raw:: html
+
+ <a href="http://www.machinelearningmindset.com/tensorflow-roadmap-ebook/" target="_blank">
+  <img width="850" height="600" align="center" src="https://github.com/machinelearningmindset/TensorFlow-Course/blob/master/_img/mainpage/booksubscribe.png"/>
+ </a>
+
+.. raw:: html
+
+   </div>
 
 #################
 Table of Contents
