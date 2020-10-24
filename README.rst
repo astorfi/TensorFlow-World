@@ -1,6 +1,4 @@
-.. figure:: _img/mainpage/subscribe.gif
-  :target: https://machinelearningmindset.com/subscription/
-   
+  
 ********************
 `TensorFlow World`_
 ********************
@@ -16,6 +14,24 @@
       :target: https://twitter.com/amirsinatorfi
 
 .. _TensorFlow World: http://tensorflow-world.readthedocs.io/en/latest/
+
+To support maintaining and upgrading this project, please kindly consider `Sponsoring the project developer <https://github.com/sponsors/astorfi/dashboard>`_.
+
+Any level of support is a great contribution here :heart:
+
+.. raw:: html
+
+   <div align="center">
+
+.. raw:: html
+
+ <a href="https://github.com/sponsors/astorfi/dashboard" target="_blank">
+  <img width="600" height="500" align="center" src="https://github.com/instillai/TensorFlow-Course/blob/master/_img/mainpage/donation.jpg"/>
+ </a>
+
+.. raw:: html
+
+   </div>  
 
 This repository aims to provide simple and ready-to-use tutorials for TensorFlow. The explanations are present in the wiki_ associated with this repository.
 
